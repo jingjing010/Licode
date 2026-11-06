@@ -9,13 +9,34 @@ def samples():
     ]
 
 
-def expect(strs):
-    """Python 参考答案（与 driver 的规范化方式一致），用来估算输出大小"""
-    groups = {}
+def norm(groups):
+    return sorted(sorted(g) for g in groups)
+
+
+def brute(strs):
+    """两两比较字母计数，逐个归入第一个匹配的组"""
+    groups = []
     for w in strs:
-        groups.setdefault("".join(sorted(w)), []).append(w)
-    rows = sorted(sorted(g) for g in groups.values())
-    return "[" + ",".join(sarr(r) for r in rows) + "]"
+        cw = sorted(w)
+        for g in groups:
+            if sorted(g[0]) == cw:
+                g.append(w)
+                break
+        else:
+            groups.append([w])
+    return norm(groups)
+
+
+def fast(strs):
+    d = {}
+    for w in strs:
+        d.setdefault("".join(sorted(w)), []).append(w)
+    return norm(d.values())
+
+
+for _ in range(200):
+    _a = [rand_str(random.randint(0, 3), "abc") for _ in range(random.randint(1, 10))]
+    assert brute(_a) == fast(_a)
 
 
 def shuffled(w):
@@ -24,31 +45,34 @@ def shuffled(w):
     return "".join(c)
 
 
-def anagram_family(n, bases):
+def anagram_case(n, n_base, lo, hi, alphabet="abcdefghijklmnopqrstuvwxyz"):
+    bases = [rand_str(random.randint(lo, hi), alphabet) for _ in range(n_base)]
     return [shuffled(random.choice(bases)) for _ in range(n)]
 
 
+def checked(strs):
+    out = sum(len(w) + 3 for w in strs) + 3 * len(fast(strs))
+    assert out < 900000, out
+    return lines(sarr(strs))
+
+
 def cases():
+    N = 10**4
     res = [
-        ["", ""],
-        ["a", "b", "a"],
-        ["abc", "bca", "cab", "xyz", "zyx", "abcd"],
-        ["ab", "ba", "abb", "bab", "aab"],
-        ["aaa", "aaa", "aaa"],
-        list("abcdefghijklmnopqrstuvwxyz"),
-        ["", "a", "", "a", "aa"],
-        ["z" * 100, shuffled("ab" * 50), "ab" * 50, "a" * 100],
+        checked(["", ""]),
+        checked(["", "b", ""]),
+        checked(["abc", "bca", "cab", "abc"]),
+        checked(["ab", "ba", "aab", "aba", "abb"]),
+        checked(["a", "b", "c", "d"]),
+        checked(["z" * 100, "z" * 99 + "y", "y" + "z" * 99]),
+        checked(["ddddddddddg", "dgggggggggg"]),
     ]
-    res.append([rand_str(random.randint(0, 4), "abc") for _ in range(50)])
-    res.append([rand_str(random.randint(0, 6), "abcd") for _ in range(1000)])
-    res.append(anagram_family(500, [rand_str(random.randint(1, 10)) for _ in range(30)]))
-    # 最大规模（输出上限 1MB，单词长度控制在 80 以内）
-    res.append([rand_str(80) for _ in range(10**4)])
-    res.append([rand_str(random.randint(0, 80)) for _ in range(10**4)])
-    res.append(anagram_family(10**4, [rand_str(random.randint(60, 80)) for _ in range(100)]))
-    res.append([rand_str(random.randint(0, 3), "ab") for _ in range(10**4)])
-    res.append(anagram_family(10**4, ["abcdefghijklmnopqrstuvwxyz" * 3]))
-    for strs in res:
-        assert 1 <= len(strs) <= 10**4 and all(len(w) <= 100 for w in strs)
-        assert len(expect(strs)) < 1000000
-    return [lines(sarr(x)) for x in res]
+    res.append(checked(anagram_case(30, 6, 1, 5, "abcd")))
+    res.append(checked(anagram_case(1000, 100, 0, 10)))
+    res.append(checked([rand_str(random.randint(0, 3), "ab") for _ in range(500)]))
+    res.append(checked(anagram_case(N, 3000, 30, 70)))
+    res.append(checked(anagram_case(N, 1, 60, 60)))
+    res.append(checked([rand_str(60) for _ in range(N)]))
+    res.append(checked(anagram_case(N, 500, 0, 8, "abc")))
+    res.append(checked(anagram_case(5000, 2000, 100, 100)))
+    return res

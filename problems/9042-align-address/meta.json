@@ -1,0 +1,16 @@
+{
+  "id": 9042,
+  "slug": "align-address",
+  "title": "地址向上 / 向下对齐",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "位运算", "内存对齐"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "向下对齐就是\"不超过 addr 的最大的 align 的倍数\"，可以用 addr - addr % align 计算。",
+    "align 是 2 的幂时，align - 1 是低位全 1 的掩码。把 addr 的这些低位清零（& ~(align - 1)）就是向下对齐。",
+    "向上对齐 = 先加上 align - 1，再向下对齐：(addr + align - 1) & ~(align - 1)。已经对齐的地址加上 align - 1 不会跨过下一个倍数。"
+  ]
+}

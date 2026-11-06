@@ -1,0 +1,16 @@
+{
+  "id": 287,
+  "slug": "find-the-duplicate-number",
+  "title": "寻找重复数",
+  "difficulty": "中等",
+  "tags": ["位运算", "数组", "双指针", "二分查找"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/find-the-duplicate-number/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "如果允许用额外空间：开一个 bool 数组记录每个数有没有出现过，第一个重复出现的就是答案。",
+    "所有数都在 [1, n] 内，把 nums[i] 看成「从 i 指向 nums[i]」的一条边，从下标 0 出发一直走，会走出一个带环的链表。",
+    "重复的数就是环的入口。用快慢指针（Floyd 判圈）：先找到相遇点，再让一个指针回到起点，两个指针每次各走一步，再次相遇的位置就是答案。"
+  ]
+}

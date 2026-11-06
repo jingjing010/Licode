@@ -12,7 +12,8 @@ def samples():
 def cases():
     res = [lines(s(x)) for x in [
         "z", "ab", "aa", "aba", "abcba", "racecar", "abcdefghijklmnop",
-        "a" * 16,                      # 2^15 种分割，最大输出
+        "a" * 15,                      # 2^14 种分割
+        "a" * 15 + "b",                # 长度 16，2^14 种分割（全 a 的 16 位输出超过 1MB 上限）
         "ab" * 8,
         "aabbaabbaabbaabb",
         "abbaabbaabbaabba",

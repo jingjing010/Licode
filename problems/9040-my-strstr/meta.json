@@ -1,0 +1,16 @@
+{
+  "id": 9040,
+  "slug": "my-strstr",
+  "title": "实现 strstr",
+  "difficulty": "中等",
+  "tags": ["嵌入式", "字符串", "指针", "字符串匹配"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的办法：把 haystack 的每个位置都当作起点，试试从这里开始能不能完整匹配 needle。",
+    "从某个起点开始逐个比较，遇到不同的字符就换下一个起点；如果比到 needle 的 '\\0' 都没有不同，就找到了。",
+    "needle 是空串时直接返回 haystack；起点走到 haystack 的 '\\0' 还没找到就返回 NULL。想更快可以学习 KMP 算法。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 31,
+  "slug": "next-permutation",
+  "title": "下一个排列",
+  "difficulty": "中等",
+  "tags": ["数组", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/next-permutation/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "想让排列「变大一点点」，应该尽量改动靠右的位置。从右往左找第一个满足 nums[i] < nums[i+1] 的下标 i。",
+    "i 右边的部分是非递增的（已经是这几个数能组成的最大排列）。在右边找一个比 nums[i] 大的最小的数，和 nums[i] 交换。",
+    "交换后 i 右边仍是非递增的，把它反转成递增，就得到了最小的后缀。如果找不到 i（整个数组非递增），直接整体反转。"
+  ]
+}

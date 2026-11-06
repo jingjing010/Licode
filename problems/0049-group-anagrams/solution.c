@@ -1,58 +1,59 @@
-/* 计数排序生成 key + 哈希表（开放寻址）分组，O(n * k) */
-#define HASH_SIZE 32768 /* 2 的幂，且大于 2 * 10^4 */
+/* 计数排序得到标签 + 哈希表按标签分组，O(n * L) */
+#define GA_HASH_SIZE (1 << 15)
 
-static unsigned int hashStr(const char* s) {
-    unsigned int h = 5381;
-    while (*s) h = h * 33 + (unsigned char)*s++;
-    return h;
+static char* gaSortedKey(const char* s) {
+    int cnt[26] = {0};
+    int len = 0;
+    for (; s[len]; len++) cnt[s[len] - 'a']++;
+    char* key = (char*)malloc(len + 1);
+    int p = 0;
+    for (int c = 0; c < 26; c++)
+        while (cnt[c]--) key[p++] = (char)('a' + c);
+    key[p] = '\0';
+    return key;
+}
+
+static unsigned int gaHash(const char* s) {
+    unsigned int h = 2166136261u;
+    for (; *s; s++) h = (h ^ (unsigned char)*s) * 16777619u;
+    return h & (GA_HASH_SIZE - 1);
 }
 
 char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnColumnSizes) {
-    static int table[HASH_SIZE];
-    for (int i = 0; i < HASH_SIZE; i++) table[i] = -1;
-
+    static int table[GA_HASH_SIZE];
+    for (int i = 0; i < GA_HASH_SIZE; i++) table[i] = -1;
     char** keys = (char**)malloc(sizeof(char*) * strsSize);
-    int* groupOf = (int*)malloc(sizeof(int) * strsSize);
-    int* cnt = (int*)calloc(strsSize, sizeof(int));
+    int* gid = (int*)malloc(sizeof(int) * strsSize);
+    int* first = (int*)malloc(sizeof(int) * strsSize);
+    int* sizes = (int*)calloc(strsSize, sizeof(int));
     int groups = 0;
-
     for (int i = 0; i < strsSize; i++) {
-        int len = strlen(strs[i]);
-        int c[26] = {0};
-        for (int j = 0; j < len; j++) c[strs[i][j] - 'a']++;
-        char* key = (char*)malloc(len + 1);
-        int p = 0;
-        for (int ch = 0; ch < 26; ch++)
-            for (int t = 0; t < c[ch]; t++) key[p++] = (char)('a' + ch);
-        key[p] = '\0';
-
-        unsigned int h = hashStr(key) & (HASH_SIZE - 1);
-        while (table[h] != -1 && strcmp(keys[table[h]], key) != 0) h = (h + 1) & (HASH_SIZE - 1);
+        keys[i] = gaSortedKey(strs[i]);
+        unsigned int h = gaHash(keys[i]);
+        while (table[h] != -1 && strcmp(keys[first[table[h]]], keys[i]) != 0)
+            h = (h + 1) & (GA_HASH_SIZE - 1);
         if (table[h] == -1) {
             table[h] = groups;
-            keys[groups++] = key;
-        } else {
-            free(key);
+            first[groups++] = i;
         }
-        groupOf[i] = table[h];
-        cnt[groupOf[i]]++;
+        gid[i] = table[h];
+        sizes[gid[i]]++;
     }
-
     char*** res = (char***)malloc(sizeof(char**) * groups);
     int* cols = (int*)malloc(sizeof(int) * groups);
     for (int g = 0; g < groups; g++) {
-        res[g] = (char**)malloc(sizeof(char*) * cnt[g]);
+        res[g] = (char**)malloc(sizeof(char*) * sizes[g]);
         cols[g] = 0;
     }
     for (int i = 0; i < strsSize; i++) {
-        int g = groupOf[i];
+        int g = gid[i];
         res[g][cols[g]++] = strs[i];
     }
-
-    for (int g = 0; g < groups; g++) free(keys[g]);
+    for (int i = 0; i < strsSize; i++) free(keys[i]);
     free(keys);
-    free(groupOf);
-    free(cnt);
+    free(gid);
+    free(first);
+    free(sizes);
     *returnSize = groups;
     *returnColumnSizes = cols;
     return res;

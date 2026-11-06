@@ -1,0 +1,16 @@
+{
+  "id": 15,
+  "slug": "3sum",
+  "title": "三数之和",
+  "difficulty": "中等",
+  "tags": ["数组", "双指针", "排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/3sum/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "三重循环可以找出所有和为 0 的三元组，但 n = 3000 时会超时，而且去重很麻烦。",
+    "先排序。固定第一个数 nums[i] 后，问题变成在 nums[i+1..n-1] 里找两个数，和为 -nums[i]——有序数组上的两数之和可以用左右双指针。",
+    "去重：nums[i] 和 nums[i-1] 相同时跳过；找到一组答案后，左右指针都要跳过相同的值。"
+  ]
+}

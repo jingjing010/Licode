@@ -1,0 +1,16 @@
+{
+  "id": 9041,
+  "slug": "split-string",
+  "title": "原地分割字符串",
+  "difficulty": "中等",
+  "tags": ["嵌入式", "字符串", "指针"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "不需要 malloc：每个子串的开头就是 str 里的某个位置，把它的地址存进 tokens 即可；子串的结尾把分隔符改成 '\\0'。",
+    "用一个指针 p 扫描：先跳过连续的分隔符；如果到了 '\\0' 就结束；否则记下 tokens[count++] = p，再往后走到下一个分隔符或 '\\0'。",
+    "走到分隔符时把它改成 '\\0' 并让 p 前进一格；count 达到 maxTokens 时立刻返回，剩下的部分不用处理。"
+  ]
+}

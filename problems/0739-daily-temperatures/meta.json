@@ -1,0 +1,16 @@
+{
+  "id": 739,
+  "slug": "daily-temperatures",
+  "title": "每日温度",
+  "difficulty": "中等",
+  "tags": ["栈", "数组", "单调栈"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/daily-temperatures/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的做法：对每一天，往后一天一天找第一个更高的温度。最坏情况是 O(n²)，n = 10^5 会超时。",
+    "换个角度：今天的温度能「解决」前面哪些还在等待更高温度的日子？那些日子的温度有什么规律？",
+    "用栈存「还没找到更高温度」的日子的下标，栈里温度从底到顶单调不增。今天比栈顶高，就弹出栈顶并记录答案 = 今天下标 - 栈顶下标。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 84,
+  "slug": "largest-rectangle-in-histogram",
+  "title": "柱状图中最大的矩形",
+  "difficulty": "困难",
+  "tags": ["栈", "数组", "单调栈"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/largest-rectangle-in-histogram/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "固定一根柱子 i，把它的高度当作矩形的高：矩形能向左、向右延伸多远？",
+    "向左延伸到「左边第一根比它矮的柱子」为止，向右同理。宽度 = right[i] - left[i] - 1。",
+    "「左/右边第一个更小的元素」可以用单调栈 O(n) 求出：栈里下标对应的高度从底到顶递增。"
+  ]
+}

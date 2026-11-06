@@ -1,0 +1,16 @@
+{
+  "id": 9050,
+  "slug": "crc32",
+  "title": "CRC-32 校验",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "位运算", "校验", "查表"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "和 CRC-16/MODBUS 一样是反射算法：右移、判断最低位、使用反射后的多项式 0xEDB88320。",
+    "初值 0xFFFFFFFF，全部处理完后再异或 0xFFFFFFFF（也就是按位取反 ~crc）。",
+    "数据量较大时可以用 256 项的 uint32_t 查找表：crc = (crc >> 8) ^ table[(crc ^ byte) & 0xFF]。"
+  ]
+}

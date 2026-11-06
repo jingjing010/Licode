@@ -1,1 +1,1 @@
-"AT+RST"
+"AT+CWJAP=\"MyWiFi\",\"12345678\""

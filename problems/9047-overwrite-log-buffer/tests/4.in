@@ -1,2 +1,2 @@
-["LogBuffer","write","write","write","write","write","getAll"]
-[[5],[0],[1],[2],[3],[4],[]]
+["LogBuffer","write","write","write","write","write","write","getAll","write","getAll","count"]
+[[6],[10],[11],[12],[13],[14],[15],[],[99],[],[]]

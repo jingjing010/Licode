@@ -1,2 +1,2 @@
-"AT+CWJAP OK"
+"AT+CSQ\n+CSQ: 23,0\nOK"
 "OK"

@@ -3,8 +3,15 @@
   "slug": "set-bit-field",
   "title": "写入寄存器位域",
   "difficulty": "中等",
-  "tags": ["位运算", "寄存器操作", "掩码"],
-  "lists": ["embedded"],
+  "tags": [
+    "嵌入式",
+    "位运算",
+    "寄存器操作",
+    "掩码"
+  ],
+  "lists": [
+    "embedded"
+  ],
   "leetcode": "",
   "time_limit_ms": 1000,
   "samples": 3,

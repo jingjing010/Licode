@@ -1,0 +1,16 @@
+{
+  "id": 9026,
+  "slug": "my-itoa",
+  "title": "实现 itoa（任意进制整数转字符串）",
+  "difficulty": "中等",
+  "tags": ["嵌入式", "字符串", "进制转换"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "反复对 base 取余得到最低位数字、再除以 base，直到商为 0——得到的数字顺序是反的。",
+    "先把数字倒序写进 buf，最后再把这段字符翻转过来；不要忘了末尾的 '\\0'。",
+    "负数只在 base == 10 时加 '-'。先把 value 转成 uint32_t 再处理：十进制负数用 0u - (uint32_t)value 求绝对值，可以安全处理 INT32_MIN。"
+  ]
+}

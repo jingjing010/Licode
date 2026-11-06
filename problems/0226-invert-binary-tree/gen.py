@@ -53,11 +53,14 @@ def brute(inp):
 
 
 def samples():
-    return [
+    res = [
         (lines("[4,2,7,1,3,6,9]"), "[4,7,2,9,6,3,1]"),
         (lines("[2,1,3]"), "[2,3,1]"),
         (lines("[]"), "[]"),
     ]
+    for inp, want in res:
+        assert brute(inp) == want
+    return res
 
 
 def cases():

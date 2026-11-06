@@ -1,0 +1,16 @@
+{
+  "id": 9049,
+  "slug": "crc16-modbus",
+  "title": "CRC-16/MODBUS 校验",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "位运算", "校验", "通信协议"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "MODBUS 的 CRC 是\"反射\"的：数据从最低位开始处理，所以 crc 每次右移，判断的是最低位 crc & 1。",
+    "反射后多项式 0x8005 要按位倒过来，变成 0xA001。初值是 0xFFFF。",
+    "对每个字节：crc ^= byte；循环 8 次：若 crc & 1，则 crc = (crc >> 1) ^ 0xA001，否则 crc >>= 1。"
+  ]
+}

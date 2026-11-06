@@ -1,0 +1,16 @@
+{
+  "id": 75,
+  "slug": "sort-colors",
+  "title": "颜色分类",
+  "difficulty": "中等",
+  "tags": ["数组", "双指针", "排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/sort-colors/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "只有 0、1、2 三种值：先数一数各有几个，再按个数依次写回去，扫两遍就行。",
+    "能不能只扫一遍？用三个指针把数组分成四段：[0, p0) 全是 0，[p0, i) 全是 1，[i, p2] 还没看，(p2, n) 全是 2。",
+    "nums[i] == 0 时和 p0 交换，p0、i 都右移；== 1 时 i 右移；== 2 时和 p2 交换，p2 左移，但 i 不动（换过来的数还没检查）。"
+  ]
+}

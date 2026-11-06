@@ -1,0 +1,16 @@
+{
+  "id": 215,
+  "slug": "kth-largest-element-in-an-array",
+  "title": "数组中的第K个最大元素",
+  "difficulty": "中等",
+  "tags": ["数组", "分治", "快速选择", "排序", "堆（优先队列）"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/kth-largest-element-in-an-array/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最简单的做法：从大到小排序，答案就是 nums[k-1]。用 qsort 写一遍。",
+    "只需要「前 k 大」：维护一个大小为 k 的小根堆，堆顶就是目前第 k 大的数，比堆顶大的数才有资格进堆。",
+    "快速选择：像快排一样选一个基准数分区，看第 k 大落在哪一边，只递归那一边。平均 O(n)。注意大量重复元素时要用三路分区。"
+  ]
+}

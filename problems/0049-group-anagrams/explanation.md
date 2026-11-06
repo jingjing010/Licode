@@ -1,6 +1,6 @@
 # 49. 字母异位词分组 —— 小白详细题解
 
-> 这道题的核心只有一句话：**给每个单词找一个"身份证号"，身份证号相同的放一组**。难点主要在 C 语言里怎么管理"数组的数组的字符串"。
+> 这道题的关键是给每个单词找一个"**身份证**"：互为异位词的单词，身份证一模一样。之后就是"按身份证分组"。C 语言的难点在于返回值是三颗星的 `char***`，我们会一层一层拆开讲。
 
 ---
 
@@ -8,172 +8,154 @@
 
 用大白话说就是：
 
-> 给你一堆单词，把"用的字母完全一样、只是顺序不同"的单词归到同一组里，最后把所有组交出去。
+> 有一堆单词。如果两个单词**用的字母和每个字母的个数完全一样**（只是顺序不同），它们就是一伙的。请把每一伙分成一组。
 
-"字母异位词"就是**字母打乱重排**得到的词：`eat`、`tea`、`ate` 都由 1 个 `a`、1 个 `e`、1 个 `t` 组成，所以是一组。
+拿示例 1 `["eat","tea","tan","ate","nat","bat"]` 来说：
 
-拿示例 1 来说，我们把每个单词的字母**排个序**，看看会发生什么：
-
-| 原单词 | 字母排序后 | 属于哪组 |
+| 单词 | 字母排序后 | 属于哪组 |
 |---|---|---|
-| eat | aet | 第 0 组 |
-| tea | aet | 第 0 组 |
-| tan | ant | 第 1 组 |
-| ate | aet | 第 0 组 |
-| nat | ant | 第 1 组 |
-| bat | abt | 第 2 组 |
+| eat | aet | 第 1 组 |
+| tea | aet | 第 1 组 |
+| tan | ant | 第 2 组 |
+| ate | aet | 第 1 组 |
+| nat | ant | 第 2 组 |
+| bat | abt | 第 3 组 |
 
-排序后一样的单词就是一组：`{eat, tea, ate}`、`{tan, nat}`、`{bat}`。
+分组结果：`["eat","tea","ate"]`、`["tan","nat"]`、`["bat"]`。
 
 **几个需要注意的细节：**
 
-1. **空字符串 `""` 也是一个单词**，它自己（和其他空串）组成一组。示例 2 的答案是 `[[""]]`，不是 `[]`。
-2. **相同的单词也要都保留**：`["a","a"]` 的答案是 `[["a","a"]]`，不能去重。
-3. 组的顺序、组内的顺序都随意，判题时会统一排序后再比较。
-4. 字母个数也要一样：`ab` 和 `aab` **不是**异位词（字母种类相同，但 `a` 的个数不同）。
+1. **字母个数也要一样**：`"aab"` 和 `"abb"` 用的字母都是 a、b，但个数不同，**不是**异位词。
+2. **空字符串 `""` 也是一个单词**，所有空串互为异位词，分在同一组。
+3. **相同的单词**（比如出现两次 `"abc"`）也要放进同一组，两次都要保留。
+4. 组的顺序、组内的顺序都随意（本 OJ 会排好序再比较）。
 
 ---
 
 ## 🧰 第二步：这道题需要的 C 语言知识
 
-### 1. 看懂 `char***` 这个"三颗星"
+### 1. 拆解 `char***`
 
 ```c
 char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnColumnSizes)
 ```
 
-一颗一颗星地拆：
-
-| 类型 | 含义 | 本题中的例子 |
+| 类型 | 含义 | 例子 |
 |---|---|---|
 | `char*` | 一个字符串 | `"eat"` |
-| `char**` | 字符串数组（一组单词） | `["eat","tea","ate"]` |
-| `char***` | 字符串数组的数组（很多组） | `[["eat","tea","ate"],["tan","nat"],["bat"]]` |
+| `char**` | 一组字符串（字符串数组） | `["eat","tea","ate"]` |
+| `char***` | 很多组（字符串数组的数组） | `[["eat","tea","ate"],["tan","nat"],["bat"]]` |
 
-所以返回值 `res` 的用法是：`res[g]` 是第 `g` 组，`res[g][j]` 是第 `g` 组里的第 `j` 个单词。
-
-### 2. 两个"返回长度"的参数
-
-C 语言的数组不知道自己多长，所以要额外告诉调用者：
-
-- `*returnSize = 组数;` —— 一共几组
-- `*returnColumnSizes = cols;` —— `cols[g]` 是第 `g` 组有几个单词。`cols` 本身也要用 `malloc` 申请
+所以要这样申请：
 
 ```c
-int* cols = (int*)malloc(sizeof(int) * groups);
-...
-*returnColumnSizes = cols;   // 注意是 *returnColumnSizes，修改调用者的变量
+char*** res = (char***)malloc(sizeof(char**) * 组数);   // 每个元素是一组（char**）
+res[g] = (char**)malloc(sizeof(char*) * 这一组的个数);    // 每组里放若干个字符串指针（char*）
+res[g][j] = strs[i];                                    // 直接存原字符串的指针，不用复制内容
 ```
 
-### 3. 字符串的复制与排序
+`*returnSize` 写组数，`*returnColumnSizes` 写"每组有几个字符串"的数组——和"合并区间"返回二维 `int` 数组是一样的套路。
 
-- `strlen(s)`：字符串长度（不含 `'\0'`）。
-- 想得到"排序后的单词"，**不能直接排 `strs[i]`**（那会改掉原单词，最后交出去的就不是原词了）。要先复制一份：
+### 2. 给字符串里的字母排序：计数排序
+
+只有 26 个小写字母，与其用 `qsort`，不如**数一数每个字母出现几次**，再按 a~z 的顺序写出来：
 
 ```c
-char* key = (char*)malloc(len + 1);   // +1 是给结尾的 '\0' 留位置
-strcpy(key, strs[i]);                 // 连同 '\0' 一起复制
+int cnt[26] = {0};
+for (int i = 0; s[i]; i++) cnt[s[i] - 'a']++;     // 'a' → 0, 'b' → 1, ...
+// 再按 a, b, c ... 的顺序，每个字母写 cnt[c] 次
 ```
 
-- 排序字符可以用标准库的 `qsort`，要自己写一个比较函数：
+`s[i] - 'a'` 把字母变成 0~25 的下标，这是字母题最常用的写法。
+
+### 3. 复制出新字符串要多留 1 个字节给 `'\0'`
 
 ```c
-int cmpChar(const void* a, const void* b) {
-    return *(const char*)a - *(const char*)b;   // 小的排前面
-}
-qsort(key, len, sizeof(char), cmpChar);        // 只排前 len 个，'\0' 不动
+char* key = (char*)malloc(len + 1);   // len 个字母 + 1 个 '\0'
+key[len] = '\0';                      // 别忘了结尾
 ```
 
-### 4. 比较两个字符串用 `strcmp`
+### 4. 比较字符串用 `strcmp`，不能用 `==`
 
-`strcmp(a, b)` 返回 0 表示相等。**千万不能写 `a == b`**，那比较的是两个地址，而不是内容。
+`key1 == key2` 比较的是两个**地址**是否相同，内容一样但地址不同时结果是假。比较内容要用 `strcmp(key1, key2) == 0`。
 
 ---
 
-## 💡 第三步：思路一 —— 排序做标签 + 把相同标签排到一起
+## 💡 第三步：思路一 —— 标签排序后分组
 
 ### 思路
 
-最朴素的想法是"两两比较"：拿每个单词去和后面所有单词比是不是异位词。但 `n = 10^4` 时要比约 5000 万对，每对还要比较一串字母，太慢了。
-
-更好的办法：
-
-1. 给每个单词生成一个**标签 key = 字母排序后的字符串**。异位词的标签一定相同，不是异位词的标签一定不同。
-2. 准备一个下标数组 `idx = [0, 1, 2, ..., n-1]`，**按标签排序**。排完后，标签相同的下标就**挨在一起**了。
-3. 从头到尾扫一遍，把连续一段标签相同的单词装进同一组。
+1. 给每个单词算出它的**标签**（把字母排序后的字符串），比如 `"tea"` → `"aet"`。
+2. 把单词的下标按**标签的字典序**排序。排完后，标签相同的单词就**挨在一起**了。
+3. 从头扫一遍，标签和前一个不同就开启新的一组。
 
 ### 手动模拟（示例 1）
 
-第 1 步，生成标签：
-
-| 下标 | 0 | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|---|
-| 单词 | eat | tea | tan | ate | nat | bat |
-| 标签 | aet | aet | ant | aet | ant | abt |
-
-第 2 步，下标按标签排序（`abt < aet < ant`）：
-
-| 排序后位置 | 0 | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|---|
-| 下标 idx | 5 | 0 | 1 | 3 | 2 | 4 |
-| 标签 | abt | aet | aet | aet | ant | ant |
-
-第 3 步，按连续相同标签切段：`[5]`、`[0,1,3]`、`[2,4]` → `[["bat"],["eat","tea","ate"],["tan","nat"]]`。
+| 步骤 | 内容 |
+|---|---|
+| 算标签 | eat→aet, tea→aet, tan→ant, ate→aet, nat→ant, bat→abt |
+| 按标签排序 | bat(abt), eat(aet), tea(aet), ate(aet), tan(ant), nat(ant) |
+| 分组 | [bat] \| [eat, tea, ate] \| [tan, nat] |
 
 ### 代码
 
 ```c
-// 全局变量：qsort 的比较函数只能拿到两个元素的地址，要靠它访问每个下标对应的标签
-static char** gKeys;
+static char** gKeys;   // 给 qsort 的比较函数用：gKeys[i] 是第 i 个单词的标签
 
-// 比较两个字符：给单词内部的字母排序用
-static int cmpChar(const void* a, const void* b) {
-    return *(const char*)a - *(const char*)b;
+// 计数排序：返回 s 的字母排好序后的新字符串（malloc 得到）
+char* makeKey(const char* s) {
+    int cnt[26] = {0};
+    int len = 0;
+    for (; s[len] != '\0'; len++) cnt[s[len] - 'a']++;   // 数每个字母出现几次
+    char* key = (char*)malloc(len + 1);
+    int p = 0;
+    for (int c = 0; c < 26; c++) {
+        for (int t = 0; t < cnt[c]; t++) key[p++] = (char)('a' + c);
+    }
+    key[p] = '\0';
+    return key;
 }
 
-// 比较两个下标：按它们的标签（字典序）比较
-static int cmpIdx(const void* a, const void* b) {
-    int x = *(const int*)a, y = *(const int*)b;
-    return strcmp(gKeys[x], gKeys[y]);
+// 比较两个下标：按它们的标签的字典序
+int cmpByKey(const void* a, const void* b) {
+    int i = *(const int*)a, j = *(const int*)b;
+    return strcmp(gKeys[i], gKeys[j]);
 }
 
 char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnColumnSizes) {
-    // 1. 为每个单词生成标签：复制一份，再把字母排序
-    gKeys = (char**)malloc(sizeof(char*) * strsSize);
-    for (int i = 0; i < strsSize; i++) {
-        int len = strlen(strs[i]);
-        gKeys[i] = (char*)malloc(len + 1);          // +1 给 '\0'
-        strcpy(gKeys[i], strs[i]);                  // 不能直接改 strs[i]，答案要用原单词
-        qsort(gKeys[i], len, sizeof(char), cmpChar);
+    int n = strsSize;
+    // 1. 每个单词算标签；idx 是下标数组，待会儿排序它
+    gKeys = (char**)malloc(sizeof(char*) * n);
+    int* idx = (int*)malloc(sizeof(int) * n);
+    for (int i = 0; i < n; i++) {
+        gKeys[i] = makeKey(strs[i]);
+        idx[i] = i;
     }
 
-    // 2. 下标数组按标签排序，标签相同的下标会挨在一起
-    int* idx = (int*)malloc(sizeof(int) * strsSize);
-    for (int i = 0; i < strsSize; i++) idx[i] = i;
-    qsort(idx, strsSize, sizeof(int), cmpIdx);
+    // 2. 按标签排序下标，标签相同的单词会挨在一起
+    qsort(idx, n, sizeof(int), cmpByKey);
 
-    // 3. 组数最多 strsSize 个，先按最大值申请
-    char*** res = (char***)malloc(sizeof(char**) * strsSize);
-    int* cols = (int*)malloc(sizeof(int) * strsSize);
+    // 3. 最多 n 组，先按最大可能申请
+    char*** res = (char***)malloc(sizeof(char**) * n);
+    int* cols = (int*)malloc(sizeof(int) * n);
     int groups = 0;
 
+    // 4. 扫描：每一段标签相同的连续区间 [i, j) 就是一组
     int i = 0;
-    while (i < strsSize) {
-        // 找出 [i, j) 这一段：标签都和 idx[i] 的相同
+    while (i < n) {
         int j = i;
-        while (j < strsSize && strcmp(gKeys[idx[j]], gKeys[idx[i]]) == 0) j++;
-
-        res[groups] = (char**)malloc(sizeof(char*) * (j - i));   // 这一组有 j - i 个单词
-        for (int p = i; p < j; p++) {
-            res[groups][p - i] = strs[idx[p]];      // 直接存原单词的指针即可
+        while (j < n && strcmp(gKeys[idx[j]], gKeys[idx[i]]) == 0) j++;
+        res[groups] = (char**)malloc(sizeof(char*) * (j - i));
+        for (int t = i; t < j; t++) {
+            res[groups][t - i] = strs[idx[t]];   // 直接放原字符串的指针
         }
         cols[groups] = j - i;
         groups++;
-        i = j;                                      // 跳到下一组的开头
+        i = j;
     }
 
-    // 4. 释放临时用的标签和下标数组
-    for (int k = 0; k < strsSize; k++) free(gKeys[k]);
+    // 5. 释放临时的标签
+    for (int t = 0; t < n; t++) free(gKeys[t]);
     free(gKeys);
     free(idx);
 
@@ -183,110 +165,128 @@ char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnCo
 }
 ```
 
+> 💬 **为什么要用全局变量 `gKeys`？** `qsort` 的比较函数只能拿到两个元素的地址，没有办法额外传参数。我们排序的是下标，比较时需要查标签，只好把标签数组放在全局变量里。
+
 ### 复杂度分析
 
-设单词个数为 n，最长单词长度为 k：
+设单词个数为 n，单词最长为 L：
 
-- **时间复杂度 O(n·k log k + n log n · k)**：每个单词内部排序 O(k log k)；下标排序要比较 O(n log n) 次，每次 `strcmp` 最多 O(k)。
-- **空间复杂度 O(n·k)**：存所有标签。
+- **时间复杂度 O(n·L + n log n · L)**：算标签 O(n·L)；排序要比较 O(n log n) 次，每次 `strcmp` 最多 O(L)。
+- **空间复杂度 O(n·L)**：存所有标签。
 
 ---
 
-## 🚀 第四步：思路二 —— 计数生成标签 + 哈希表（一遍扫描）
+## 🚀 第四步：思路二 —— 哈希表直接分组
 
 ### 思路
 
-思路一有两处可以优化：
+思路一花了 O(n log n) 次比较去排序，其实我们**并不需要组和组之间有顺序**，只需要"标签相同的放一起"。
 
-1. **生成标签不必用 `qsort`**：单词只有小写字母，先数出每个字母出现几次（`c[0]` 个 a、`c[1]` 个 b……），再按 a→z 的顺序把字母"吐"出来，就直接得到排好序的字符串了。这叫**计数排序**，只要 O(k + 26)。
-2. **分组不必排序**：用一个**哈希表**记录"标签 → 组号"。每来一个单词，查一下它的标签：
-   - 查到了 → 放进那一组；
-   - 没查到 → 新开一组，把"标签 → 新组号"存进哈希表。
+用一个哈希表：**标签 → 组号**。
 
-哈希表的原理和第 1 题一样：用一个公式把字符串变成格子编号；格子被别的标签占了，就看下一个格子（线性探测）。字符串的哈希公式常用 `h = h * 33 + 字符`（叫 djb2）。
+1. 对每个单词算标签。
+2. 在哈希表里查这个标签：
+   - 查到了：这个单词属于那一组。
+   - 没查到：新开一组，把"标签 → 新组号"存进哈希表。
+3. 第一遍只记录每个单词属于哪组（`gid[i]`）和每组有几个（`sizes[g]`）；第二遍按组号把字符串放进去。
 
-由于要先知道每组有几个单词才能 `malloc`，我们分两遍：第一遍算出每个单词的组号 `groupOf[i]` 并统计每组人数 `cnt[g]`；第二遍再把单词装进去。
+为什么要扫两遍？因为 C 语言的数组要先知道大小才能 `malloc`。第一遍数清楚每组几个，第二遍就能一次性申请好。
+
+### 哈希函数
+
+字符串的哈希可以用经典的 **FNV-1a**：从一个初始值出发，每个字符先异或进来、再乘一个大质数。不用深究，当成固定写法：
+
+```c
+unsigned int h = 2166136261u;
+for (; *s; s++) h = (h ^ (unsigned char)*s) * 16777619u;
+```
 
 ### 手动模拟（示例 1）
 
-| i | 单词 | 计数后的标签 | 哈希表里有吗？ | 组号 | 各组人数 cnt |
-|---|---|---|---|---|---|
-| 0 | eat | aet | 没有，新开第 0 组 | 0 | [1] |
-| 1 | tea | aet | 有，是第 0 组 | 0 | [2] |
-| 2 | tan | ant | 没有，新开第 1 组 | 1 | [2,1] |
-| 3 | ate | aet | 有，是第 0 组 | 0 | [3,1] |
-| 4 | nat | ant | 有，是第 1 组 | 1 | [3,2] |
-| 5 | bat | abt | 没有，新开第 2 组 | 2 | [3,2,1] |
-
-第二遍：第 0 组装 `eat, tea, ate`，第 1 组装 `tan, nat`，第 2 组装 `bat`。
+| 单词 | 标签 | 哈希表里有吗？ | 组号 gid | 每组个数 sizes |
+|---|---|---|---|---|
+| eat | aet | 没有 → 新开第 0 组 | 0 | [1] |
+| tea | aet | 有，第 0 组 | 0 | [2] |
+| tan | ant | 没有 → 新开第 1 组 | 1 | [2, 1] |
+| ate | aet | 有，第 0 组 | 0 | [3, 1] |
+| nat | ant | 有，第 1 组 | 1 | [3, 2] |
+| bat | abt | 没有 → 新开第 2 组 | 2 | [3, 2, 1] |
 
 ### 代码
 
 ```c
-#define HASH_SIZE 32768   // 格子数：2 的幂，且比单词数（最多 10^4）的两倍还大
+#define HASH_SIZE (1 << 15)    // 32768 个格子，比最多 10^4 个不同标签大得多
 
-// djb2 字符串哈希：把字符串变成一个整数
-static unsigned int hashStr(const char* s) {
-    unsigned int h = 5381;
-    while (*s) h = h * 33 + (unsigned char)*s++;
-    return h;
+// 计数排序得到标签（malloc 得到的新字符串）
+char* makeKey(const char* s) {
+    int cnt[26] = {0};
+    int len = 0;
+    for (; s[len] != '\0'; len++) cnt[s[len] - 'a']++;
+    char* key = (char*)malloc(len + 1);
+    int p = 0;
+    for (int c = 0; c < 26; c++) {
+        for (int t = 0; t < cnt[c]; t++) key[p++] = (char)('a' + c);
+    }
+    key[p] = '\0';
+    return key;
+}
+
+// FNV-1a 字符串哈希，结果落在 0 ~ HASH_SIZE-1
+unsigned int hashStr(const char* s) {
+    unsigned int h = 2166136261u;
+    for (; *s; s++) h = (h ^ (unsigned char)*s) * 16777619u;
+    return h & (HASH_SIZE - 1);
 }
 
 char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnColumnSizes) {
-    static int table[HASH_SIZE];                     // 格子里存组号，-1 表示空格子
-    for (int i = 0; i < HASH_SIZE; i++) table[i] = -1;
+    int n = strsSize;
+    static int table[HASH_SIZE];          // table[h]：这个格子里存的组号，-1 表示空
+    for (int h = 0; h < HASH_SIZE; h++) table[h] = -1;
 
-    char** keys = (char**)malloc(sizeof(char*) * strsSize);   // keys[g]：第 g 组的标签
-    int* groupOf = (int*)malloc(sizeof(int) * strsSize);      // groupOf[i]：第 i 个单词在哪组
-    int* cnt = (int*)calloc(strsSize, sizeof(int));           // cnt[g]：第 g 组有几个单词（calloc 会清零）
+    char** keys = (char**)malloc(sizeof(char*) * n);   // 每个单词的标签
+    int* gid = (int*)malloc(sizeof(int) * n);          // 每个单词属于哪一组
+    int* firstOf = (int*)malloc(sizeof(int) * n);      // 每组第一个单词的下标（用来取这组的标签）
+    int* sizes = (int*)calloc(n, sizeof(int));         // 每组有几个单词
     int groups = 0;
 
-    // ===== 第一遍：算出每个单词的组号 =====
-    for (int i = 0; i < strsSize; i++) {
-        // 1. 计数排序生成标签
-        int len = strlen(strs[i]);
-        int c[26] = {0};
-        for (int j = 0; j < len; j++) c[strs[i][j] - 'a']++;   // 'a' 对应 0，'b' 对应 1，依此类推
-        char* key = (char*)malloc(len + 1);
-        int p = 0;
-        for (int ch = 0; ch < 26; ch++) {
-            for (int t = 0; t < c[ch]; t++) key[p++] = (char)('a' + ch);   // 按 a~z 依次写出
-        }
-        key[p] = '\0';
-
-        // 2. 在哈希表里找这个标签：格子非空且标签不同，就看下一个格子
-        unsigned int h = hashStr(key) & (HASH_SIZE - 1);
-        while (table[h] != -1 && strcmp(keys[table[h]], key) != 0) {
+    // 1. 第一遍：确定每个单词的组号
+    for (int i = 0; i < n; i++) {
+        keys[i] = makeKey(strs[i]);
+        unsigned int h = hashStr(keys[i]);
+        // 线性探测：格子被"别的标签"占了就看下一个
+        while (table[h] != -1 && strcmp(keys[firstOf[table[h]]], keys[i]) != 0) {
             h = (h + 1) & (HASH_SIZE - 1);
         }
-        if (table[h] == -1) {          // 3a. 没找到：新开一组
+        if (table[h] == -1) {             // 新标签：开一个新组
             table[h] = groups;
-            keys[groups] = key;
+            firstOf[groups] = i;
             groups++;
-        } else {                       // 3b. 找到了：标签已经存过，这份可以释放
-            free(key);
         }
-        groupOf[i] = table[h];
-        cnt[groupOf[i]]++;
+        gid[i] = table[h];
+        sizes[gid[i]]++;
     }
 
-    // ===== 第二遍：按组装单词 =====
+    // 2. 按每组的大小申请空间
     char*** res = (char***)malloc(sizeof(char**) * groups);
     int* cols = (int*)malloc(sizeof(int) * groups);
     for (int g = 0; g < groups; g++) {
-        res[g] = (char**)malloc(sizeof(char*) * cnt[g]);
-        cols[g] = 0;                   // 先当作"已经装了几个"的计数器用
-    }
-    for (int i = 0; i < strsSize; i++) {
-        int g = groupOf[i];
-        res[g][cols[g]] = strs[i];
-        cols[g]++;                     // 装完后 cols[g] 正好等于 cnt[g]
+        res[g] = (char**)malloc(sizeof(char*) * sizes[g]);
+        cols[g] = 0;                      // 先当"已放入的个数"用，放完正好等于 sizes[g]
     }
 
-    for (int g = 0; g < groups; g++) free(keys[g]);
+    // 3. 第二遍：把每个单词放进它的组
+    for (int i = 0; i < n; i++) {
+        int g = gid[i];
+        res[g][cols[g]] = strs[i];
+        cols[g]++;
+    }
+
+    // 4. 释放临时数组
+    for (int i = 0; i < n; i++) free(keys[i]);
     free(keys);
-    free(groupOf);
-    free(cnt);
+    free(gid);
+    free(firstOf);
+    free(sizes);
 
     *returnSize = groups;
     *returnColumnSizes = cols;
@@ -294,28 +294,21 @@ char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnCo
 }
 ```
 
-**代码中几个可能看不懂的地方：**
-
-- `strs[i][j] - 'a'`：字母减去 `'a'` 就得到 0~25 的编号，可以直接当数组下标。
-- `& (HASH_SIZE - 1)`：`HASH_SIZE` 是 2 的幂时，等价于 `% HASH_SIZE`，而且结果一定非负。
-- `static int table[...]`：放在静态区，不占栈空间；但每次调用都要重新填 -1，否则会留着上一次的数据。
-
 ### 复杂度分析
 
-- **时间复杂度 O(n·k)**：每个单词计数 O(k)，哈希查找平均 O(1) 次 `strcmp`（每次 O(k)）。
-- **空间复杂度 O(n·k)**：存每组的标签。
+- **时间复杂度 O(n·L)**：每个单词算标签 O(L)，哈希和比较平均 O(L)。
+- **空间复杂度 O(n·L)**：存所有标签。
 
 ---
 
 ## ⚠️ 第五步：小白常见错误
 
-1. **直接对 `strs[i]` 排序** → `qsort(strs[i], ...)` 会把原单词改掉，最后交出去的变成 `"aet"` 而不是 `"eat"`。一定要先复制。
-2. **复制字符串时 `malloc(len)` 少了 1** → 没有给 `'\0'` 留位置，`strcpy` 写越界，结果随机出错。
-3. **用 `==` 比较字符串** → `if (keyA == keyB)` 比的是地址，内容一样也会判成不同。要用 `strcmp(keyA, keyB) == 0`。
-4. **忘了设置 `*returnColumnSizes`** → 调用者不知道每组有几个单词，输出为空或崩溃。
-5. **把空字符串丢掉** → `[""]` 的答案是 `[[""]]`；长度为 0 的单词也必须参与分组。
-6. **只比较"字母种类"不比较个数**（比如用 26 位的位掩码当标签）→ `ab` 和 `aab` 会被错误地分到一组。
-7. **`static` 哈希表没有每次清空** → 判题时每个测试点是独立进程，看似没问题；但在力扣上同一进程会多次调用，残留数据会导致错误。养成每次初始化的习惯。
+1. **标签只记"用了哪些字母"，不记个数** → `"aab"` 和 `"abb"` 被错误地分到一组。
+2. **用 `==` 比较两个标签** → 比的是地址，内容相同也会判成不同，每个单词都自成一组。要用 `strcmp(...) == 0`。
+3. **`malloc(len)` 忘了 +1** → 没地方放 `'\0'`，`strcmp` 会一直读到别的内存里，结果随机甚至崩溃。
+4. **标签直接在原字符串上排序**（原地修改 `strs[i]`）→ 返回的组里放的是 `strs[i]`，单词本身被改成了 `"aet"`，输出就错了。要复制一份再排序。
+5. **`sizeof(char**)` 和 `sizeof(char*)` 搞混** → 在 64 位系统上两者恰好都是 8 字节，碰巧不出错；但类型意义不同，养成按"元素类型"写 `sizeof` 的习惯：`res` 的元素是 `char**`，`res[g]` 的元素是 `char*`。
+6. **空字符串 `""` 没处理好** → 计数循环一次都不执行，标签也是 `""`，`malloc(0 + 1)` 放一个 `'\0'`。按上面的写法自然正确，不需要特判；但如果写成 `s[0] - 'a'` 之类的"先取第一个字母"就会出错。
 
 ---
 
@@ -323,17 +316,16 @@ char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnCo
 
 | 方法 | 时间复杂度 | 空间复杂度 | 难度 | 建议 |
 |---|---|---|---|---|
-| 两两比较 | O(n²·k) | O(n·k) | ⭐ | n = 10^4 时太慢 |
-| 排序标签 + 排序分组 | O(n·k log k + n log n·k) | O(n·k) | ⭐⭐ | 不用写哈希表，好理解 |
-| 计数标签 + 哈希表 | O(n·k) | O(n·k) | ⭐⭐⭐ | 最优，面试常考 |
+| 标签排序后分组 | O(n log n · L) | O(n·L) | ⭐⭐ | 不需要写哈希表，好理解 |
+| 哈希表按标签分组 | O(n·L) | O(n·L) | ⭐⭐⭐ | 标准答案 |
 
-> 🎯 **学习建议**："先算一个标签，再按标签归类"是一个非常通用的套路，先把思路一写对，再挑战哈希表版本。
+> 💬 标签也可以不排序，直接用"26 个字母各出现几次"组成，比如 `"a1b0c2..."`。效果一样，单词很长时还更快。
 
 ---
 
 ## 🔗 举一反三
 
-- **242. 有效的字母异位词**：只判断两个单词是不是异位词，就是本题"标签"的那一步。
-- **438. 找到字符串中所有字母异位词**：用"字母计数"+ 滑动窗口在长字符串里找异位词。
-- **1. 两数之和**：同样用哈希表把"查找"从 O(n) 降到 O(1)。
-- **思考题**：如果单词里可以出现任意 ASCII 字符（不只是小写字母），计数标签要怎么改？
+- **242. 有效的字母异位词**：判断两个单词是不是异位词——本题的基础。
+- **438. 找到字符串中所有字母异位词**：滑动窗口 + 字母计数。
+- **290. 单词规律**：同样是"给每个东西找身份证，再按身份证配对"。
+- **思考题**：如果字符串里不止小写字母，还可能有大写、数字、中文，标签的做法要怎么改？

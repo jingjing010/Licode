@@ -1,0 +1,16 @@
+{
+  "id": 347,
+  "slug": "top-k-frequent-elements",
+  "title": "前 K 个高频元素",
+  "difficulty": "中等",
+  "tags": ["数组", "哈希表", "计数", "桶排序", "堆（优先队列）"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/top-k-frequent-elements/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "第一步一定是统计每个数出现了几次。数值范围只有 [-10^4, 10^4]，用一个下标偏移的计数数组就够了，不需要哈希表。",
+    "得到 (数值, 次数) 之后，问题变成「按次数选出最大的 k 个」：可以按次数排序，也可以用大小为 k 的小根堆。",
+    "桶排序：次数最多是 n，开 n+1 个桶，bucket[c] 放所有出现 c 次的数，从大到小把桶倒出来，凑够 k 个就停。"
+  ]
+}

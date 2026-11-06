@@ -1,0 +1,16 @@
+{
+  "id": 80,
+  "slug": "remove-duplicates-from-sorted-array-ii",
+  "title": "删除有序数组中的重复项 II",
+  "difficulty": "中等",
+  "tags": ["数组", "双指针"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "数组有序，相同的数一定挨在一起。用一个下标 k 表示「下一个保留的元素写到哪」，nums[0..k-1] 是已经整理好的部分。",
+    "前两个元素一定可以保留。对后面的 nums[i]，什么时候它会成为同一个数的「第 3 个」？",
+    "只要 nums[i] != nums[k-2]，就说明它不会让某个数出现 3 次，可以写入 nums[k] 并让 k++。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 113,
+  "slug": "path-sum-ii",
+  "title": "路径总和 II",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "回溯", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/path-sum-ii/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "在第 112 题的基础上，用一个数组 path 记录「从根走到当前结点」经过的值。",
+    "进入结点时把值放进 path 末尾，离开（左右子树都处理完）时再拿掉——这就是回溯。",
+    "到达叶子且剩余和恰好为 0 时，把 path 复制一份（malloc 新数组）放进答案；不能直接存 path 指针。"
+  ]
+}

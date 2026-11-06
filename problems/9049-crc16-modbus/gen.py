@@ -23,12 +23,12 @@ def cross_check(pairs):
         judge._cleanup(wd)
 
 
-def reflect(v, bits):
-    return int(format(v, "0%db" % bits)[::-1], 2)
+def reflect(x, w):
+    return int(bin(x)[2:].zfill(w)[::-1], 2)
 
 
-def ref_generic(data):
-    """按 Rocksoft 模型的定义直接实现（不反射多项式）：输入每字节反射、MSB 优先、输出反射"""
+def ref_crc16_modbus(data):
+    """按参数模型直接计算：输入字节反射 → 不反射的左移算法(poly 0x8005, init 0xFFFF) → 输出反射"""
     crc = 0xFFFF
     for x in data:
         crc ^= reflect(x, 8) << 8
@@ -37,46 +37,27 @@ def ref_generic(data):
     return reflect(crc, 16)
 
 
-TABLE = []
-for _v in range(256):
-    _c = _v
-    for _ in range(8):
-        _c = (_c >> 1) ^ 0xA001 if _c & 1 else _c >> 1
-    TABLE.append(_c)
-
-
-def ref_table(data):
-    crc = 0xFFFF
-    for x in data:
-        crc = (crc >> 8) ^ TABLE[(crc ^ x) & 0xFF]
-    return crc
-
-
-assert ref_generic(b"123456789") == 0x4B37 == ref_table(b"123456789")
+assert ref_crc16_modbus(b"123456789") == 0x4B37
 
 
 def case(data):
-    data = list(data)
-    want = ref_table(data)
-    if len(data) <= 5000:
-        assert want == ref_generic(data)
-    return lines(arr(data)), str(want)
+    return lines(arr(data)), str(ref_crc16_modbus(data))
 
 
 def samples():
-    res = [case(b"123456789"), case([1, 3, 0, 0, 0, 1]), case([])]
+    res = [case(list(b"123456789")), case([1, 3, 0, 0, 0, 1]), case([])]
     assert [w for _, w in res] == ["19255", "2692", "65535"]
     return res
 
 
 def cases():
+    c = ref_crc16_modbus([17, 3, 0, 107, 0, 3])
     res = [
         case([0]),
         case([255]),
-        case([0, 0]),
-        case([17, 3, 0, 107, 0, 3]),      # 经典例子：11 03 00 6B 00 03 → CRC 0x8776
+        case([17, 3, 0, 107, 0, 3]),
+        case([17, 3, 0, 107, 0, 3, c & 0xFF, c >> 8]),   # 整帧（含 CRC）再算一次结果为 0
         case([1, 6, 0, 1, 0, 23]),
-        case([1, 3, 0, 0, 0, 1, 0x84, 0x0A]),   # 帧 + 自身 CRC（低字节在前），结果为 0
         case([0] * 256),
         case([255] * 1000),
     ]

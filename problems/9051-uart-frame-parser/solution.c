@@ -1,50 +1,53 @@
-enum { ST_HEAD1, ST_HEAD2, ST_LEN, ST_DATA, ST_CHK };
+typedef enum { WAIT_AA, WAIT_55, READ_LEN, READ_DATA, READ_CHK } ParseState;
 
 int** parseFrames(const uint8_t* buf, size_t len, int* returnSize, int** returnColumnSizes) {
-    int maxFrames = (int)(len / 4) + 1;
-    int** frames = (int**)malloc(sizeof(int*) * maxFrames);
-    int* sizes = (int*)malloc(sizeof(int) * maxFrames);
-    int cnt = 0;
+    size_t maxFrames = len / 4 + 1;
+    int** res = (int**)malloc(sizeof(int*) * maxFrames);
+    int* cols = (int*)malloc(sizeof(int) * maxFrames);
+    int n = 0;
 
-    int state = ST_HEAD1;
-    uint8_t data[256];
-    int need = 0, got = 0;
-    uint8_t sum = 0;
+    ParseState st = WAIT_AA;
+    uint8_t frameLen = 0, sum = 0;
+    int got = 0;
+    int* data = NULL;
 
     for (size_t i = 0; i < len; i++) {
-        uint8_t b = buf[i];
-        switch (state) {
-        case ST_HEAD1:
-            if (b == 0xAA) state = ST_HEAD2;
+        uint8_t c = buf[i];
+        switch (st) {
+        case WAIT_AA:
+            if (c == 0xAA) st = WAIT_55;
             break;
-        case ST_HEAD2:
-            if (b == 0x55) state = ST_LEN;
-            else if (b != 0xAA) state = ST_HEAD1;
+        case WAIT_55:
+            if (c == 0x55) st = READ_LEN;
+            else if (c != 0xAA) st = WAIT_AA;
             break;
-        case ST_LEN:
-            need = b;
+        case READ_LEN:
+            frameLen = c;
+            sum = c;
             got = 0;
-            sum = b;
-            state = (need > 0) ? ST_DATA : ST_CHK;
+            data = (int*)malloc(sizeof(int) * (frameLen + 1));
+            st = (frameLen == 0) ? READ_CHK : READ_DATA;
             break;
-        case ST_DATA:
-            data[got++] = b;
-            sum = (uint8_t)(sum + b);
-            if (got == need) state = ST_CHK;
+        case READ_DATA:
+            data[got++] = c;
+            sum = (uint8_t)(sum + c);
+            if (got == frameLen) st = READ_CHK;
             break;
-        case ST_CHK:
-            if (b == sum) {
-                int* f = (int*)malloc(sizeof(int) * (need + 1));
-                for (int k = 0; k < need; k++) f[k] = data[k];
-                frames[cnt] = f;
-                sizes[cnt] = need;
-                cnt++;
+        case READ_CHK:
+            if (c == sum) {
+                res[n] = data;
+                cols[n] = frameLen;
+                n++;
+            } else {
+                free(data);
             }
-            state = ST_HEAD1;
+            data = NULL;
+            st = WAIT_AA;
             break;
         }
     }
-    *returnSize = cnt;
-    *returnColumnSizes = sizes;
-    return frames;
+    free(data);
+    *returnSize = n;
+    *returnColumnSizes = cols;
+    return res;
 }

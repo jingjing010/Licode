@@ -1,0 +1,16 @@
+{
+  "id": 111,
+  "slug": "minimum-depth-of-binary-tree",
+  "title": "二叉树的最小深度",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/minimum-depth-of-binary-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "叶子结点是「左右孩子都为空」的结点。只有一个孩子的结点不是叶子！",
+    "递归时：如果某一边子树为空，就不能拿它的深度 0 去取 min，只能走另一边。",
+    "按层 BFS，遇到的第一个叶子所在的层数就是答案，可以立刻返回。"
+  ]
+}

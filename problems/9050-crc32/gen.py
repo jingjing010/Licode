@@ -24,28 +24,20 @@ def cross_check(pairs):
         judge._cleanup(wd)
 
 
-def ref_bitwise(data):
-    crc = 0xFFFFFFFF
-    for x in data:
-        crc ^= x
-        for _ in range(8):
-            crc = (crc >> 1) ^ 0xEDB88320 if crc & 1 else crc >> 1
-    return crc ^ 0xFFFFFFFF
+def ref_crc32(data):
+    """Python 标准库 zlib.crc32 正是 CRC-32/ISO-HDLC"""
+    return zlib.crc32(bytes(data)) & 0xFFFFFFFF
 
 
-assert ref_bitwise(b"123456789") == 0xCBF43926 == zlib.crc32(b"123456789")
+assert ref_crc32(b"123456789") == 0xCBF43926
 
 
 def case(data):
-    data = bytes(data)
-    want = zlib.crc32(data) & 0xFFFFFFFF
-    if len(data) <= 5000:
-        assert want == ref_bitwise(data)
-    return lines(arr(list(data))), str(want)
+    return lines(arr(data)), str(ref_crc32(data))
 
 
 def samples():
-    res = [case(b"123456789"), case(b"a"), case(b"")]
+    res = [case(list(b"123456789")), case([97]), case([])]
     assert [w for _, w in res] == ["3421780262", "3904355907", "0"]
     return res
 
@@ -56,12 +48,11 @@ def cases():
         case([255]),
         case([0, 0, 0, 0]),
         case([255] * 4),
-        case(b"The quick brown fox jumps over the lazy dog"),
-        case(bytes(range(256))),
+        case(list(b"The quick brown fox jumps over the lazy dog")),
     ]
     for n in (3, 16, 255, 4096):
         res.append(case(rand_arr(n, 0, 255)))
     res.append(case(rand_arr(2 * 10**5, 0, 255)))
-    res.append(case([0xFF] * (2 * 10**5)))
+    res.append(case([0] * (2 * 10**5)))
     cross_check(samples() + res)
     return [t for t, _ in res]

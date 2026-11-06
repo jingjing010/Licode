@@ -1,0 +1,16 @@
+{
+  "id": 9029,
+  "slug": "adc-to-mv",
+  "title": "ADC 原始值转毫伏",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "ADC", "溢出处理", "整数运算"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "bits 位 ADC 的满量程原始值是 fs = (1 << bits) - 1，电压 = raw × vref_mv / fs。",
+    "raw × vref_mv 最大约 65535 × 65535 ≈ 4.29 × 10^9，超过了 int 的范围，要先转成 uint32_t 再乘。",
+    "整数除法默认向下取整。四舍五入的技巧是先加上除数的一半：(x + fs / 2) / fs。"
+  ]
+}

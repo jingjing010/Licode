@@ -1,0 +1,16 @@
+{
+  "id": 89,
+  "slug": "gray-code",
+  "title": "格雷编码",
+  "difficulty": "中等",
+  "tags": ["位运算", "数学", "回溯"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/gray-code/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先手写 n = 1、2、3 的格雷码，观察 n 位的序列和 n - 1 位的序列有什么关系。",
+    "镜像构造：把 n - 1 位的序列倒过来接在后面，再给后一半每个数加上最高位 1 << (n - 1)。",
+    "还有直接公式：第 i 个格雷码就是 i ^ (i >> 1)。"
+  ]
+}

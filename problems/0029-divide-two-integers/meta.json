@@ -1,0 +1,16 @@
+{
+  "id": 29,
+  "slug": "divide-two-integers",
+  "title": "两数相除",
+  "difficulty": "中等",
+  "tags": ["位运算", "数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/divide-two-integers/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接的想法是一直减去 divisor，数一数能减几次。但 -2^31 ÷ 1 要减 21 亿次，会超时。",
+    "每次不要只减 1 个 divisor：先把 divisor 不断翻倍（左移），找到不超过被除数的最大的 divisor × 2^k，一次减掉，商加上 2^k。",
+    "负数取绝对值时 -2^31 会溢出：可以把两个数的绝对值都转成 unsigned int 再算；只有 -2^31 ÷ -1 = 2^31 会超出 int 范围，要特判返回 INT_MAX。"
+  ]
+}

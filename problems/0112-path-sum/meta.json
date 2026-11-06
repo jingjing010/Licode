@@ -1,0 +1,16 @@
+{
+  "id": 112,
+  "slug": "path-sum",
+  "title": "路径总和",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/path-sum/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "路径必须从根开始、到「叶子」结束，中途停下不算。",
+    "往下走一步，就把 targetSum 减去当前结点的值，问题变成「子树里有没有和为剩余值的路径」。",
+    "走到叶子时判断剩余值是否恰好等于叶子的值；空树一律返回 false。"
+  ]
+}

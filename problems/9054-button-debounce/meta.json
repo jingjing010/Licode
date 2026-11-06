@@ -1,0 +1,16 @@
+{
+  "id": 9054,
+  "slug": "button-debounce",
+  "title": "按键消抖状态机",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "状态机", "模拟", "计数"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "记住当前\"认可的\"稳定状态 stable（初始 0），再用一个计数器 cnt 统计\"连续有多少个采样和 stable 不同\"。",
+    "采样值等于 stable：说明刚才只是抖动，cnt 清零；不等于 stable：cnt++，到达 stableCount 时状态翻转并记录事件，cnt 清零。",
+    "也可以写成 4 个状态的 enum + switch 状态机：松开、按下确认中、按下、松开确认中。"
+  ]
+}

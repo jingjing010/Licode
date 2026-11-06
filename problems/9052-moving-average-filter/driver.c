@@ -12,8 +12,7 @@ int main(void) {
             obj = movingAvgCreate(args[i][0]);
             printf("null");
         } else if (strcmp(ops[i], "update") == 0) {
-            unsigned int v = movingAvgUpdate(obj, (uint16_t)args[i][0]);
-            printf("%u", v);
+            printf("%u", (unsigned)movingAvgUpdate(obj, (uint16_t)args[i][0]));
         } else if (strcmp(ops[i], "reset") == 0) {
             movingAvgReset(obj);
             printf("null");

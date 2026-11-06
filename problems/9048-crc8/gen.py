@@ -24,14 +24,15 @@ def cross_check(pairs):
 
 
 def ref_crc8(data):
-    """按定义做多项式模 2 除法：数据后面补 8 个 0，余数即 CRC"""
-    poly = 0x107
-    v = int.from_bytes(bytes(data), "big") << 8 if data else 0
-    nbits = len(data) * 8 + 8
-    for i in range(nbits - 1, 7, -1):
-        if v >> i & 1:
-            v ^= poly << (i - 8)
-    return v
+    """按定义做模 2 长除法（逐位移入数据，末尾补 8 个 0），余数即 CRC"""
+    reg = 0
+    bits = [(x >> k) & 1 for x in data for k in range(7, -1, -1)] + [0] * 8
+    for bit in bits:
+        top = reg >> 7
+        reg = ((reg << 1) | bit) & 0xFF
+        if top:
+            reg ^= 0x07
+    return reg
 
 
 assert ref_crc8(b"123456789") == 0xF4

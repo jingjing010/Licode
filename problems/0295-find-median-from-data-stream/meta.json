@@ -1,0 +1,16 @@
+{
+  "id": 295,
+  "slug": "find-median-from-data-stream",
+  "title": "数据流的中位数",
+  "difficulty": "困难",
+  "tags": ["设计", "双指针", "数据流", "排序", "堆（优先队列）"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/find-median-from-data-stream/",
+  "time_limit_ms": 1000,
+  "samples": 1,
+  "hints": [
+    "最直接的做法：维护一个始终有序的数组，每来一个数就插到正确位置，中位数直接看中间。插入是 O(n) 的。",
+    "中位数把所有数分成「较小的一半」和「较大的一半」。我们只关心较小一半的最大值、较大一半的最小值。",
+    "用一个大根堆存较小的一半、一个小根堆存较大的一半，保持两个堆大小相差不超过 1。中位数就是堆顶（或两个堆顶的平均）。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 461,
+  "slug": "hamming-distance",
+  "title": "汉明距离",
+  "difficulty": "简单",
+  "tags": ["位运算"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/hamming-distance/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "逐位比较：第 i 位分别是 (x >> i) & 1 和 (y >> i) & 1，不相等就计数。",
+    "哪些位不同？x ^ y 的结果里，为 1 的位正好就是 x 和 y 不同的位。",
+    "所以答案 = x ^ y 中 1 的个数。用 n &= n - 1 每次消掉一个 1 来计数（参考 191 题）。"
+  ]
+}

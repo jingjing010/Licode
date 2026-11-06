@@ -1,0 +1,16 @@
+{
+  "id": 617,
+  "slug": "merge-two-binary-trees",
+  "title": "合并二叉树",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/merge-two-binary-trees/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "两棵树同时从根开始往下走，对应位置一起处理。",
+    "如果某一边为空，合并结果直接就是另一边（整棵子树拿过来用，不需要再往下递归）。",
+    "两边都不空时：值相加，再分别递归合并左子树和右子树。"
+  ]
+}

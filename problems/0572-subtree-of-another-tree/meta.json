@@ -1,0 +1,16 @@
+{
+  "id": 572,
+  "slug": "subtree-of-another-tree",
+  "title": "另一棵树的子树",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "二叉树", "字符串匹配", "哈希函数"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/subtree-of-another-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "子树必须包含某个结点及其「全部」后代，所以要求的是：root 中存在某个结点，以它为根的子树和 subRoot 完全相同。",
+    "对 root 的每个结点都调用一次第 100 题「相同的树」，就是 O(n·m) 的直接做法。",
+    "更快的做法：把两棵树按前序遍历序列化（空结点也要记下来），问题就变成「数组 B 是否是数组 A 的连续子串」，用 KMP 可以 O(n+m) 解决。"
+  ]
+}

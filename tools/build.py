@@ -37,6 +37,30 @@ def load_gen(problem):
     return mod
 
 
+TEXT_EXT = (".md", ".c", ".py", ".json")
+
+
+def fix_encoding(pdir):
+    """把 UTF-16 / 带 BOM 的源文件转成无 BOM 的 UTF-8（LF）"""
+    for name in os.listdir(pdir):
+        path = os.path.join(pdir, name)
+        if not name.endswith(TEXT_EXT) or not os.path.isfile(path):
+            continue
+        with open(path, "rb") as f:
+            data = f.read()
+        if data[:2] in (b"\xff\xfe", b"\xfe\xff"):
+            text = data.decode("utf-16")
+        elif b"\x00" in data and len(data) % 2 == 0:
+            text = data.decode("utf-16-le")
+        elif data[:3] == b"\xef\xbb\xbf":
+            text = data[3:].decode("utf-8")
+        else:
+            continue
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(text.replace("\r\n", "\n"))
+        print("  已转为 UTF-8: %s" % name)
+
+
 def build(problem):
     mod = load_gen(problem)
     if mod is None:
@@ -73,6 +97,10 @@ def build(problem):
 
 def main():
     args = sys.argv[1:]
+    pdir = os.path.join(os.path.dirname(TOOLS), "problems")
+    for name in os.listdir(pdir):
+        if os.path.isdir(os.path.join(pdir, name)) and name[:4].isdigit():
+            fix_encoding(os.path.join(pdir, name))
     probs = judge.all_problems()
     if "--all" not in args:
         probs = [p for p in probs if str(p["id"]) in args]

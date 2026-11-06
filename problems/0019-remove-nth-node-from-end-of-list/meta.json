@@ -1,0 +1,16 @@
+{
+  "id": 19,
+  "slug": "remove-nth-node-from-end-of-list",
+  "title": "删除链表的倒数第 N 个结点",
+  "difficulty": "中等",
+  "tags": ["链表", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/remove-nth-node-from-end-of-list/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "如果知道链表一共有 L 个结点，倒数第 n 个就是正数第 L - n + 1 个。",
+    "删除一个结点，需要找到它的「前一个」结点，让前一个结点的 next 跳过它。要删除的恰好是头结点怎么办？试试在头结点前面加一个哑结点 dummy。",
+    "只遍历一遍的做法：让快指针先走 n 步，然后快慢指针一起走，快指针走到最后一个结点时，慢指针正好停在要删除结点的前一个。"
+  ]
+}

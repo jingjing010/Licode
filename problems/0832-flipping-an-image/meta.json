@@ -1,0 +1,16 @@
+{
+  "id": 832,
+  "slug": "flipping-an-image",
+  "title": "翻转图像",
+  "difficulty": "简单",
+  "tags": ["数组", "双指针", "矩阵", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/flipping-an-image/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "分两步做：先把每一行左右反转（双指针交换），再把每个数 0/1 互换。",
+    "0 和 1 互换可以写成 x = 1 - x，或者 x ^= 1（异或）。",
+    "可以在交换的同时取反：左右两个数交换并各自取反；行长为奇数时，中间那个数也要单独取反。"
+  ]
+}

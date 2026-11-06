@@ -1,0 +1,16 @@
+{
+  "id": 205,
+  "slug": "isomorphic-strings",
+  "title": "同构字符串",
+  "difficulty": "简单",
+  "tags": ["哈希表", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/isomorphic-strings/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "同构的意思是：s 的每个字符都固定对应 t 中同一位置的字符，而且这种对应是「一对一」的。",
+    "只检查 s → t 的方向是不够的：s = \"ab\", t = \"aa\" 时，a→a、b→a 每个字符都只有一个去处，但两个不同字符映射到了同一个字符。要两个方向都检查。",
+    "字符只有 ASCII，用两个大小为 256 的数组当哈希表：s2t[c] 记录 s 中字符 c 映射到了谁，t2s[c] 记录 t 中字符 c 是谁映射来的。遇到矛盾就返回 false。"
+  ]
+}

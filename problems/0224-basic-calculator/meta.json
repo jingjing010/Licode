@@ -1,0 +1,16 @@
+{
+  "id": 224,
+  "slug": "basic-calculator",
+  "title": "基本计算器",
+  "difficulty": "困难",
+  "tags": ["栈", "递归", "数学", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/basic-calculator/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "只有加减法和括号。先想想没有括号时怎么算：从左到右，记住当前符号 sign，读到一个数就 res += sign * num。",
+    "遇到 '(' 时，括号里是一个「子问题」。把括号外已经算好的 res 和括号前的符号先存起来（压栈），再从 0 开始算括号里的。",
+    "遇到 ')' 时，括号里的结果 res 算完了：弹出之前保存的 (旧 res, 符号)，res = 旧 res + 符号 * res。注意 '-' 可以是一元负号，比如 \"-(2+3)\"。"
+  ]
+}

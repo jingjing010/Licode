@@ -1,0 +1,16 @@
+{
+  "id": 199,
+  "slug": "binary-tree-right-side-view",
+  "title": "二叉树的右视图",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-right-side-view/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "站在右边看，每一层你能看到几个结点？是哪一个？",
+    "用层序遍历（队列）一层一层地处理，每层最后一个出队的结点就是答案的一部分。",
+    "也可以 DFS：先访问右子树再访问左子树，每一层第一次到达的结点就是从右边看到的那个。"
+  ]
+}

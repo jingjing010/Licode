@@ -1,0 +1,16 @@
+{
+  "id": 200,
+  "slug": "number-of-islands",
+  "title": "岛屿数量",
+  "difficulty": "中等",
+  "tags": ["深度优先搜索", "广度优先搜索", "并查集", "数组", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/number-of-islands/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从左上角开始一格一格地扫描，每遇到一个还没被统计过的 '1'，就说明发现了一座新岛屿。",
+    "发现新岛屿后，要把和它连在一起（上下左右）的所有 '1' 都标记掉，否则后面扫到它们时会被重复计数。",
+    "用 DFS（递归向四个方向扩散）或 BFS（队列）把整座岛「淹掉」：把访问过的 '1' 改成 '0'，就不需要额外的 visited 数组。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 9046,
+  "slug": "ring-buffer",
+  "title": "环形缓冲区",
+  "difficulty": "简单",
+  "tags": ["队列", "设计", "数组", "通信协议"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "用一个固定大小的数组存数据，再用两个下标：head 指向\"下一个要读的位置\"，tail 指向\"下一个要写的位置\"。",
+    "下标走到数组末尾后要\"绕回\" 0：idx = (idx + 1) % capacity。这就是\"环形\"的含义。",
+    "head == tail 时既可能是空也可能是满。最简单的区分办法是再维护一个 count 记录当前元素个数。"
+  ]
+}

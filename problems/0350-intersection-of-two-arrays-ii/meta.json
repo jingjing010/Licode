@@ -1,0 +1,16 @@
+{
+  "id": 350,
+  "slug": "intersection-of-two-arrays-ii",
+  "title": "两个数组的交集 II",
+  "difficulty": "简单",
+  "tags": ["数组", "哈希表", "双指针", "二分查找", "排序"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/intersection-of-two-arrays-ii/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "和 349 题不同，这里重复的数字也要保留：一个数在两个数组中分别出现 a 次和 b 次，答案里就有 min(a, b) 个。",
+    "数值只有 0~1000，用一个计数数组 cnt[1001] 统计 nums1 中每个数出现的次数。",
+    "遍历 nums2，如果 cnt[x] > 0，就把 x 加入答案并把 cnt[x] 减 1。也可以把两个数组排序后用双指针。"
+  ]
+}

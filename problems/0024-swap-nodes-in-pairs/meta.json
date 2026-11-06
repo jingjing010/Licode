@@ -1,0 +1,16 @@
+{
+  "id": 24,
+  "slug": "swap-nodes-in-pairs",
+  "title": "两两交换链表中的节点",
+  "difficulty": "中等",
+  "tags": ["递归", "链表"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/swap-nodes-in-pairs/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "交换的是结点本身（改 next 指针），不能偷懒只交换 val。先画图：交换 a、b 两个结点，需要改哪几根箭头？",
+    "交换 a -> b 这一对时，a 前面的结点 prev 也要改成指向 b。头两个结点前面没有结点，加一个哑结点 dummy 就统一了。",
+    "每一轮：prev->next = b; a->next = b->next; b->next = a; 然后 prev 移到 a（交换后 a 在后面），继续处理下一对。"
+  ]
+}

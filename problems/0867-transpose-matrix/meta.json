@@ -1,0 +1,16 @@
+{
+  "id": 867,
+  "slug": "transpose-matrix",
+  "title": "转置矩阵",
+  "difficulty": "简单",
+  "tags": ["数组", "矩阵", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/transpose-matrix/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "m 行 n 列的矩阵，转置后是几行几列？",
+    "转置后的 ans[j][i] 就是原来的 matrix[i][j]。",
+    "矩阵不一定是方阵，不能原地交换；需要 malloc 一个 n 行、每行 m 个元素的新矩阵，并正确设置 *returnSize 和 *returnColumnSizes。"
+  ]
+}

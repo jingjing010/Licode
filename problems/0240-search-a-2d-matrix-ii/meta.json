@@ -1,0 +1,16 @@
+{
+  "id": 240,
+  "slug": "search-a-2d-matrix-ii",
+  "title": "搜索二维矩阵 II",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找", "分治", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/search-a-2d-matrix-ii/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接：把每个元素都看一遍。能不能利用「每一行都是有序的」这个条件加快？",
+    "每一行有序，就可以对每一行做二分查找，总时间 O(m log n)。",
+    "从右上角出发：当前数比 target 大，这一列下面只会更大，整列都可以排除（往左走）；比 target 小，这一行左边只会更小，整行排除（往下走）。"
+  ]
+}

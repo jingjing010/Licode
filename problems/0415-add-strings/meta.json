@@ -1,0 +1,16 @@
+{
+  "id": 415,
+  "slug": "add-strings",
+  "title": "字符串相加",
+  "difficulty": "简单",
+  "tags": ["数学", "字符串", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/add-strings/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "数字最长 10^4 位，不能转成整数。回忆小学竖式加法：个位对齐，从右往左一位一位加。",
+    "用 i、j 分别从两个字符串的末尾往前走，carry 记录进位：本位 = (x + y + carry) % 10，新进位 = (x + y + carry) / 10。某个字符串走完了，它的位就当作 0。",
+    "循环条件写成 while (i >= 0 || j >= 0 || carry)，最后的进位也不会漏。结果最长 max(len1, len2) + 1 位，倒着写再反转，或者从结果末尾往前填。"
+  ]
+}

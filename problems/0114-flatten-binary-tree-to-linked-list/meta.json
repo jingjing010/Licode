@@ -1,0 +1,16 @@
+{
+  "id": 114,
+  "slug": "flatten-binary-tree-to-linked-list",
+  "title": "二叉树展开为链表",
+  "difficulty": "中等",
+  "tags": ["栈", "树", "深度优先搜索", "链表", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "展开后的「链表」顺序就是二叉树的先序遍历（根 → 左 → 右）。最简单的办法：先把先序遍历的结点存进数组，再依次连起来。",
+    "想不用额外数组？对当前结点 cur：如果它有左子树，那么右子树在先序中应该紧跟在「左子树的最右结点」后面。",
+    "找到左子树的最右结点 pre，令 pre->right = cur->right；cur->right = cur->left；cur->left = NULL；然后 cur 移到 cur->right，重复。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 905,
+  "slug": "sort-array-by-parity",
+  "title": "按奇偶排序数组",
+  "difficulty": "简单",
+  "tags": ["数组", "双指针", "排序"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sort-array-by-parity/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最简单的做法：新建一个数组，先把所有偶数放进去，再把所有奇数放进去。",
+    "想不用额外数组？用一个下标 k 表示「下一个偶数该放的位置」，遇到偶数就和 nums[k] 交换。",
+    "或者左右双指针：左边找奇数、右边找偶数，找到就交换，直到两指针相遇。"
+  ]
+}

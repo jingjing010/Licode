@@ -1,0 +1,16 @@
+{
+  "id": 98,
+  "slug": "validate-binary-search-tree",
+  "title": "验证二叉搜索树",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "二叉搜索树", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/validate-binary-search-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "只检查「每个结点比左孩子大、比右孩子小」够吗？试试 [5,4,6,null,null,3,7]。",
+    "每个结点的值其实被限制在一个区间 (low, high) 里：往左走时更新上界，往右走时更新下界。注意结点值可能是 INT_MIN / INT_MAX，边界要用 long long。",
+    "另一种思路：二叉搜索树的中序遍历一定严格递增。中序遍历时记住上一个值，和当前值比较即可。"
+  ]
+}

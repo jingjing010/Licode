@@ -1,0 +1,16 @@
+{
+  "id": 412,
+  "slug": "fizz-buzz",
+  "title": "Fizz Buzz",
+  "difficulty": "简单",
+  "tags": ["数学", "字符串", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/fizz-buzz/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "返回值是一个「字符串数组」：先 malloc 一个能放 n 个 char* 的数组，再为每个字符串分别 malloc 空间。",
+    "判断顺序很重要：先判断「同时是 3 和 5 的倍数」（即 15 的倍数），再分别判断 3 和 5，否则 15 会被当成 Fizz。",
+    "数字转字符串可以用 sprintf(buf, \"%d\", i)。int 最多 10 位，加上 '\\0'，每个字符串开 12 个字节足够。"
+  ]
+}

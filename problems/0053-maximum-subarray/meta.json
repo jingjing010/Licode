@@ -1,0 +1,16 @@
+{
+  "id": 53,
+  "slug": "maximum-subarray",
+  "title": "最大子数组和",
+  "difficulty": "中等",
+  "tags": ["数组", "分治", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/maximum-subarray/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的想法：枚举每个子数组的起点和终点，算出它们的和取最大。数据有 10^5，两层循环会不会太慢？",
+    "子数组 nums[i..j] 的和 = 前缀和 S[j+1] - S[i]。固定终点 j 时，想让差最大，就要让 S[i] 尽量小。",
+    "换个角度：以 nums[i] 结尾的最大子数组和，要么是 nums[i] 自己，要么是「以 nums[i-1] 结尾的最大和」再加上 nums[i]——前面那段如果是负数就扔掉。"
+  ]
+}

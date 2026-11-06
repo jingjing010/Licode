@@ -1,0 +1,16 @@
+{
+  "id": 121,
+  "slug": "best-time-to-buy-and-sell-stock",
+  "title": "买卖股票的最佳时机",
+  "difficulty": "简单",
+  "tags": ["数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接的想法：枚举买入日 i 和卖出日 j（j > i），取 prices[j] - prices[i] 的最大值。但 n 可达 10^5，两层循环会超时。",
+    "如果固定在第 j 天卖出，那么最好的买入日一定是第 j 天之前价格最低的那天。",
+    "从左往右扫描，一边维护「到目前为止的最低价」，一边用「今天价格 - 最低价」更新答案，一遍就够了。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 124,
+  "slug": "binary-tree-maximum-path-sum",
+  "title": "二叉树中的最大路径和",
+  "difficulty": "困难",
+  "tags": ["树", "深度优先搜索", "动态规划", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-maximum-path-sum/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "任何一条路径都有一个「最高点」，路径从最高点出发向左下走一段、向右下走一段（每段都可以为空）。",
+    "定义 gain(node)：从 node 出发只往下走（只能选一边），能得到的最大和。负的子树贡献不如不要，取 max(gain, 0)。",
+    "以 node 为最高点的最大路径和 = node->val + max(gain(left), 0) + max(gain(right), 0)，用它更新全局答案；而往上返回给父结点的只能是 node->val + max(左, 右, 0)。答案的初始值要设成很小的数（结点可能全是负数）。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 236,
+  "slug": "lowest-common-ancestor-of-a-binary-tree",
+  "title": "二叉树的最近公共祖先",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/",
+  "time_limit_ms": 2000,
+  "samples": 3,
+  "hints": [
+    "朴素想法：分别找出从根到 p 的路径、从根到 q 的路径，两条路径最后一个相同的结点就是答案。",
+    "递归想法：在以 root 为根的子树里找 p 或 q。如果 root 本身就是 p 或 q，直接返回 root。",
+    "分别在左右子树里递归查找：两边都找到了，说明 p、q 分居两侧，root 就是答案；只有一边找到，就返回那一边的结果。"
+  ]
+}

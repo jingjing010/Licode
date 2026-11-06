@@ -1,0 +1,16 @@
+{
+  "id": 86,
+  "slug": "partition-list",
+  "title": "分隔链表",
+  "difficulty": "中等",
+  "tags": ["链表", "双指针"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/partition-list/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "想象把一队人分成两队：「矮于 x 的」一队，「不矮于 x 的」另一队，每个人按原来的顺序排进自己的队，最后两队接起来。",
+    "准备两个哑结点 smallDummy、largeDummy，以及各自的尾指针。遍历原链表，把每个结点接到对应链表的尾巴上。",
+    "最后 smallTail->next = largeDummy.next，并且一定要 largeTail->next = NULL，否则可能形成环。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 69,
+  "slug": "sqrtx",
+  "title": "x 的平方根",
+  "difficulty": "简单",
+  "tags": ["数学", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sqrtx/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "答案就是满足 k * k <= x 的最大整数 k。可以从 0 开始一个一个试吗？最多要试多少个？",
+    "k * k 随 k 单调递增，所以可以在 [0, x] 上二分查找这个 k。",
+    "k * k 可能超过 int 范围（例如 46341 * 46341），计算时先转成 long long，或者改为比较 k <= x / k。"
+  ]
+}

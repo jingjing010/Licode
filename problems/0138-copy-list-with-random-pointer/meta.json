@@ -1,0 +1,16 @@
+{
+  "id": 138,
+  "slug": "copy-list-with-random-pointer",
+  "title": "随机链表的复制",
+  "difficulty": "中等",
+  "tags": ["哈希表", "链表"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/copy-list-with-random-pointer/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "只复制 val 和 next 很简单，难点在 random：新结点的 random 必须指向「新链表」里对应的结点，而不是原链表的结点。",
+    "如果能从「原结点」快速找到「它对应的新结点」，问题就解决了。可以先把原结点和新结点都按顺序放进数组，用下标来对应。",
+    "O(1) 额外空间的技巧：把每个新结点插在对应原结点的后面（A -> A' -> B -> B'），这样 A' 的 random 就是 A->random->next。最后再把两条链表拆开。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 27,
+  "slug": "remove-element",
+  "title": "移除元素",
+  "difficulty": "简单",
+  "tags": ["数组", "双指针"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/remove-element/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "不需要真的「删除」元素，只要让不等于 val 的元素都排到数组最前面就行。",
+    "用一个下标 k 记录「下一个要保留的元素该写到哪」，从头扫描，遇到 nums[i] != val 就写到 nums[k]，然后 k++。",
+    "题目允许改变顺序：遇到等于 val 的元素时，也可以直接用数组最后一个元素覆盖它，并把数组长度减 1，这样赋值次数更少。"
+  ]
+}

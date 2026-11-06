@@ -1,0 +1,16 @@
+{
+  "id": 994,
+  "slug": "rotting-oranges",
+  "title": "腐烂的橘子",
+  "difficulty": "中等",
+  "tags": ["广度优先搜索", "数组", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/rotting-oranges/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的想法：一分钟一分钟地模拟。每一分钟，把所有「挨着烂橘子」的新鲜橘子都变烂。",
+    "注意同一分钟里新烂掉的橘子，要等到下一分钟才能传染别人；什么时候停止？什么时候返回 -1？",
+    "把一开始所有的烂橘子同时放进队列，做「多源 BFS」，一层就是一分钟；最后再检查还有没有新鲜橘子。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 153,
+  "slug": "find-minimum-in-rotated-sorted-array",
+  "title": "寻找旋转排序数组中的最小值",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "遍历一遍取最小值是 O(n)，题目要求 O(log n)。",
+    "旋转后的数组是「两段升序」，最小值就是第二段的第一个数。拿中间的数和谁比较，能判断它在哪一段？",
+    "和区间最右边的数 nums[hi] 比较：nums[mid] < nums[hi] 说明 mid 在右段（最小值在 mid 或其左边），否则最小值在 mid 右边。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 543,
+  "slug": "diameter-of-binary-tree",
+  "title": "二叉树的直径",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/diameter-of-binary-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "任何一条路径都有一个「最高点」（离根最近的结点），路径从这个点出发分别向左、向右往下走。",
+    "以某结点为最高点的最长路径长度 = 左子树的深度 + 右子树的深度（按边数算）。",
+    "在递归计算每个结点深度的同时，用一个全局（或指针传入的）变量记录 左深度 + 右深度 的最大值。"
+  ]
+}

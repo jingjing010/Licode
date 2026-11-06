@@ -1,0 +1,16 @@
+{
+  "id": 605,
+  "slug": "can-place-flowers",
+  "title": "种花问题",
+  "difficulty": "简单",
+  "tags": ["贪心", "数组"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/can-place-flowers/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "一个空地能种花，需要满足什么条件？看看它自己和左右两个邻居。",
+    "从左往右扫，只要遇到能种的位置就立刻种上（贪心），会不会让后面变差？",
+    "数组两端只有一个邻居，可以把「越界的邻居」当作空地 0 处理；种下后记得把该位置改成 1。"
+  ]
+}

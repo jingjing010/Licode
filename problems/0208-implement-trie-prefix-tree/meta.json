@@ -1,0 +1,16 @@
+{
+  "id": 208,
+  "slug": "implement-trie-prefix-tree",
+  "title": "实现 Trie (前缀树)",
+  "difficulty": "中等",
+  "tags": ["设计", "字典树", "哈希表", "字符串"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/implement-trie-prefix-tree/",
+  "time_limit_ms": 1000,
+  "samples": 1,
+  "hints": [
+    "最简单的做法是把插入过的单词都存进一个数组，查询时逐个比较——想想它为什么慢。",
+    "把单词一个字母一个字母地「挂」在一棵树上：每个结点最多有 26 个孩子，分别对应 'a'~'z'，共同前缀的单词会共用同一段路径。",
+    "结点里还要有一个标记 isEnd，表示「有单词在这里结束」。search 要求走完后 isEnd 为真，startsWith 只要求能走完。"
+  ]
+}

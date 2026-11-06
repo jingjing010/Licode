@@ -1,0 +1,16 @@
+{
+  "id": 13,
+  "slug": "roman-to-integer",
+  "title": "罗马数字转整数",
+  "difficulty": "简单",
+  "tags": ["哈希表", "数学", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/roman-to-integer/",
+  "time_limit_ms": 1000,
+  "samples": 5,
+  "hints": [
+    "先写一个小函数，把单个罗马字符（I、V、X……）换成它代表的数值。",
+    "大多数情况下，把每个字符的值加起来就是答案。只有 IV、IX、XL 这类「小的在大的左边」的情况例外。",
+    "从左往右扫描：如果当前字符的值比它右边那个字符的值小，就减去它，否则加上它。"
+  ]
+}

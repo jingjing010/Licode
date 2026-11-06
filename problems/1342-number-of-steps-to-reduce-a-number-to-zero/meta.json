@@ -1,0 +1,16 @@
+{
+  "id": 1342,
+  "slug": "number-of-steps-to-reduce-a-number-to-zero",
+  "title": "将数字变成 0 的操作次数",
+  "difficulty": "简单",
+  "tags": ["位运算", "数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "按题意模拟即可：用 while (num > 0) 循环，偶数就 num /= 2，奇数就 num -= 1，每次计数加 1。",
+    "从二进制角度看：除以 2 就是右移一位，减 1 就是把最低位的 1 变成 0。",
+    "因此答案 = 二进制中 1 的个数（每个 1 需要一次减 1）+ 二进制位数 - 1（需要右移的次数）。num = 0 时答案为 0。"
+  ]
+}

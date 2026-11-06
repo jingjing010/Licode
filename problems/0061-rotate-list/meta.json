@@ -1,0 +1,16 @@
+{
+  "id": 61,
+  "slug": "rotate-list",
+  "title": "旋转链表",
+  "difficulty": "中等",
+  "tags": ["链表", "双指针"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/rotate-list/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "k 最大可以到 2×10^9，但链表最多 500 个结点。每旋转 n 次（n 是链表长度）链表就变回原样，所以先算 k % n。",
+    "旋转 k 次的结果，就是把链表最后 k 个结点整体搬到最前面。新的尾结点是第 n-k 个结点。",
+    "先找到尾结点，让它指向 head 连成一个环；再从 head 走 n-k-1 步找到新的尾结点，在它后面「剪断」环即可。"
+  ]
+}

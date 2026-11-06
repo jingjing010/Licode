@@ -1,0 +1,16 @@
+{
+  "id": 416,
+  "slug": "partition-equal-subset-sum",
+  "title": "分割等和子集",
+  "difficulty": "中等",
+  "tags": ["数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/partition-equal-subset-sum/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "两个子集和相等，说明每个子集的和都是 sum / 2。如果 sum 是奇数，直接返回 false。",
+    "问题变成：能否从数组中选出若干个数，使它们的和恰好等于 target = sum / 2？这是经典的 0-1 背包。",
+    "用 dp[j] 表示「能否凑出和 j」，对每个数 x，让 j 从 target 倒序到 x：dp[j] = dp[j] || dp[j - x]。倒序是为了保证每个数只用一次。"
+  ]
+}

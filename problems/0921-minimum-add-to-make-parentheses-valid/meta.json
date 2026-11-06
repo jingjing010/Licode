@@ -1,0 +1,16 @@
+{
+  "id": 921,
+  "slug": "minimum-add-to-make-parentheses-valid",
+  "title": "使括号有效的最少添加",
+  "difficulty": "中等",
+  "tags": ["栈", "贪心", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/minimum-add-to-make-parentheses-valid/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先把能配对的括号都配对消掉（就像判断有效括号那样用栈），剩下没配上的每一个都需要补一个括号。",
+    "栈里其实只会放 '('，所以不需要真的存字符，用一个计数器 open 表示「还没配对的左括号个数」就够了。",
+    "遇到 ')' 时如果 open > 0 就配对（open--），否则这个 ')' 必须补一个 '('（ans++）。最后答案是 ans + open。"
+  ]
+}

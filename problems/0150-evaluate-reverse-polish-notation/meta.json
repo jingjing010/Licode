@@ -1,0 +1,16 @@
+{
+  "id": 150,
+  "slug": "evaluate-reverse-polish-notation",
+  "title": "逆波兰表达式求值",
+  "difficulty": "中等",
+  "tags": ["栈", "数组", "数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/evaluate-reverse-polish-notation/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "逆波兰表达式里，运算符总是跟在它的两个操作数后面。从左往右读，遇到运算符时它要用的两个数是谁？",
+    "是「最近读到的、还没被用掉的」两个数——这正好是栈顶的两个元素。",
+    "遇到数字就压栈；遇到运算符就弹出 b（栈顶）和 a（次栈顶），计算 a op b 再压回去。注意 \"-11\" 是数字不是减号。"
+  ]
+}

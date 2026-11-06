@@ -1,0 +1,16 @@
+{
+  "id": 856,
+  "slug": "score-of-parentheses",
+  "title": "括号的分数",
+  "difficulty": "中等",
+  "tags": ["栈", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/score-of-parentheses/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "可以用栈来模拟：遇到 '(' 就开一个新的「层」，它的分数先记为 0。",
+    "遇到 ')' 时，当前层结束：如果这一层里面是空的，得 1 分；否则得 2 × 里面的分数。把它加到外面一层上。",
+    "更巧妙的做法：只有相邻的 \"()\" 才真正产生分数，它在深度 d 时贡献 2^d。统计每个 \"()\" 的深度即可，O(1) 空间。"
+  ]
+}

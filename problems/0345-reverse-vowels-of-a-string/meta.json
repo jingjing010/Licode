@@ -1,0 +1,16 @@
+{
+  "id": 345,
+  "slug": "reverse-vowels-of-a-string",
+  "title": "反转字符串中的元音字母",
+  "difficulty": "简单",
+  "tags": ["双指针", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reverse-vowels-of-a-string/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先写一个辅助函数判断字符是不是元音，注意大写的 'A'、'E'、'I'、'O'、'U' 也算。",
+    "可以把所有元音的下标按顺序记下来，然后把这些位置上的字符首尾互换。",
+    "更省空间的做法：左右两个指针，左边找到一个元音、右边找到一个元音就交换，然后继续向中间走。"
+  ]
+}

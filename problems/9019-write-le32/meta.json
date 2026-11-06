@@ -1,0 +1,16 @@
+{
+  "id": 9019,
+  "slug": "write-le32",
+  "title": "小端写入 uint32 到缓冲区",
+  "difficulty": "简单",
+  "tags": ["字节序", "位运算", "指针"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "小端：最低字节写在最低地址，也就是 buf[offset]。",
+    "第 i 个字节（从低到高）是 (value >> (8 * i)) & 0xFF，应写入 buf[offset + i]。",
+    "只能写 buf[offset] ~ buf[offset + 3] 这 4 个位置，不要动缓冲区其它字节。"
+  ]
+}

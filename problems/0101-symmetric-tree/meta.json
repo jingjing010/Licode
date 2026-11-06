@@ -1,0 +1,16 @@
+{
+  "id": 101,
+  "slug": "symmetric-tree",
+  "title": "对称二叉树",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/symmetric-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "一棵树对称，等价于它的左子树和右子树互为「镜像」。",
+    "两棵树 A、B 互为镜像需要满足：根的值相等，A 的左子树和 B 的右子树互为镜像，A 的右子树和 B 的左子树互为镜像。",
+    "写一个辅助函数 check(a, b)：两个都空返回 true，只有一个空返回 false，否则比较值并递归 check(a->left, b->right) && check(a->right, b->left)。"
+  ]
+}

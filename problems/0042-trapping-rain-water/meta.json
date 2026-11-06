@@ -1,0 +1,16 @@
+{
+  "id": 42,
+  "slug": "trapping-rain-water",
+  "title": "接雨水",
+  "difficulty": "困难",
+  "tags": ["栈", "数组", "双指针", "动态规划", "单调栈"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/trapping-rain-water/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "不要整体看，一列一列地看：第 i 列头顶上能存多少水？",
+    "第 i 列的水面高度 = min(它左边（含自己）最高的柱子, 它右边（含自己）最高的柱子)，存水量 = 水面高度 - height[i]。",
+    "用两个数组预先算好每个位置的「左边最高」和「右边最高」就能 O(n)；进一步，用左右双指针每次处理较矮的一侧，可以省掉这两个数组。"
+  ]
+}

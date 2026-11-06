@@ -1,0 +1,16 @@
+{
+  "id": 9005,
+  "slug": "set-bit-field",
+  "title": "写入寄存器位域",
+  "difficulty": "中等",
+  "tags": ["位运算", "寄存器操作", "掩码"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "直接 reg | (val << pos) 行不通：位域里原来的 1 不会被清掉。应该分成\"先清零、再写入\"两步。",
+    "清零：构造低 width 位全 1 的掩码 mask，再用 reg & ~(mask << pos) 把位域清零。",
+    "写入前先 val & mask 去掉超出宽度的位，再左移 pos 位或进去。width = 32 时掩码要单独处理。"
+  ]
+}

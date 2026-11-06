@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C 语言刷题 OJ</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem("oj.theme") || '"light"');
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">🧩 <span>C 刷题 OJ</span></a>
+    <nav class="nav">
+      <a href="#/" data-nav="problems">题库</a>
+      <a href="#/submissions" data-nav="submissions">提交记录</a>
+      <a href="#/stats" data-nav="stats">统计</a>
+      <a href="#/guide" data-nav="guide">新手指南</a>
+    </nav>
+    <span class="spacer"></span>
+    <span class="env" id="env" title="">检测编译器…</span>
+    <button class="icon-btn" id="theme-btn" title="切换深色 / 浅色">🌓</button>
+  </header>
+  <div id="env-banner"></div>
+  <main id="app"></main>
+  <div id="toasts"></div>
+
+  <script src="/markdown.js"></script>
+  <script src="/editor.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

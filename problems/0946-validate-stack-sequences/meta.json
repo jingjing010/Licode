@@ -1,0 +1,16 @@
+{
+  "id": 946,
+  "slug": "validate-stack-sequences",
+  "title": "验证栈序列",
+  "difficulty": "中等",
+  "tags": ["栈", "数组", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/validate-stack-sequences/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "不要想复杂了，直接拿一个真的栈来模拟：按 pushed 的顺序一个个压进去。",
+    "每压入一个元素后，只要栈顶正好等于 popped 中「下一个该弹出的元素」，就立刻弹出（贪心：能弹就弹）。",
+    "全部压完后，如果栈空了（popped 全部匹配完），就是 true；否则 false。"
+  ]
+}

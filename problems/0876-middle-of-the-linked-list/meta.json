@@ -1,0 +1,16 @@
+{
+  "id": 876,
+  "slug": "middle-of-the-linked-list",
+  "title": "链表的中间结点",
+  "difficulty": "简单",
+  "tags": ["链表", "双指针"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/middle-of-the-linked-list/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接的办法：先遍历一遍数出长度 n，再从头走 n / 2 步，就到了中间结点。",
+    "能不能只遍历一遍？想象两个人同时从起点出发，一个人的速度是另一个人的两倍。",
+    "快慢指针：slow 每次走 1 步，fast 每次走 2 步。当 fast 为 NULL 或 fast->next 为 NULL 时，slow 正好在中间（偶数个结点时是第二个中间结点）。"
+  ]
+}

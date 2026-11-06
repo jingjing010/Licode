@@ -1,0 +1,16 @@
+{
+  "id": 5,
+  "slug": "longest-palindromic-substring",
+  "title": "最长回文子串",
+  "difficulty": "中等",
+  "tags": ["双指针", "字符串", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/longest-palindromic-substring/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接的做法：枚举所有子串，逐个判断是不是回文，记录最长的。想想怎么剪枝让它更快。",
+    "回文串是左右对称的。换个角度：枚举回文串的「中心」，从中心向两边扩展，直到两边字符不相等。",
+    "回文中心有两种：奇数长度的中心是一个字符（如 \"aba\" 的 b），偶数长度的中心在两个字符之间（如 \"abba\" 的两个 b 之间），两种都要试。"
+  ]
+}

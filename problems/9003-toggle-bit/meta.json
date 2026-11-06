@@ -1,0 +1,16 @@
+{
+  "id": 9003,
+  "slug": "toggle-bit",
+  "title": "翻转指定位",
+  "difficulty": "简单",
+  "tags": ["位运算", "寄存器操作"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "\"翻转\"就是 0 变 1、1 变 0。哪个位运算符和 1 运算会翻转、和 0 运算保持不变？",
+    "答案是按位异或 ^：两位不同时结果为 1。",
+    "构造只有第 n 位为 1 的掩码 1u << n，然后 reg ^ mask。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 105,
+  "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+  "title": "从前序与中序遍历序列构造二叉树",
+  "difficulty": "中等",
+  "tags": ["树", "数组", "哈希表", "分治", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "前序遍历的第一个数一定是根。它在中序遍历中的位置把中序序列分成了哪两部分？",
+    "设根在中序中的下标是 k，那么左子树有 k - inLeft 个结点。据此可以在前序序列里切出左子树和右子树对应的段，分别递归。",
+    "每次在中序里线性查找根的位置最坏是 O(n²)。值互不相同且在 [-3000, 3000] 内，可以先用数组 pos[val + 3000] 记录每个值在中序里的下标，查找变成 O(1)。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 48,
+  "slug": "rotate-image",
+  "title": "旋转图像",
+  "difficulty": "中等",
+  "tags": ["数组", "数学", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/rotate-image/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先找规律：顺时针旋转 90 度后，原来第 i 行第 j 列的元素跑到了哪里？用示例 1 对照一下。",
+    "规律是 matrix[i][j] → 新位置 [j][n-1-i]。先拷贝一份原矩阵，再按这个公式填回去，就能做出来。",
+    "不用额外空间：先沿主对角线翻转（转置，交换 [i][j] 和 [j][i]），再把每一行左右翻转。"
+  ]
+}

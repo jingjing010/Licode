@@ -1,0 +1,16 @@
+{
+  "id": 725,
+  "slug": "split-linked-list-in-parts",
+  "title": "分隔链表",
+  "difficulty": "中等",
+  "tags": ["链表"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/split-linked-list-in-parts/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先遍历一遍求出链表长度 n。要分成 k 段、长度尽量平均，每段的基本长度是 n / k。",
+    "还剩下 n % k 个结点没分完，把它们分给前面的 n % k 段，每段多 1 个。所以第 i 段（从 0 开始）的长度是 n / k + (i < n % k ? 1 : 0)。",
+    "返回的是一个指针数组，长度固定为 k，记得 *returnSize = k。每段走到最后一个结点时，先记下它的 next，再把它的 next 置为 NULL 切断。"
+  ]
+}

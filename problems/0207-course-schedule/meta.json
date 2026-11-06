@@ -1,0 +1,16 @@
+{
+  "id": 207,
+  "slug": "course-schedule",
+  "title": "课程表",
+  "difficulty": "中等",
+  "tags": ["深度优先搜索", "广度优先搜索", "图", "拓扑排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/course-schedule/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "把课程看成点，「先学 b 再学 a」看成一条从 b 指向 a 的箭头。什么情况下永远学不完？",
+    "如果箭头绕成了一个圈（环），圈上的课程互相等待，谁都学不了。问题变成：这张有向图里有没有环？",
+    "拓扑排序：不断找「没有先修课（入度为 0）」的课程学掉，并把它指向的课程入度减 1。最后学掉的课程数等于 numCourses 就是 true。"
+  ]
+}

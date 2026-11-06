@@ -1,0 +1,16 @@
+{
+  "id": 21,
+  "slug": "merge-two-sorted-lists",
+  "title": "合并两个有序链表",
+  "difficulty": "简单",
+  "tags": ["链表", "递归"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/merge-two-sorted-lists/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "两个链表都已经从小到大排好序了。新链表的第一个结点，一定是两个链表头结点中较小的那个。",
+    "用两个指针分别指向两个链表当前的结点，每次比较，把较小的那个「摘下来」接到新链表的尾巴上，然后让它的指针后移。",
+    "先建一个「哑结点」dummy 作为新链表的假头，用 tail 指向新链表的最后一个结点，可以避免单独处理头结点；某个链表走完后，把另一个链表剩下的部分直接整体接上。"
+  ]
+}

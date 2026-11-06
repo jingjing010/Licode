@@ -1,0 +1,16 @@
+{
+  "id": 495,
+  "slug": "teemo-attacking",
+  "title": "提莫攻击",
+  "difficulty": "简单",
+  "tags": ["数组", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/teemo-attacking/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "每次攻击会让中毒覆盖区间 [t, t + duration - 1]。如果两次攻击的区间不重叠，答案就是 duration 乘以攻击次数。",
+    "两次相邻攻击的时间差是 gap = timeSeries[i+1] - timeSeries[i]。第 i 次攻击真正「独占」的中毒时间是多少？",
+    "第 i 次攻击贡献 min(gap, duration) 秒，最后一次攻击一定贡献完整的 duration 秒，全部加起来即可。"
+  ]
+}

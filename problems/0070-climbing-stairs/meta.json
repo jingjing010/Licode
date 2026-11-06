@@ -1,0 +1,16 @@
+{
+  "id": 70,
+  "slug": "climbing-stairs",
+  "title": "爬楼梯",
+  "difficulty": "简单",
+  "tags": ["记忆化搜索", "数学", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/climbing-stairs/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先手算 n = 1、2、3、4 的答案，看看有没有规律。",
+    "爬到第 n 阶的最后一步，要么是从第 n-1 阶跨 1 步上来，要么是从第 n-2 阶跨 2 步上来。",
+    "所以 f(n) = f(n-1) + f(n-2)，这就是斐波那契数列。用循环从小到大算，只需要两个变量。"
+  ]
+}

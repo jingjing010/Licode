@@ -1,0 +1,16 @@
+{
+  "id": 230,
+  "slug": "kth-smallest-element-in-a-bst",
+  "title": "二叉搜索树中第 K 小的元素",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "二叉搜索树", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/kth-smallest-element-in-a-bst/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "二叉搜索树按什么顺序遍历，得到的序列是从小到大排好的？",
+    "中序遍历（左 → 根 → 右）得到的就是升序序列，第 k 个访问到的结点就是答案。",
+    "不必遍历完整棵树：用栈做迭代中序遍历，每弹出一个结点就让 k 减 1，减到 0 时直接返回。"
+  ]
+}

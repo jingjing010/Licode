@@ -1,0 +1,16 @@
+{
+  "id": 25,
+  "slug": "reverse-nodes-in-k-group",
+  "title": "K 个一组翻转链表",
+  "difficulty": "困难",
+  "tags": ["递归", "链表"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/reverse-nodes-in-k-group/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先别想原地操作：把所有结点指针存进数组，每 k 个一段在数组里倒过来，最后按数组顺序重新连 next，就简单多了。",
+    "原地做法：每次先检查从当前位置往后是否还够 k 个结点，不够就结束。够的话，把这 k 个结点当成一个小链表，用第 206 题的方法反转。",
+    "反转一段时要记住 4 个结点：这一段前面的 prev、这一段的头 start、尾 end、以及后面的 next。反转后 prev->next = end，start->next = next，然后 prev = start 进入下一段。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 367,
+  "slug": "valid-perfect-square",
+  "title": "有效的完全平方数",
+  "difficulty": "简单",
+  "tags": ["数学", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/valid-perfect-square/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从 1 开始逐个试 k，直到 k * k >= num。最多要试多少次？",
+    "k * k 随 k 单调递增，所以可以在 [1, num] 上二分查找是否存在 k 使得 k * k == num。",
+    "k * k 可能超出 int，用 (long long)k * k 计算。"
+  ]
+}

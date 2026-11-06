@@ -1,0 +1,16 @@
+{
+  "id": 102,
+  "slug": "binary-tree-level-order-traversal",
+  "title": "二叉树的层序遍历",
+  "difficulty": "中等",
+  "tags": ["树", "广度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-level-order-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "一层一层地从左往右访问结点，「先来先服务」——这正是队列的特点。",
+    "每轮循环开始时，队列里恰好是同一层的全部结点。先记下这个数量 size，再出队 size 个。",
+    "返回值是二维数组：res[i] 是第 i 层的数组，(*returnColumnSizes)[i] 是第 i 层的结点数，*returnSize 是层数，三者都要 malloc / 赋值。"
+  ]
+}

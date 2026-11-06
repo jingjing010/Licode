@@ -1,0 +1,16 @@
+{
+  "id": 9044,
+  "slug": "fixed-block-memory-pool",
+  "title": "固定大小内存池",
+  "difficulty": "中等",
+  "tags": ["设计", "内存", "链表"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "把所有空闲块串成一个\"空闲链表\"，链表里存的是块的编号。alloc 就是从链表头取一个，release 就是插回链表头——都是 O(1)。",
+    "链表的 next 可以放在一个 int 数组 next[blockCount] 里；更\"嵌入式\"的做法是直接存进空闲块自己的内存里（空闲块的内容反正没人用）。",
+    "release 要判断三种非法情况：编号越界、这个块本来就是空闲的（重复释放）。用一个 bool used[] 数组记录每个块是否已分配。"
+  ]
+}

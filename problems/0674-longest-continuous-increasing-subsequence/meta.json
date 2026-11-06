@@ -1,0 +1,16 @@
+{
+  "id": 674,
+  "slug": "longest-continuous-increasing-subsequence",
+  "title": "最长连续递增序列",
+  "difficulty": "简单",
+  "tags": ["数组"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/longest-continuous-increasing-subsequence/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "「连续」意味着只需要比较相邻的两个数：nums[i] 是否大于 nums[i-1]。",
+    "用一个变量 cur 记录「以当前位置结尾」的递增段长度：递增就 +1，否则重置为 1。",
+    "每走一步都用 cur 更新答案 ans = max(ans, cur)，注意是「严格」递增，相等不算。"
+  ]
+}

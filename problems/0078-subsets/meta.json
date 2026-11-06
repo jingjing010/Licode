@@ -1,0 +1,16 @@
+{
+  "id": 78,
+  "slug": "subsets",
+  "title": "子集",
+  "difficulty": "中等",
+  "tags": ["位运算", "数组", "回溯"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/subsets/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "每个元素只有两种命运：放进子集，或者不放。n 个元素一共有多少个子集？",
+    "递归处理第 i 个元素：先「选它」递归一次，再「不选它」递归一次，处理完所有元素就得到一个子集。",
+    "也可以用二进制：0 到 2^n - 1 的每个整数 mask，第 j 位是 1 就表示选 nums[j]。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 73,
+  "slug": "set-matrix-zeroes",
+  "title": "矩阵置零",
+  "difficulty": "中等",
+  "tags": ["数组", "哈希表", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/set-matrix-zeroes/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "如果边扫描边置零，新写入的 0 会被误认为是原来的 0。要先「记下来」哪些行、哪些列需要清零，再统一修改。",
+    "用两个布尔数组 row[m]、col[n] 记录：只要 matrix[i][j] == 0，就标记 row[i] 和 col[j]。",
+    "进阶 O(1) 空间：拿矩阵的第 0 行和第 0 列来当标记数组，但要先用两个变量记住第 0 行、第 0 列自己原来有没有 0。"
+  ]
+}

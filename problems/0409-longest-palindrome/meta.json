@@ -1,0 +1,16 @@
+{
+  "id": 409,
+  "slug": "longest-palindrome",
+  "title": "最长回文串",
+  "difficulty": "简单",
+  "tags": ["贪心", "哈希表", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/longest-palindrome/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "回文串左右对称，所以除了正中间那一个字符，其它字符都是成对出现的。",
+    "先统计每个字符出现了几次（注意大小写不同）。出现 cnt 次的字符，最多能用上 cnt / 2 * 2 个（成对的部分）。",
+    "把所有成对的部分加起来；如果还有任何一个字符出现了奇数次，就可以把它放在正中间，答案再加 1。"
+  ]
+}

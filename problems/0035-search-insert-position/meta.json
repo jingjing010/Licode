@@ -1,0 +1,16 @@
+{
+  "id": 35,
+  "slug": "search-insert-position",
+  "title": "搜索插入位置",
+  "difficulty": "简单",
+  "tags": ["数组", "二分查找"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/search-insert-position/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最简单的做法：从左往右找第一个 >= target 的位置。但题目要求 O(log n)。",
+    "数组是有序的，可以每次看中间的数，把搜索范围砍掉一半——这就是二分查找。",
+    "答案其实就是「第一个 >= target 的下标」。用 left、right 两个下标夹住答案，循环结束时 left 就是插入位置。"
+  ]
+}

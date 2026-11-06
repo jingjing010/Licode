@@ -1,0 +1,16 @@
+{
+  "id": 55,
+  "slug": "jump-game",
+  "title": "跳跃游戏",
+  "difficulty": "中等",
+  "tags": ["贪心", "数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/jump-game/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "可以用一个布尔数组 reach[i] 表示「下标 i 能不能到达」，从前往后推一遍。",
+    "其实不需要记住每个位置能否到达，只要记住「目前能跳到的最远下标」就够了。",
+    "从左往右走，如果当前下标 i 已经超过了最远可达位置，说明卡住了；否则用 i + nums[i] 更新最远可达位置。"
+  ]
+}

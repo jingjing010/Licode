@@ -1,0 +1,16 @@
+{
+  "id": 74,
+  "slug": "search-a-2d-matrix",
+  "title": "搜索二维矩阵",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/search-a-2d-matrix/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "暴力：把每个格子都看一遍。能不能利用「每行有序、下一行第一个比上一行最后一个大」这个性质？",
+    "把矩阵一行接一行地拼起来，会得到一个完整的升序数组。",
+    "对这个「虚拟的一维数组」做二分：一维下标 k 对应的格子是 matrix[k / n][k % n]。"
+  ]
+}

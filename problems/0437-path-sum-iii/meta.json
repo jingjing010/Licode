@@ -1,0 +1,16 @@
+{
+  "id": 437,
+  "slug": "path-sum-iii",
+  "title": "路径总和 III",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/path-sum-iii/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先解决一个简单问题：从某个固定结点出发、一直往下走，有几条路径的和等于 targetSum？然后对每个结点都做一次。",
+    "结点值可达 ±10^9，路径和会超出 int 范围，要用 long long。",
+    "前缀和：从根到当前结点的路径和为 cur，如果某个祖先处的前缀和恰好是 cur - targetSum，就得到一条合法路径。用哈希表记录当前路径上各前缀和出现的次数，回溯时记得减掉。"
+  ]
+}

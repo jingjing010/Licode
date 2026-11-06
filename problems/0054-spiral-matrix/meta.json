@@ -1,0 +1,16 @@
+{
+  "id": 54,
+  "slug": "spiral-matrix",
+  "title": "螺旋矩阵",
+  "difficulty": "中等",
+  "tags": ["数组", "矩阵", "模拟"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/spiral-matrix/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "答案一共有 m × n 个数，可以先把返回数组按这个大小申请好。",
+    "模拟一个人在矩阵里走路：按「右、下、左、上」的顺序转向。走出边界或者碰到走过的格子，就右转。",
+    "也可以用四个变量 top、bottom、left、right 表示还没走的范围，每走完一条边就把对应的边界往里收缩一格；注意只剩一行或一列时不要重复走。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 17,
+  "slug": "letter-combinations-of-a-phone-number",
+  "title": "电话号码的字母组合",
+  "difficulty": "中等",
+  "tags": ["哈希表", "字符串", "回溯"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/letter-combinations-of-a-phone-number/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先用一个字符串数组存好每个数字对应的字母，例如 map[2] = \"abc\"。",
+    "输入有几位数字，组合就有几层选择：第 1 位从它的字母里选一个，第 2 位再选一个……用递归逐位填写。",
+    "组合总数等于每个数字对应字母个数的乘积，可以提前算好并一次性 malloc；别忘了 digits 为空时返回空数组。"
+  ]
+}

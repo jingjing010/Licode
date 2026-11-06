@@ -1,0 +1,16 @@
+{
+  "id": 962,
+  "slug": "maximum-width-ramp",
+  "title": "最大宽度坡",
+  "difficulty": "中等",
+  "tags": ["栈", "数组", "双指针", "单调栈"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/maximum-width-ramp/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "暴力枚举所有 (i, j) 是 O(n²)，n = 5×10^4 时会超时。",
+    "如果 i1 < i2 且 nums[i1] <= nums[i2]，那么 i2 永远不会是最优的左端点（换成 i1 坡更宽）。所以候选左端点只有「前缀最小值」的位置，它们的值严格递减。",
+    "先从左到右把这些候选左端点压入栈（值递减），再让 j 从右往左扫：只要 nums[栈顶] <= nums[j]，就用 j - 栈顶 更新答案并弹栈。"
+  ]
+}

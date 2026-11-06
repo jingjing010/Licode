@@ -1,0 +1,16 @@
+{
+  "id": 118,
+  "slug": "pascals-triangle",
+  "title": "杨辉三角",
+  "difficulty": "简单",
+  "tags": ["数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/pascals-triangle/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "第 i 行（从 0 开始数）有 i + 1 个数，每行的第一个和最后一个数都是 1。",
+    "中间的数等于上一行「左上方」和「正上方」两个数之和：row[i][j] = row[i-1][j-1] + row[i-1][j]。",
+    "C 语言要返回二维数组：先 malloc 一个 int* 数组存每行的地址，再为每一行单独 malloc；别忘了填写 *returnSize 和 *returnColumnSizes。"
+  ]
+}

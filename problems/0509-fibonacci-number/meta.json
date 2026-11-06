@@ -1,0 +1,16 @@
+{
+  "id": 509,
+  "slug": "fibonacci-number",
+  "title": "斐波那契数",
+  "difficulty": "简单",
+  "tags": ["递归", "记忆化搜索", "数学", "动态规划"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/fibonacci-number/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "题目已经给出了递推公式 F(n) = F(n-1) + F(n-2)，直接写成递归函数就能通过（n 最大只有 30）。",
+    "递归会重复计算很多次相同的 F(k)。用一个数组从小到大依次算出 F(0), F(1), …, F(n)，每个只算一次。",
+    "其实只需要前两项：用两个变量 a、b 滚动前进，空间就降到 O(1)。"
+  ]
+}

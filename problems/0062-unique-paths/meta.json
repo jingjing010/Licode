@@ -1,0 +1,16 @@
+{
+  "id": 62,
+  "slug": "unique-paths",
+  "title": "不同路径",
+  "difficulty": "中等",
+  "tags": ["数学", "动态规划", "组合数学"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/unique-paths/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "机器人只能向右或向下走，那么它能到达格子 (i, j) 的上一步只可能来自哪两个格子？",
+    "设 dp[i][j] 为走到 (i, j) 的路径数，则 dp[i][j] = dp[i-1][j] + dp[i][j-1]。第一行和第一列的路径数都是 1。",
+    "计算第 i 行时只用到了第 i-1 行，可以只用一个长度为 n 的一维数组滚动更新：dp[j] += dp[j-1]。"
+  ]
+}

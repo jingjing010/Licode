@@ -1,0 +1,16 @@
+{
+  "id": 349,
+  "slug": "intersection-of-two-arrays",
+  "title": "两个数组的交集",
+  "difficulty": "简单",
+  "tags": ["数组", "哈希表", "双指针", "二分查找", "排序"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/intersection-of-two-arrays/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接的做法：对 nums1 的每个数，到 nums2 里找一找有没有；找到了还要检查答案里是不是已经放过它（结果要去重）。",
+    "数值范围只有 0~1000，可以开一个 bool 数组 in1[1001]，标记哪些数在 nums1 中出现过。",
+    "遍历 nums2，如果 in1[x] 为真就把 x 加入答案，并立刻把 in1[x] 设为 false，这样同一个数不会被加两次。"
+  ]
+}

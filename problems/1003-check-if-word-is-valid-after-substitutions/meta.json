@@ -1,0 +1,16 @@
+{
+  "id": 1003,
+  "slug": "check-if-word-is-valid-after-substitutions",
+  "title": "检查替换后的词是否有效",
+  "difficulty": "中等",
+  "tags": ["栈", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/check-if-word-is-valid-after-substitutions/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "反过来想：既然 s 是不断插入 \"abc\" 得到的，那么一定可以不断删除连续的 \"abc\"，最后变成空串。",
+    "反复查找并删除 \"abc\" 是 O(n²) 的。能不能像括号匹配那样，从左到右一遍完成？",
+    "用栈：每读入一个字符就入栈，如果栈顶三个字符恰好是 'a','b','c'，就把它们一起弹出。最后栈为空就是有效。"
+  ]
+}

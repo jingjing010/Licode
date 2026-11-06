@@ -1,0 +1,16 @@
+{
+  "id": 94,
+  "slug": "binary-tree-inorder-traversal",
+  "title": "二叉树的中序遍历",
+  "difficulty": "简单",
+  "tags": ["栈", "树", "深度优先搜索", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-inorder-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "中序遍历的顺序是：左子树 → 根 → 右子树。先想想怎么用递归表达这句话。",
+    "递归函数需要往结果数组里写数，可以把数组和一个「当前写到第几个」的下标指针一起传下去。",
+    "迭代写法：用一个数组模拟栈，一路向左把结点压栈；走到头就弹出一个结点访问它，再转向它的右子树。"
+  ]
+}

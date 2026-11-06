@@ -1,0 +1,16 @@
+{
+  "id": 907,
+  "slug": "sum-of-subarray-minimums",
+  "title": "子数组的最小值之和",
+  "difficulty": "中等",
+  "tags": ["栈", "数组", "动态规划", "单调栈"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sum-of-subarray-minimums/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "暴力：枚举左端点，向右扩展时维护当前最小值，O(n²)。n = 3×10^4 时有 4.5×10^8 个子数组，太慢了。",
+    "换个角度：不枚举子数组，而是问「arr[i] 是多少个子数组的最小值？」，答案 = Σ arr[i] × 次数。",
+    "用单调栈求 arr[i] 左边第一个 < 它的位置 L 和右边第一个 <= 它的位置 R（一边严格一边不严格，避免相等元素重复计数），次数 = (i - L) × (R - i)。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 148,
+  "slug": "sort-list",
+  "title": "排序链表",
+  "difficulty": "中等",
+  "tags": ["链表", "双指针", "分治", "排序", "归并排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/sort-list/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最省事的办法：把所有值拷到数组里，用 qsort 排好序，再按顺序写回链表。",
+    "链表最适合的 O(n log n) 排序是归并排序：把链表从中间切成两半，分别排序，再合并两个有序链表（第 21 题）。",
+    "用快慢指针找中点：慢指针停在前半段末尾，记下 slow->next 作为后半段的头，然后 slow->next = NULL 把链表断开。"
+  ]
+}

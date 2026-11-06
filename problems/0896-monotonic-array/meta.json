@@ -1,0 +1,16 @@
+{
+  "id": 896,
+  "slug": "monotonic-array",
+  "title": "单调数列",
+  "difficulty": "简单",
+  "tags": ["数组"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/monotonic-array/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "单调递增：每一对相邻元素都满足 nums[i] <= nums[i+1]；单调递减同理。注意相等是允许的。",
+    "可以分别检查「是否单调递增」和「是否单调递减」，满足其一即可。",
+    "一遍扫描：用两个布尔变量记录「出现过上升」和「出现过下降」，两者都出现过就不是单调的。"
+  ]
+}

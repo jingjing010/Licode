@@ -1,0 +1,16 @@
+{
+  "id": 141,
+  "slug": "linked-list-cycle",
+  "title": "环形链表",
+  "difficulty": "简单",
+  "tags": ["哈希表", "链表", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/linked-list-cycle/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "没有环的链表，一直往后走最终会走到 NULL；有环的链表会永远走不完。",
+    "题目说结点最多 10^4 个。如果沿着 next 走了超过 10^4 步还没遇到 NULL，说明什么？",
+    "更通用的办法：快慢指针。快指针每次走两步、慢指针每次走一步，如果有环，快指针一定会在环里「追上」慢指针。"
+  ]
+}

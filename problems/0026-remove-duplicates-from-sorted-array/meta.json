@@ -1,0 +1,15 @@
+{
+  "id": 26,
+  "slug": "remove-duplicates-from-sorted-array",
+  "title": "删除有序数组中的重复项",
+  "difficulty": "简单",
+  "tags": ["数组", "双指针"],
+  "leetcode": "https://leetcode.cn/problems/remove-duplicates-from-sorted-array/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "数组已经从小到大排好序了，所以相同的数字一定是挨在一起的。怎么判断一个数是不是「第一次出现」？",
+    "只要 nums[i] != nums[i-1]，nums[i] 就是一个新数字。可以先把所有新数字依次放进一个临时数组，再拷贝回去。",
+    "不用临时数组：用一个「慢指针」k 记录下一个新数字该放的位置，「快指针」i 负责往前扫描，遇到新数字就写到 nums[k] 并让 k++。"
+  ]
+}

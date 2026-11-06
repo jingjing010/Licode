@@ -1,0 +1,16 @@
+{
+  "id": 67,
+  "slug": "add-binary",
+  "title": "二进制求和",
+  "difficulty": "简单",
+  "tags": ["位运算", "数学", "字符串", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/add-binary/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "字符串最长 10^4 位，不能转成整数再相加，要像列竖式一样从最低位（字符串末尾）开始逐位相加。",
+    "用 i、j 分别从 a、b 的末尾往前走，再用一个 carry 记录进位：本位 = (a 的位 + b 的位 + carry) % 2，新进位 = 和 / 2。",
+    "结果最长 max(lenA, lenB) + 1 位。可以先倒着写进数组，最后再反转；或者直接从结果数组的末尾往前填，最后去掉多余的开头。"
+  ]
+}

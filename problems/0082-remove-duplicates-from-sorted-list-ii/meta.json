@@ -1,0 +1,16 @@
+{
+  "id": 82,
+  "slug": "remove-duplicates-from-sorted-list-ii",
+  "title": "删除排序链表中的重复元素 II",
+  "difficulty": "中等",
+  "tags": ["链表", "双指针"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "和 83 题不同：只要某个数出现了不止一次，就要把它全部删掉，所以头结点也可能被删。",
+    "在 head 前面放一个「哑结点」dummy，这样头结点和其他结点就能用同一套代码删除，最后返回 dummy.next。",
+    "用 prev 指向「确定保留」的最后一个结点。如果 prev->next 和 prev->next->next 的值相同，就记下这个值 x，把 prev 后面所有值为 x 的结点都跳过；否则 prev 往后走一步。"
+  ]
+}

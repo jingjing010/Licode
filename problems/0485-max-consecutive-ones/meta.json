@@ -1,0 +1,16 @@
+{
+  "id": 485,
+  "slug": "max-consecutive-ones",
+  "title": "最大连续 1 的个数",
+  "difficulty": "简单",
+  "tags": ["数组"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/max-consecutive-ones/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从左往右扫描，用一个变量 cnt 记录「当前这一段」连续 1 的个数。",
+    "遇到 1 就 cnt++，遇到 0 就把 cnt 清零。",
+    "每次 cnt 变化后都和答案 ans 比一比，取较大者——别忘了数组可能以 1 结尾。"
+  ]
+}

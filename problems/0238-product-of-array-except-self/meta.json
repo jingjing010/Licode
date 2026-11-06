@@ -1,0 +1,16 @@
+{
+  "id": 238,
+  "slug": "product-of-array-except-self",
+  "title": "除自身以外数组的乘积",
+  "difficulty": "中等",
+  "tags": ["数组", "前缀和"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/product-of-array-except-self/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "题目不让用除法（而且数组里可能有 0）。answer[i] 其实就是「i 左边所有数的乘积」×「i 右边所有数的乘积」。",
+    "用两个数组：L[i] 表示 nums[0..i-1] 的乘积，R[i] 表示 nums[i+1..n-1] 的乘积，各扫一遍就能求出来。",
+    "进阶 O(1) 额外空间：先把 L 直接存进答案数组，再从右往左扫，用一个变量记录右边的乘积，乘到答案上。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 9057,
+  "slug": "pwm-duty-calc",
+  "title": "PWM 周期与占空比寄存器计算",
+  "difficulty": "简单",
+  "tags": ["数学", "寄存器操作"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "计数器每秒计数 clk / (psc + 1) 次，一个 PWM 周期要计 N = ARR + 1 个数，所以 N ≈ clk / ((psc + 1) * freq)。",
+    "整数四舍五入 round(a / b)（a、b 非负）可以写成 (2a + b) / (2b)，这样 .5 也能正确进位。",
+    "中间结果可能超过 32 位（(psc+1) * freq 最大约 3×10^13），用 uint64_t 计算。"
+  ]
+}

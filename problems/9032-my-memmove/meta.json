@@ -1,0 +1,16 @@
+{
+  "id": 9032,
+  "slug": "my-memmove",
+  "title": "实现 memmove",
+  "difficulty": "中等",
+  "tags": ["指针", "内存"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先用示例 1 试试：buf = [1,2,3,4,5,6,7,8]，从前往后把 buf[0..4] 复制到 buf[2..6]，结果对吗？哪个字节被\"提前覆盖\"了？",
+    "当 dst 在 src 后面（dst > src）且两段重叠时，从前往后复制会覆盖还没读的源数据。换个方向——从后往前复制呢？",
+    "规则：dst < src 时从前往后复制；dst > src 时从最后一个字节开始往前复制；dst == src 时什么都不用做。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 56,
+  "slug": "merge-intervals",
+  "title": "合并区间",
+  "difficulty": "中等",
+  "tags": ["数组", "排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/merge-intervals/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "如果区间是乱序的，判断谁和谁重叠很麻烦。先想办法让它们变得「有序」。",
+    "按左端点从小到大排序后，能和当前区间合并的，一定是紧挨着它的下一个区间。",
+    "维护「当前正在合并的区间」[L, R]：下一个区间的左端点 <= R 就合并（R 取较大的右端点），否则把 [L, R] 存进答案、开始新的一段。"
+  ]
+}

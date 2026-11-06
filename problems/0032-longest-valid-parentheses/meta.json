@@ -1,0 +1,16 @@
+{
+  "id": 32,
+  "slug": "longest-valid-parentheses",
+  "title": "最长有效括号",
+  "difficulty": "困难",
+  "tags": ["栈", "字符串", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/longest-valid-parentheses/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "判断一个括号串是否有效可以用栈（或计数器）。最朴素的做法是枚举所有子串逐个判断，但太慢了。",
+    "用栈保存下标：栈底始终放「最后一个没有被匹配的右括号的下标」作为分界线。遇到 '(' 入栈；遇到 ')' 出栈，若栈空则把当前下标作为新分界线压入，否则 i - 栈顶 就是以 i 结尾的有效长度。",
+    "不用栈也可以：从左往右数 left、right，相等时更新答案，right > left 时清零；再从右往左做一遍（left > right 时清零），就能处理 \"(()\" 这种情况。"
+  ]
+}

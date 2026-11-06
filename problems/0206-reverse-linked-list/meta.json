@@ -1,0 +1,16 @@
+{
+  "id": 206,
+  "slug": "reverse-linked-list",
+  "title": "反转链表",
+  "difficulty": "简单",
+  "tags": ["链表", "递归"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/reverse-linked-list/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "反转链表，其实就是把每个结点的 next 箭头「掉个头」：原来指向后一个，现在改成指向前一个。",
+    "改 cur->next 之前，必须先用一个变量把原来的 cur->next 存起来，否则后面的链表就「丢了」。",
+    "用 prev（已经反转好的部分的头）和 cur（当前要处理的结点）两个指针，一边走一边改箭头；cur 走到 NULL 时，prev 就是新的头结点。"
+  ]
+}

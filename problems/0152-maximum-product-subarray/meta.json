@@ -1,0 +1,16 @@
+{
+  "id": 152,
+  "slug": "maximum-product-subarray",
+  "title": "乘积最大子数组",
+  "difficulty": "中等",
+  "tags": ["数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/maximum-product-subarray/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "和「最大子数组和」不同：一个很小的负数乘上一个负数，可能一下子变成很大的正数。",
+    "所以只记录「以 nums[i] 结尾的最大乘积」不够，还要记录「以 nums[i] 结尾的最小乘积」。",
+    "新的最大值 = max(nums[i], 旧最大 × nums[i], 旧最小 × nums[i])，新的最小值同理取 min。注意计算时要先保存旧值。"
+  ]
+}

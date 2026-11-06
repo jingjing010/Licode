@@ -1,0 +1,16 @@
+{
+  "id": 1143,
+  "slug": "longest-common-subsequence",
+  "title": "最长公共子序列",
+  "difficulty": "中等",
+  "tags": ["字符串", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/longest-common-subsequence/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先考虑两个字符串的「前缀」：设 dp[i][j] 为 text1 前 i 个字符和 text2 前 j 个字符的最长公共子序列长度。",
+    "看最后一个字符：如果 text1[i-1] == text2[j-1]，它们可以一起放进公共子序列，dp[i][j] = dp[i-1][j-1] + 1。",
+    "如果不相等，至少有一个字符用不上，扔掉其中一个：dp[i][j] = max(dp[i-1][j], dp[i][j-1])。dp 表多开一行一列，第 0 行和第 0 列都是 0。"
+  ]
+}

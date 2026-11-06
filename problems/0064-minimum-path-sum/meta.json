@@ -1,0 +1,16 @@
+{
+  "id": 64,
+  "slug": "minimum-path-sum",
+  "title": "最小路径和",
+  "difficulty": "中等",
+  "tags": ["数组", "动态规划", "矩阵"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/minimum-path-sum/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "只能向右或向下走，那么走到格子 (i, j) 之前，最后一步一定来自上面或左边。",
+    "设 dp[i][j] 为从左上角走到 (i, j) 的最小路径和，则 dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]。第一行、第一列只能一路累加。",
+    "可以直接把 dp 值写回 grid 里，或者只用一个长度为 n 的一维数组，把空间降到 O(n) 甚至 O(1)。"
+  ]
+}

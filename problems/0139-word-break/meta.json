@@ -1,0 +1,16 @@
+{
+  "id": 139,
+  "slug": "word-break",
+  "title": "单词拆分",
+  "difficulty": "中等",
+  "tags": ["字典树", "记忆化搜索", "数组", "哈希表", "字符串", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/word-break/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "如果 s 的某个前缀是字典里的单词，那么问题就变成了：剩下的后缀能不能被拆分？",
+    "设 dp[i] 表示 s 的前 i 个字符能否被拆分。dp[0] = true（空串）。",
+    "dp[i] = true 当且仅当存在某个单词 w，使得 s 在 i 之前的 len(w) 个字符恰好等于 w，并且 dp[i - len(w)] = true。"
+  ]
+}

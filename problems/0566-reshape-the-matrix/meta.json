@@ -1,0 +1,16 @@
+{
+  "id": 566,
+  "slug": "reshape-the-matrix",
+  "title": "重塑矩阵",
+  "difficulty": "简单",
+  "tags": ["数组", "矩阵", "模拟"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reshape-the-matrix/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先判断能不能重塑：元素总数必须相等，即 m * n == r * c；不相等就原样返回 mat。",
+    "按行遍历原矩阵，相当于把所有元素排成一条长长的一维序列，第 k 个元素是 mat[k / n][k % n]。",
+    "新矩阵中第 k 个元素的位置是 [k / c][k % c]。返回二维数组时，要 malloc 行指针数组、每一行，以及 *returnColumnSizes。"
+  ]
+}

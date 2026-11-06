@@ -1,0 +1,16 @@
+{
+  "id": 11,
+  "slug": "container-with-most-water",
+  "title": "盛最多水的容器",
+  "difficulty": "中等",
+  "tags": ["贪心", "数组", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/container-with-most-water/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "选定两条线 i < j 后，能装的水是 (j - i) * min(height[i], height[j])。枚举所有 (i, j) 可以得到答案，但 n = 10^5 时太慢。",
+    "试试从最宽的容器开始：左指针在最左边，右指针在最右边。接下来每一步都让宽度减 1，应该移动哪一边？",
+    "移动较高的那一边，高度上限仍被较矮的那条线卡住，而宽度变小，面积只会变小。所以每次都移动较矮的那一边。"
+  ]
+}

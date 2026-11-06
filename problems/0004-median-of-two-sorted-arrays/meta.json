@@ -1,0 +1,16 @@
+{
+  "id": 4,
+  "slug": "median-of-two-sorted-arrays",
+  "title": "寻找两个正序数组的中位数",
+  "difficulty": "困难",
+  "tags": ["数组", "二分查找", "分治"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/median-of-two-sorted-arrays/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "先别管 O(log(m+n))：像归并排序那样把两个数组合并成一个有序数组，中位数就很好求了。",
+    "其实不用真的合并完，只要「走」到第 (m+n)/2 个位置就够了。但这仍是 O(m+n)。",
+    "在较短的数组上二分一个切分位置 i，另一个数组的切分位置 j 随之确定，使左半部分共有 (m+n+1)/2 个数；检查 nums1[i-1] <= nums2[j] 且 nums2[j-1] <= nums1[i] 是否成立。"
+  ]
+}

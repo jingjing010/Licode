@@ -1,0 +1,16 @@
+{
+  "id": 1290,
+  "slug": "convert-binary-number-in-a-linked-list-to-integer",
+  "title": "二进制链表转整数",
+  "difficulty": "简单",
+  "tags": ["链表", "数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/convert-binary-number-in-a-linked-list-to-integer/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "想想十进制是怎么「一位一位读数」的：读到 1 得 1，再读到 2 得 1×10+2=12，再读到 3 得 12×10+3=123。",
+    "二进制也一样，只是把 ×10 换成 ×2：每读到一位，ans = ans * 2 + 这一位。",
+    "ans * 2 + bit 也可以写成位运算 (ans << 1) | bit。最多 30 位，int 装得下。"
+  ]
+}

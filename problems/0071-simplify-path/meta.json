@@ -1,0 +1,16 @@
+{
+  "id": 71,
+  "slug": "simplify-path",
+  "title": "简化路径",
+  "difficulty": "中等",
+  "tags": ["栈", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/simplify-path/",
+  "time_limit_ms": 1000,
+  "samples": 5,
+  "hints": [
+    "先按 '/' 把路径切成一段一段的「名字」，连续的 '/' 会切出空段，直接忽略。",
+    "每一段只有三种情况：\".\"（什么都不做）、\"..\"（回到上一级）、其他（进入这个目录）。",
+    "「进入目录」和「回到上一级」正好是栈的 push 和 pop。最后把栈里的名字从栈底到栈顶用 '/' 连起来。"
+  ]
+}

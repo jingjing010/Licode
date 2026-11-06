@@ -1,0 +1,16 @@
+{
+  "id": 344,
+  "slug": "reverse-string",
+  "title": "反转字符串",
+  "difficulty": "简单",
+  "tags": ["双指针", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reverse-string/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "反转之后，原来的第 0 个字符要到第 sSize-1 个位置，第 1 个要到第 sSize-2 个……第 i 个和第 sSize-1-i 个互换。",
+    "用两个下标 left = 0、right = sSize - 1，交换 s[left] 和 s[right]，然后 left++、right--。",
+    "什么时候停？当 left >= right 时就停下，否则会把已经换好的又换回去。"
+  ]
+}

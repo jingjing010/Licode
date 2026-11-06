@@ -1,0 +1,16 @@
+{
+  "id": 7,
+  "slug": "reverse-integer",
+  "title": "整数反转",
+  "difficulty": "中等",
+  "tags": ["数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reverse-integer/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "用 x % 10 可以取出 x 的最后一位，用 x / 10 可以去掉最后一位。反复这样做，就能从低位到高位拿到每一位数字。",
+    "把取出的数字依次拼到新数上：rev = rev * 10 + digit。负数在 C 里取余也是负数，所以不用单独处理符号。",
+    "最难的是溢出：rev * 10 + digit 可能超出 int 范围。在乘 10 之前先判断 rev 是否大于 INT_MAX / 10 或小于 INT_MIN / 10。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "slug": "two-sum",
+  "title": "两数之和",
+  "difficulty": "简单",
+  "tags": ["数组", "哈希表"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/two-sum/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的想法：把每两个数都组合一遍，看看和是不是 target。需要几层循环？",
+    "固定第一个数 nums[i] 之后，你要找的第二个数其实是确定的：target - nums[i]。",
+    "如果能「快速」判断某个值之前有没有出现过（以及它的下标），就只需要遍历一遍数组——这就是哈希表的用处。"
+  ]
+}

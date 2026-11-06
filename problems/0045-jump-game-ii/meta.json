@@ -1,0 +1,16 @@
+{
+  "id": 45,
+  "slug": "jump-game-ii",
+  "title": "跳跃游戏 II",
+  "difficulty": "中等",
+  "tags": ["贪心", "数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/jump-game-ii/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "可以用 dp[j] 表示「跳到下标 j 最少需要几步」，dp[j] = min(dp[i] + 1)，其中 i < j 且 i + nums[i] >= j。",
+    "换个角度：跳 1 步能到的位置是一段连续区间，跳 2 步能到的位置也是一段连续区间……像 BFS 一样一层一层往外扩。",
+    "用 end 记录「当前这一步能到的最远边界」，用 far 记录「再跳一步能到的最远位置」；每当 i 走到 end，就必须再跳一次，并把 end 更新为 far。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 108,
+  "slug": "convert-sorted-array-to-binary-search-tree",
+  "title": "将有序数组转换为二叉搜索树",
+  "difficulty": "简单",
+  "tags": ["树", "二叉搜索树", "数组", "分治", "二叉树"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "BST 的中序遍历是升序的，所以 nums 就是你要构造的树的中序遍历。剩下的问题是：选谁当根？",
+    "想让左右两边一样「重」，根应该选数组的中间元素，左半边去建左子树，右半边去建右子树。",
+    "写一个递归函数 build(nums, lo, hi)：lo > hi 返回 NULL；否则 mid = lo + (hi - lo) / 2，malloc 一个结点，左右分别递归。"
+  ]
+}

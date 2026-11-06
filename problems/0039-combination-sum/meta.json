@@ -1,0 +1,16 @@
+{
+  "id": 39,
+  "slug": "combination-sum",
+  "title": "组合总和",
+  "difficulty": "中等",
+  "tags": ["数组", "回溯"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/combination-sum/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "回溯：每次从 candidates 里选一个数加入组合，target 减去它，再递归；target 变成 0 就找到一个答案。",
+    "[2,2,3] 和 [2,3,2] 是同一个组合。为了不重复，规定只能「从当前下标及之后」选数，这样组合内部总是按下标不减的顺序出现。",
+    "同一个数可以重复选，所以递归时下标传 i 而不是 i+1；把 candidates 先排序，当前数已经大于剩余 target 时可以直接 break。"
+  ]
+}

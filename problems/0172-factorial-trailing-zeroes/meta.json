@@ -1,0 +1,16 @@
+{
+  "id": 172,
+  "slug": "factorial-trailing-zeroes",
+  "title": "阶乘后的零",
+  "difficulty": "中等",
+  "tags": ["数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/factorial-trailing-zeroes/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "直接算 n! 不可行：20! 就超出 long long 了。末尾的 0 是怎么来的？每个 0 都来自一个因子 10 = 2 × 5。",
+    "1~n 中因子 2 的个数远多于因子 5，所以只需要数出 n! 里一共有多少个因子 5。",
+    "1~n 中 5 的倍数有 n/5 个，25 的倍数又各多贡献一个 5，有 n/25 个……答案是 n/5 + n/25 + n/125 + …，也就是不断 n /= 5 并累加。"
+  ]
+}

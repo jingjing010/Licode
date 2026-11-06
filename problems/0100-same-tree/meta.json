@@ -1,0 +1,16 @@
+{
+  "id": 100,
+  "slug": "same-tree",
+  "title": "相同的树",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/same-tree/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "两棵树相同 = 根结点相同 + 左子树相同 + 右子树相同。后两件事和原问题一模一样。",
+    "先处理空指针：两个都空 → 相同；只有一个空 → 不同。",
+    "两个都不空时，比较 p->val 与 q->val，再递归比较 (p->left, q->left) 和 (p->right, q->right)。"
+  ]
+}

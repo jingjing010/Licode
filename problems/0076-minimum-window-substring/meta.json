@@ -1,0 +1,16 @@
+{
+  "id": 76,
+  "slug": "minimum-window-substring",
+  "title": "最小覆盖子串",
+  "difficulty": "困难",
+  "tags": ["哈希表", "字符串", "滑动窗口"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/minimum-window-substring/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "「覆盖」的意思是：窗口里每种字符的个数都不少于 t 中该字符的个数。用一个数组 need[128] 记录 t 中每个字符需要几个。",
+    "用滑动窗口：右指针不断扩张，直到窗口覆盖了 t；然后左指针尽量收缩，在仍然覆盖的前提下更新最短答案。",
+    "用一个变量 missing 记录「还缺几个字符」，就能 O(1) 判断窗口是否已经覆盖 t，不需要每次比较整个计数数组。"
+  ]
+}

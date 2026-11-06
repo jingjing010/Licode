@@ -1,2 +1,2 @@
-["Bitmap","allocRange","allocRange","allocRange","freeRange","allocRange","allocRange","count"]
+["BitmapAllocator","alloc","alloc","alloc","release","alloc","alloc","usedCount"]
 [[8],[2],[2],[2],[2,2],[1],[3],[]]

@@ -1,2 +1,2 @@
-["Bitmap","allocRange","freeRange","count","allocRange"]
-[[40],[33],[0,33],[],[40]]
+["BitmapAllocator","alloc","release","release","release","usedCount"]
+[[40],[33],[0,33],[0,1],[30,20],[]]

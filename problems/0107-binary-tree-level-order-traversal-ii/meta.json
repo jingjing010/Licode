@@ -1,0 +1,16 @@
+{
+  "id": 107,
+  "slug": "binary-tree-level-order-traversal-ii",
+  "title": "二叉树的层序遍历 II",
+  "difficulty": "中等",
+  "tags": ["树", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先忘掉「自底向上」，按第 102 题的方法从上到下逐层收集。",
+    "每一层内部仍然是从左到右，只是「层的顺序」反过来了。",
+    "收集完所有层之后，把行指针数组和每行长度数组一起首尾交换（反转）即可。"
+  ]
+}

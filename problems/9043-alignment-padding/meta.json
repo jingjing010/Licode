@@ -1,0 +1,16 @@
+{
+  "id": 9043,
+  "slug": "alignment-padding",
+  "title": "判断地址对齐并计算填充字节",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "位运算", "内存对齐"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "addr 对齐，就是 addr 能被 align 整除。填充字节数就是\"从 addr 走到下一个 align 的倍数要走几步\"。",
+    "先求余数 r = addr % align：r 为 0 时不需要填充，否则填充 align - r。注意已经对齐时答案是 0，不是 align。",
+    "align 是 2 的幂时：是否对齐用 (addr & (align - 1)) == 0；填充字节可以用无分支的 (0 - addr) & (align - 1)。"
+  ]
+}

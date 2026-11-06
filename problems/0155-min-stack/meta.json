@@ -1,0 +1,16 @@
+{
+  "id": 155,
+  "slug": "min-stack",
+  "title": "最小栈",
+  "difficulty": "中等",
+  "tags": ["栈", "设计"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/min-stack/",
+  "time_limit_ms": 1000,
+  "samples": 1,
+  "hints": [
+    "push、pop、top 用数组模拟栈都很简单。难点是 getMin 要 O(1)：每次都遍历整个栈是 O(n)。",
+    "最小值会随着 pop 改变，只记一个变量 min 不够——弹出最小值后，怎么知道新的最小值是谁？",
+    "再开一个辅助数组 mins：mins[i] 表示栈底到第 i 个元素为止的最小值。push 时 mins[top] = min(x, mins[top-1])，pop 时两个数组一起弹。"
+  ]
+}

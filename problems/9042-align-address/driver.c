@@ -1,7 +1,10 @@
 int main(void) {
-    uintptr_t addr = (uintptr_t)oj_read_ll();
-    size_t align = (size_t)oj_read_ll();
-    if (align == 0 || (align & (align - 1)) != 0) oj_fail("align 必须是 2 的幂");
+    long long a = oj_read_ll();
+    long long al = oj_read_ll();
+    if (a < 0 || a > 0xFFFF0000LL) oj_fail("addr 超出范围");
+    if (al < 1 || al > 4096 || (al & (al - 1)) != 0) oj_fail("align 必须是 1 ~ 4096 之间的 2 的幂");
+    uintptr_t addr = (uintptr_t)a;
+    size_t align = (size_t)al;
     oj_print_int((long long)align_up(addr, align));
     oj_print_int((long long)align_down(addr, align));
     return 0;

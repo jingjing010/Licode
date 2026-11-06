@@ -1,0 +1,16 @@
+{
+  "id": 110,
+  "slug": "balanced-binary-tree",
+  "title": "平衡二叉树",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/balanced-binary-tree/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "平衡的定义是「每个」结点的左右子树高度差都不超过 1，不只是根结点。",
+    "对每个结点都调用一次求高度的函数也能做，但同一个子树的高度会被反复计算。",
+    "让求高度的函数「顺便」检查平衡：一旦发现不平衡就返回 -1，上层看到 -1 直接继续返回 -1，这样每个结点只算一次。"
+  ]
+}

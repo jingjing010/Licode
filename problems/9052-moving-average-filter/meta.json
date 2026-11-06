@@ -1,0 +1,16 @@
+{
+  "id": 9052,
+  "slug": "moving-average-filter",
+  "title": "滑动平均滤波",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "设计", "队列", "信号处理"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "用一个长度为 windowSize 的环形数组保存最近的采样值，再记录当前已有几个值 cnt（不超过 windowSize）。",
+    "不用每次都把窗口重新加一遍：维护一个累加和 sum，新值进来 sum += 新值，被挤出的旧值 sum -= 旧值。",
+    "四舍五入的整数除法：(sum + cnt / 2) / cnt。sum 最大约 1000 × 65535，用 uint32_t 保存。"
+  ]
+}

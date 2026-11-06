@@ -1,0 +1,18 @@
+{
+  "id": 434,
+  "slug": "number-of-segments-in-a-string",
+  "title": "字符串中的单词数",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/number-of-segments-in-a-string/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "只统计非空格片段的起点，避免连续空格重复计数。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

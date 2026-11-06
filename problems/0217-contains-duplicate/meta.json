@@ -1,0 +1,18 @@
+{
+  "id": 217,
+  "slug": "contains-duplicate",
+  "title": "存在重复元素",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/contains-duplicate/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先排序，再检查相邻元素是否相等。",
+    "注意边界条件；推荐复杂度：时间 O(n log n)，排序栈空间 O(log n)"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 9067,
+  "slug": "modbus-ascii-lrc",
+  "title": "Modbus ASCII 的 LRC",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "校验字节是字节和的8位补码，使原数据与LRC的总和模256为0。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

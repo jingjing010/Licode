@@ -30,7 +30,7 @@
 
 ## 🧰 第二步：这道题需要的 C 语言知识
 
-### 1. `qsort` 排序（思路一要用）
+### 1. 按值排序下标
 
 ```c
 int cmp(const void* a, const void* b) {
@@ -40,11 +40,11 @@ int cmp(const void* a, const void* b) {
 qsort(arr, n, sizeof(int), cmp);
 ```
 
-`qsort` 是 `<stdlib.h>` 里的通用排序：参数依次是数组、元素个数、每个元素的大小、比较函数。
+`qsort` 是 `<stdlib.h>` 里的通用排序：参数依次是数组、元素个数、每个元素的大小、比较函数。但 C 标准不保证它的最坏时间复杂度；本题完整实现使用归并排序，保证特殊排列也能在 O(n log n) 内完成。归并的做法是分别排好左右两半，再把两段按顺序合并。
 
-### 2. 比较函数里访问外部数组
+### 2. 排序时访问原数组
 
-思路一要"按值排序下标"，比较函数只拿到两个下标，需要通过一个**全局变量**指针访问 `nums`：
+思路一要"按值排序下标"，归并函数拿到的是下标，可以通过一个**文件内静态指针**访问 `nums`：
 
 ```c
 static int* g_nums;   // 全局变量，比较函数里可以用
@@ -85,19 +85,35 @@ st[--top];        // 出栈
 ### 代码
 
 ```c
-static int* g_nums;   // 给比较函数用
+static int* g_nums;   // 排序时读取原数组，保持原数组不变
 
-static int cmpIdx(const void* a, const void* b) {
-    int i = *(const int*)a, j = *(const int*)b;
-    if (g_nums[i] != g_nums[j]) return g_nums[i] < g_nums[j] ? -1 : 1;   // 先按值
-    return i < j ? -1 : (i > j);                                          // 值相同按下标
+static void mergeIndices(int* idx, int* temp, int left, int right) {
+    if (right - left <= 1) return;
+    int mid = left + (right - left) / 2;
+    mergeIndices(idx, temp, left, mid);
+    mergeIndices(idx, temp, mid, right);
+    int i = left, j = mid, k = left;
+    while (i < mid && j < right) {
+        // 值相同时按原下标升序，保证相等的值也能组成坡。
+        int a = idx[i], b = idx[j];
+        if (g_nums[a] < g_nums[b] || (g_nums[a] == g_nums[b] && a < b))
+            temp[k++] = idx[i++];
+        else
+            temp[k++] = idx[j++];
+    }
+    while (i < mid) temp[k++] = idx[i++];
+    while (j < right) temp[k++] = idx[j++];
+    for (k = left; k < right; ++k) idx[k] = temp[k];
 }
 
 int maxWidthRamp(int* nums, int numsSize) {
     int* idx = (int*)malloc(sizeof(int) * numsSize);
     for (int i = 0; i < numsSize; i++) idx[i] = i;
     g_nums = nums;
-    qsort(idx, numsSize, sizeof(int), cmpIdx);   // 下标按值从小到大排
+    // 归并排序保证最坏 O(n log n)，避免部分运行库的 qsort 在特定排列上退化。
+    int* temp = (int*)malloc(sizeof(int) * numsSize);
+    mergeIndices(idx, temp, 0, numsSize);
+    free(temp);
 
     int ans = 0;
     int minIdx = numsSize;                       // 已处理的下标中最小的那个

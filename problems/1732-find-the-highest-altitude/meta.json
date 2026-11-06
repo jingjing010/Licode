@@ -1,0 +1,18 @@
+{
+  "id": 1732,
+  "slug": "find-the-highest-altitude",
+  "title": "找到最高海拔",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-the-highest-altitude/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "海拔是增量的前缀和，起点0也要参与最大值比较。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

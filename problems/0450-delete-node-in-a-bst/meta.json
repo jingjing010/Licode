@@ -1,0 +1,16 @@
+{
+  "id": 450,
+  "slug": "delete-node-in-a-bst",
+  "title": "删除二叉搜索树中的节点",
+  "difficulty": "中等",
+  "tags": ["树", "二叉搜索树", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/delete-node-in-a-bst/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先按 BST 的规则找到要删除的结点：key 比当前小往左，大往右。找不到就什么也不做。",
+    "被删结点没有孩子或只有一个孩子时很简单：直接用它唯一的孩子（或 NULL）顶替它的位置。",
+    "有两个孩子时，找到右子树中最小的结点（后继，一路向左走到底），让它来顶替被删结点的位置；后继最多只有一个右孩子，把它摘下来很容易。"
+  ]
+}

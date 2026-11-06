@@ -1,0 +1,16 @@
+{
+  "id": 744,
+  "slug": "find-smallest-letter-greater-than-target",
+  "title": "寻找比目标字母大的最小字母",
+  "difficulty": "简单",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-smallest-letter-greater-than-target/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "字符在 C 语言里就是一个小整数，可以直接用 > 比较大小。",
+    "要找的是「第一个 > target 的字母」——数组有序，用二分查找边界。",
+    "如果所有字母都 <= target（二分结果等于 lettersSize），按题意返回 letters[0]。"
+  ]
+}

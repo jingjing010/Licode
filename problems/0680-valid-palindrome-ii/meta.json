@@ -1,0 +1,18 @@
+{
+  "id": 680,
+  "slug": "valid-palindrome-ii",
+  "title": "验证回文串 II",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/valid-palindrome-ii/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "首次不匹配时只可能删除左边或右边，分别验证余下区间是否是回文。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 540,
+  "slug": "single-element-in-a-sorted-array",
+  "title": "有序数组中的单一元素",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/single-element-in-a-sorted-array/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "所有数异或起来就是答案，但这是 O(n)。题目要求 O(log n)。",
+    "在单一元素左边，每一对的第一个数都在偶数下标；在它右边，每一对的第一个数都在奇数下标。",
+    "只在偶数下标上二分：nums[mid] == nums[mid+1] 说明单一元素在右边（lo = mid + 2），否则在 mid 或左边（hi = mid）。"
+  ]
+}

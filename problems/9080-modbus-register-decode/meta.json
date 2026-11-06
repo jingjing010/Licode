@@ -1,0 +1,21 @@
+{
+  "id": 9080,
+  "slug": "modbus-register-decode",
+  "title": "Modbus 大端寄存器解析",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每两个字节组成一个无符号16位寄存器，高字节先到，不能把字节缓冲区强转成uint16_t指针。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

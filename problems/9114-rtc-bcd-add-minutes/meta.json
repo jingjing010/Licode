@@ -1,0 +1,21 @@
+{
+  "id": 9114,
+  "slug": "rtc-bcd-add-minutes",
+  "title": "RTC BCD 时间增加分钟",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "RTC"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先将BCD解为普通整数，用一天1440分钟取模处理跨日，再分别编码小时和分钟。",
+    "注意边界条件；推荐复杂度：时间 O(1)，输出空间 O(1)"
+  ]
+}

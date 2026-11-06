@@ -1,0 +1,19 @@
+{
+  "id": 1009,
+  "slug": "complement-of-base-10-integer",
+  "title": "十进制整数的反码",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/complement-of-base-10-integer/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "构造与输入有效位数相同的全1掩码，再异或；0的有效表示是单个0。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

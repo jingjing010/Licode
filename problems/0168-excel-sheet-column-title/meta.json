@@ -1,0 +1,19 @@
+{
+  "id": 168,
+  "slug": "excel-sheet-column-title",
+  "title": "Excel 表列名称",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/excel-sheet-column-title/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每一位的数字是1到26，而非0到25。先减1即可使用普通的除余操作。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

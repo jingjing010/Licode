@@ -1,0 +1,21 @@
+{
+  "id": 9099,
+  "slug": "signal-peak-to-peak",
+  "title": "信号峰峰值",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "信号处理"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "一次遍历同时保存最小和最大值，差值可达到65535，所以返回int而非int16_t。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

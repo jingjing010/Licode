@@ -1,0 +1,21 @@
+{
+  "id": 9085,
+  "slug": "timer-reload-calculate",
+  "title": "定时器重装载值计算",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "定时器"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "定时器周期为(PSC+1)*(ARR+1)/时钟，先求每周期计数再减1，注意两个寄存器都存在加1关系。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

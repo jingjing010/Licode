@@ -1,0 +1,16 @@
+{
+  "id": 1011,
+  "slug": "capacity-to-ship-packages-within-d-days",
+  "title": "在 D 天内送达包裹的能力",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "如果船的载重固定为 cap，按顺序能装就装、装不下就留到明天，需要几天？",
+    "载重越大，需要的天数越少——天数关于载重单调，可以在载重上二分。",
+    "载重范围是 [max(weights), sum(weights)]。找最小的载重使需要的天数 <= days。"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 1323,
+  "slug": "maximum-69-number",
+  "title": "6 和 9 组成的最大数字",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/maximum-69-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "改变越高位的6收益越大，只把最高位的6变成9。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

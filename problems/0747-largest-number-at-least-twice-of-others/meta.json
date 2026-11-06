@@ -1,0 +1,18 @@
+{
+  "id": 747,
+  "slug": "largest-number-at-least-twice-of-others",
+  "title": "至少是其他数字两倍的最大数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/largest-number-at-least-twice-of-others/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先找到最大值，再逐一检验两倍关系。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

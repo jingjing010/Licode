@@ -1,0 +1,16 @@
+{
+  "id": 222,
+  "slug": "count-complete-tree-nodes",
+  "title": "完全二叉树的节点个数",
+  "difficulty": "简单",
+  "tags": ["位运算", "树", "二分查找", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/count-complete-tree-nodes/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "不管是不是完全二叉树，递归 1 + 左子树结点数 + 右子树结点数 都是对的，复杂度 O(n)。",
+    "高度为 h 的满二叉树有 2^h - 1 个结点。完全二叉树里，一路向左走能得到左高度，一路向右走能得到右高度；两者相等时这棵子树就是满的，直接用公式。",
+    "两者不相等时再递归左右子树。可以证明左右子树中至少有一棵是满的，所以每层只会往下递归一边，总复杂度 O(log² n)。"
+  ]
+}

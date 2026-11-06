@@ -1,0 +1,21 @@
+{
+  "id": 9078,
+  "slug": "can-extended-id-compose",
+  "title": "扩展 CAN 标识符组装",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "按照字段宽度构造位移后按位或。各字段的范围互不重叠，合成结果限制在29位内。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

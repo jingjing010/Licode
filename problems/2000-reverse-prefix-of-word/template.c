@@ -1,0 +1,4 @@
+char *reversePrefix(char *word, char ch) {
+    /* 请在这里完成实现。 */
+    return NULL;
+}

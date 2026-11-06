@@ -1,0 +1,21 @@
+{
+  "id": 9112,
+  "slug": "length-prefixed-frame-scanner",
+  "title": "带长度字段的数据帧扫描",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "按字节找双字节同步头，确认长度字段与剩余数据一致再接收；有效载荷内的同步字不应误认成新帧。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

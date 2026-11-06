@@ -1,0 +1,21 @@
+{
+  "id": 9062,
+  "slug": "crc8-maxim-dallas",
+  "title": "CRC8 MAXIM 单总线校验",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "MAXIM采用反射方式，最低位先处理；0x31多项式对应反射常数0x8C。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

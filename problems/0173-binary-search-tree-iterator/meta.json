@@ -1,0 +1,16 @@
+{
+  "id": 173,
+  "slug": "binary-search-tree-iterator",
+  "title": "二叉搜索树迭代器",
+  "difficulty": "中等",
+  "tags": ["栈", "树", "设计", "二叉搜索树", "二叉树", "迭代器"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-search-tree-iterator/",
+  "time_limit_ms": 1000,
+  "samples": 1,
+  "hints": [
+    "最简单的办法：构造时把整棵树中序遍历一遍存进数组，next 就是依次读数组。这样空间是 O(n)。",
+    "进阶要求 O(h) 的内存：回忆迭代版中序遍历——“一路向左压栈，弹出一个，再转向它的右子树”。",
+    "把这个迭代过程“拆开”：构造时先把根一路向左压栈；next 弹出栈顶作为答案，再把它的右孩子一路向左压栈；hasNext 就是栈是否非空。"
+  ]
+}

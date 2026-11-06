@@ -1,0 +1,18 @@
+{
+  "id": 1588,
+  "slug": "sum-of-all-odd-length-subarrays",
+  "title": "所有奇数长度子数组的和",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sum-of-all-odd-length-subarrays/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "从元素贡献出发，数每个位置出现在多少个奇数长度区间中，再乘该元素。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

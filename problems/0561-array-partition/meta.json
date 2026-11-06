@@ -1,0 +1,18 @@
+{
+  "id": 561,
+  "slug": "array-partition",
+  "title": "数组拆分",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/array-partition/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "升序后相邻配对，把偶数下标元素相加。交换论证可知跨越配对不会更优。",
+    "注意边界条件；推荐复杂度：时间 O(n log n)，排序栈空间 O(log n)"
+  ]
+}

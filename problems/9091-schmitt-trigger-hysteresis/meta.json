@@ -1,0 +1,21 @@
+{
+  "id": 9091,
+  "slug": "schmitt-trigger-hysteresis",
+  "title": "施密特触发滞回判定",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "信号处理"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "高阈值负责开启，低阈值负责关闭，阈值之间保持原状态，防止单阈值附近抖动。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

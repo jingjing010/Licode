@@ -1,0 +1,18 @@
+{
+  "id": 1394,
+  "slug": "find-lucky-integer-in-an-array",
+  "title": "找出数组中的幸运数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-lucky-integer-in-an-array/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先统计次数，再从大到小寻找次数与数值相等的数。",
+    "注意边界条件；推荐复杂度：时间 O(n+500)，空间 O(500)"
+  ]
+}

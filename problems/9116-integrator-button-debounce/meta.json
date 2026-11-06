@@ -1,0 +1,21 @@
+{
+  "id": 9116,
+  "slug": "integrator-button-debounce",
+  "title": "积分式按键消抖",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "按键"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "高电平使积分值加1，低电平减1，积分值在0与limit间饱和，仅触到边界才改变稳定状态。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

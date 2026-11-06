@@ -1,0 +1,18 @@
+{
+  "id": 1768,
+  "slug": "merge-strings-alternately",
+  "title": "交替合并字符串",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/merge-strings-alternately/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "按下标分别读取两个字符串，哪个还有字符就追加哪个。",
+    "注意边界条件；推荐复杂度：时间 O(n+m)，输出空间 O(n+m)"
+  ]
+}

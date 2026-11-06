@@ -1,0 +1,21 @@
+{
+  "id": 9092,
+  "slug": "integer-ema-filter",
+  "title": "整数指数滑动平均",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "信号处理"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "公式y += (x−y)/2^shift；shift越大响应越平滑也越慢。明确用C整数除法向零截断。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

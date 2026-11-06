@@ -1,0 +1,21 @@
+{
+  "id": 9117,
+  "slug": "onewire-rom-validation",
+  "title": "单总线 ROM 校验",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "传感器"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "ROM前7字节参与MAXIM CRC8，最后一个字节为收到的校验值；先检查长度，防止越界。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

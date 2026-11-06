@@ -1,0 +1,21 @@
+{
+  "id": 9106,
+  "slug": "dma-transfer-chunks",
+  "title": "DMA 传输分块长度",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "DMA"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每个DMA描述符最多容纳maximum字节，先安排完整块，最后追加不足一块的尾部；整除时不追加0长度块。",
+    "注意边界条件；推荐复杂度：时间 O(块数)，输出空间 O(块数)"
+  ]
+}

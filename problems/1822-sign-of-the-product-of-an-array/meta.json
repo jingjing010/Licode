@@ -1,0 +1,18 @@
+{
+  "id": 1822,
+  "slug": "sign-of-the-product-of-an-array",
+  "title": "数组元素积的符号",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sign-of-the-product-of-an-array/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "零使乘积为零，每个负数翻转一次符号，正数不改变符号。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

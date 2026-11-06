@@ -1,0 +1,19 @@
+{
+  "id": 231,
+  "slug": "power-of-two",
+  "title": "2 的幂",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/power-of-two/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "n & (n−1) 清除最低的一个1；清除后为0且原值为正即成立。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

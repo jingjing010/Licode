@@ -1,0 +1,19 @@
+{
+  "id": 258,
+  "slug": "add-digits",
+  "title": "各位相加",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/add-digits/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每次求位和不改变模9的余数，非零数的最终结果在1到9之间。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

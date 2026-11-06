@@ -1,0 +1,18 @@
+{
+  "id": 1957,
+  "slug": "delete-characters-to-make-fancy-string",
+  "title": "删除字符使字符串变好",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/delete-characters-to-make-fancy-string/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "如果输出的末尾两位都等于当前字符，就跳过它；其余字符保留。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

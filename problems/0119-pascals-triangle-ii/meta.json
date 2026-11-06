@@ -1,0 +1,16 @@
+{
+  "id": 119,
+  "slug": "pascals-triangle-ii",
+  "title": "杨辉三角 II",
+  "difficulty": "简单",
+  "tags": ["数组", "动态规划"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/pascals-triangle-ii/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "第 i 行有 i+1 个数，两端都是 1，中间每个数等于上一行「左上 + 正上」两个数之和。",
+    "只需要上一行就能算出下一行，所以不必保存整个三角形，用一个长度为 rowIndex+1 的数组反复更新即可。",
+    "原地更新时要从后往前算：row[j] = row[j] + row[j-1]，这样用到的 row[j-1] 还是上一行的值。"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 2239,
+  "slug": "find-closest-number-to-zero",
+  "title": "找到最接近 0 的数字",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-closest-number-to-zero/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "按绝对值比较距离，相等时选择更大的数。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

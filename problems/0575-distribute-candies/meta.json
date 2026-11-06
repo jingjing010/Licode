@@ -1,0 +1,18 @@
+{
+  "id": 575,
+  "slug": "distribute-candies",
+  "title": "分糖果",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/distribute-candies/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "最多只能吃n/2颗，也不可能超过现有种类总数，取二者最小值。",
+    "注意边界条件；推荐复杂度：时间 O(n log n)，排序栈空间 O(log n)"
+  ]
+}

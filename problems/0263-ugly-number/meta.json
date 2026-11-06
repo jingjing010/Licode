@@ -1,0 +1,19 @@
+{
+  "id": 263,
+  "slug": "ugly-number",
+  "title": "丑数",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/ugly-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "把允许的质因子全部除尽。如果最后剩1，说明没有其他质因子。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 202,
+  "slug": "happy-number",
+  "title": "快乐数",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/happy-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "下一项只由当前项决定。快慢指针相遇后，检查环是否是固定点1。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

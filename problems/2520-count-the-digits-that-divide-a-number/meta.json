@@ -1,0 +1,19 @@
+{
+  "id": 2520,
+  "slug": "count-the-digits-that-divide-a-number",
+  "title": "统计能整除数字的位数",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/count-the-digits-that-divide-a-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "保留原数，另用临时变量提取每一位；重复数字要重复计数。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 453,
+  "slug": "minimum-moves-to-equal-array-elements",
+  "title": "最小操作次数使数组元素相等",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/minimum-moves-to-equal-array-elements/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "只关心相对差值，每次让n−1个数加1等价于让剩下一个减1，统一降到最小值。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

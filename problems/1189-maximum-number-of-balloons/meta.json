@@ -1,0 +1,18 @@
+{
+  "id": 1189,
+  "slug": "maximum-number-of-balloons",
+  "title": "气球的最大数量",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/maximum-number-of-balloons/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "balloon需要b、a、n各一个，l、o各两个。每种字符给出一个可构造份数上限，取最小值。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

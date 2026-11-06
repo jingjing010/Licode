@@ -1,0 +1,19 @@
+{
+  "id": 633,
+  "slug": "sum-of-square-numbers",
+  "title": "平方数之和",
+  "difficulty": "中等",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sum-of-square-numbers/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "两个平方数之和随左端增大而增加，随右端减小而减小，使用相向双指针。",
+    "注意边界条件；推荐复杂度：时间 O(√c)，空间 O(1)"
+  ]
+}

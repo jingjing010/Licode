@@ -1,0 +1,19 @@
+{
+  "id": 507,
+  "slug": "perfect-number",
+  "title": "完美数",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/perfect-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "枚举到平方根即可找到成对的因子，排除数本身并避免重复累加平方根。",
+    "注意边界条件；推荐复杂度：时间 O(√n)，空间 O(1)"
+  ]
+}

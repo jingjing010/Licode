@@ -1,0 +1,18 @@
+{
+  "id": 1812,
+  "slug": "determine-color-of-a-chessboard-square",
+  "title": "判断国际象棋棋盘中一个格子的颜色",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/determine-color-of-a-chessboard-square/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "相邻格子颜色翻转，因此颜色只由横纵位移之和的奇偶性决定。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

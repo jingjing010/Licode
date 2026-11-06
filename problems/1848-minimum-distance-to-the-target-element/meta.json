@@ -1,0 +1,18 @@
+{
+  "id": 1848,
+  "slug": "minimum-distance-to-the-target-element",
+  "title": "到目标元素的最小距离",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/minimum-distance-to-the-target-element/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "遍历所有目标值位置，更新与start的绝对距离最小值。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

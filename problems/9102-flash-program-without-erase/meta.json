@@ -1,0 +1,21 @@
+{
+  "id": 9102,
+  "slug": "flash-program-without-erase",
+  "title": "Flash 无擦除写入可行性",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "存储"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "典型NOR Flash编程只能把1变0；目标为1的每一位在原数据里也必须是1。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

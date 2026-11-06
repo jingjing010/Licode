@@ -1,0 +1,18 @@
+{
+  "id": 709,
+  "slug": "to-lower-case",
+  "title": "转换成小写字母",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/to-lower-case/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "ASCII大小写字母有固定偏移，只修改A到Z之间的字符。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

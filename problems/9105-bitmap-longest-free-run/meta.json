@@ -1,0 +1,21 @@
+{
+  "id": 9105,
+  "slug": "bitmap-longest-free-run",
+  "title": "位图最大连续空闲区",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "内存"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "逐位扫描有效区间，0延长当前空闲段，1清零当前长度，保存最长值。",
+    "注意边界条件；推荐复杂度：时间 O(width)，空间 O(1)"
+  ]
+}

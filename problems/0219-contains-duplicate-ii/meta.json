@@ -1,0 +1,19 @@
+{
+  "id": 219,
+  "slug": "contains-duplicate-ii",
+  "title": "存在重复元素 II",
+  "difficulty": "简单",
+  "tags": [
+    "数组",
+    "排序"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/contains-duplicate-ii/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "把数值和原始下标一起排序。同一值内按下标递增后，最小距离必然出现在相邻两项之间。",
+    "注意边界条件；推荐复杂度：时间 O(n log n)，空间 O(n)"
+  ]
+}

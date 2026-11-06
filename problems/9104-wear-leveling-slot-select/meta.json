@@ -1,0 +1,21 @@
+{
+  "id": 9104,
+  "slug": "wear-leveling-slot-select",
+  "title": "磨损均衡槽位选择",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "存储"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "选择累计擦除次数最少的槽位，平局时保留最小下标以保证确定性。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

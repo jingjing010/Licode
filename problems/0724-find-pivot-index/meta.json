@@ -1,0 +1,18 @@
+{
+  "id": 724,
+  "slug": "find-pivot-index",
+  "title": "寻找数组的中心下标",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-pivot-index/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "预先求总和，再维护左边总和，当前元素不属于任何一侧。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

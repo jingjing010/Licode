@@ -1,0 +1,21 @@
+{
+  "id": 9061,
+  "slug": "crc16-ccitt-false",
+  "title": "CRC16 CCITT-FALSE",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先把字节异或到CRC高8位，然后执行8次移位和条件异或。初值、反射方式和输出异或值都是协议参数。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

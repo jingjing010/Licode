@@ -1,0 +1,19 @@
+{
+  "id": 1539,
+  "slug": "kth-missing-positive-number",
+  "title": "第 k 个缺失的正整数",
+  "difficulty": "简单",
+  "tags": [
+    "数组",
+    "二分查找"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/kth-missing-positive-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "缺失数量随着下标递增而不减，二分查找第一个缺失数量至少k的位置，答案等于该位置下标加k。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，空间 O(1)"
+  ]
+}

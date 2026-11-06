@@ -1,0 +1,18 @@
+{
+  "id": 1480,
+  "slug": "running-sum-of-1d-array",
+  "title": "一维数组的动态和",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/running-sum-of-1d-array/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "维护到当前下标为止的总和，每读一个元素就写一个结果。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

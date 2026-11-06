@@ -1,0 +1,18 @@
+{
+  "id": 1512,
+  "slug": "number-of-good-pairs",
+  "title": "好数对的数目",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/number-of-good-pairs/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "边扫描边计数，累加当前值以前出现的次数。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(101)"
+  ]
+}

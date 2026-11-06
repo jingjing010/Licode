@@ -1,0 +1,19 @@
+{
+  "id": 1137,
+  "slug": "n-th-tribonacci-number",
+  "title": "第 N 个泰波那契数",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/n-th-tribonacci-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每项只依赖前三项，用三个变量更新即可，覆盖旧值前先计算新值。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

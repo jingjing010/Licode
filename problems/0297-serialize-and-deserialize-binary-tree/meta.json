@@ -1,0 +1,16 @@
+{
+  "id": 297,
+  "slug": "serialize-and-deserialize-binary-tree",
+  "title": "二叉树的序列化与反序列化",
+  "difficulty": "困难",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "设计", "字符串", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "只记录结点的值是不够的：[1,2] 和 [1,null,2] 的值都是 1、2。必须把“空孩子”也记下来，比如用一个特殊符号 #。",
+    "前序遍历 + 空结点标记就能唯一确定一棵树：序列化时“根、左、右”依次写出，遇到空写 #；反序列化时按同样的顺序读，读到 # 就返回 NULL。",
+    "C 语言里要自己管理字符串：序列化用一个可扩容的 char 缓冲区配合 sprintf 追加；反序列化用一个“当前读到哪”的指针，配合 strtol 读数字。"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 1281,
+  "slug": "subtract-the-product-and-sum-of-digits-of-an-integer",
+  "title": "整数的各位积和之差",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/subtract-the-product-and-sum-of-digits-of-an-integer/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "逐位取余，把数字同时计入乘积和总和，最后相减。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

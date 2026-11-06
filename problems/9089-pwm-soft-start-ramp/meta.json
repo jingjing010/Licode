@@ -1,0 +1,21 @@
+{
+  "id": 9089,
+  "slug": "pwm-soft-start-ramp",
+  "title": "PWM 软启动爬坡",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "控制"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每拍只朝目标移动step，达到目标后保持。可把多拍总变化量合并计算，并用64位承接乘积。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 1207,
+  "slug": "unique-number-of-occurrences",
+  "title": "独一无二的出现次数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/unique-number-of-occurrences/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "用一张表统计元素次数，再用另一张表记录次数是否已经出现。",
+    "注意边界条件；推荐复杂度：时间 O(n+2001)，空间 O(3002)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 1221,
+  "slug": "split-a-string-in-balanced-strings",
+  "title": "分割平衡字符串",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/split-a-string-in-balanced-strings/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "一旦L和R计数差回到0就切开，尽早切开不会破坏余下字符串的平衡。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

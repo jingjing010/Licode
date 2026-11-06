@@ -1,0 +1,18 @@
+{
+  "id": 657,
+  "slug": "robot-return-to-origin",
+  "title": "机器人能否返回原点",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/robot-return-to-origin/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "横向和纵向位移互相独立，累计后两者均为0才能回原点。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 2129,
+  "slug": "capitalize-the-title",
+  "title": "将标题首字母大写",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/capitalize-the-title/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每个单词先转小写，长度大于2时再把首字母转大写。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 319,
+  "slug": "bulb-switcher",
+  "title": "灯泡开关",
+  "difficulty": "中等",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/bulb-switcher/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "第i盏灯被其每个约数对应的轮次翻转。约数成对出现，唯独平方数的平方根不成对。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

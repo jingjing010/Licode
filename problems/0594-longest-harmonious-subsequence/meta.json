@@ -1,0 +1,18 @@
+{
+  "id": 594,
+  "slug": "longest-harmonious-subsequence",
+  "title": "最长和谐子序列",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/longest-harmonious-subsequence/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "排序后用滑动窗口维持最大最小差不超过1，只有差恰好1时更新长度。",
+    "注意边界条件；推荐复杂度：时间 O(n log n)，排序栈空间 O(log n)"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 9073,
+  "slug": "slip-frame-encode",
+  "title": "SLIP 帧转义编码",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "帧首尾加END，数据中的END和ESC必须转义，否则接收端会误判边界。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

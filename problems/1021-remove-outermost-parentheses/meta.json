@@ -1,0 +1,18 @@
+{
+  "id": 1021,
+  "slug": "remove-outermost-parentheses",
+  "title": "删除最外层的括号",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/remove-outermost-parentheses/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "左括号先判断深度再增加，右括号先减少深度再判断，深度0对应原语外层。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

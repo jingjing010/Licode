@@ -1,0 +1,18 @@
+{
+  "id": 941,
+  "slug": "valid-mountain-array",
+  "title": "有效的山脉数组",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/valid-mountain-array/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "沿上坡走到顶，排除峰顶在端点，再沿下坡走到底；中途停住就不合法。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

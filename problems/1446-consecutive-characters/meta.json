@@ -1,0 +1,18 @@
+{
+  "id": 1446,
+  "slug": "consecutive-characters",
+  "title": "连续字符",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/consecutive-characters/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "当前字符等于上一个就延长连续段，否则从1重新开始。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

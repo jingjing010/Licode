@@ -1,0 +1,21 @@
+{
+  "id": 9119,
+  "slug": "packed-12bit-adc-unpack",
+  "title": "两个12位 ADC 样本解包",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "ADC"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "三个字节的24位分成前12位与后12位，中间字节的高低半字节分别属于两个样本。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

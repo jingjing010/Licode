@@ -1,0 +1,21 @@
+{
+  "id": 9070,
+  "slug": "even-parity-byte-check",
+  "title": "带偶校验的字节验收",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "把8个数据位和校验位全部异或，偶数个1对应结果0。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 9063,
+  "slug": "fletcher16-checksum",
+  "title": "Fletcher-16 双累加校验",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "第一个累加器累加字节，第二个累加器累加第一个的当前值，两者都模255。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

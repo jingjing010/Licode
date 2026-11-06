@@ -1,0 +1,19 @@
+{
+  "id": 242,
+  "slug": "valid-anagram",
+  "title": "有效的字母异位词",
+  "difficulty": "简单",
+  "tags": [
+    "字符串",
+    "哈希表"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/valid-anagram/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "使用26个计数器表示字母多重集合。逐字符扣减时出现负数说明缺少所需字符。结束后所有计数还必须为0。",
+    "注意边界条件；推荐复杂度：时间 O(n+m)，空间 O(26)"
+  ]
+}

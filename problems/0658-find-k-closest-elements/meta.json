@@ -1,0 +1,16 @@
+{
+  "id": 658,
+  "slug": "find-k-closest-elements",
+  "title": "找到 K 个最接近的元素",
+  "difficulty": "中等",
+  "tags": ["数组", "双指针", "二分查找", "排序", "滑动窗口", "堆（优先队列）"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-k-closest-elements/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "答案一定是原数组中一段长度为 k 的连续区间 arr[left .. left+k-1]。",
+    "双指针：从整个数组开始，每次比较两端谁离 x 更远，删掉更远的那个，直到只剩 k 个。",
+    "直接二分 left（范围 [0, n-k]）：比较 x - arr[mid] 和 arr[mid+k] - x，前者更大说明窗口应该右移。"
+  ]
+}

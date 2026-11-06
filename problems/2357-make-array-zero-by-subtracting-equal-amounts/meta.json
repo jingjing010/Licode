@@ -1,0 +1,18 @@
+{
+  "id": 2357,
+  "slug": "make-array-zero-by-subtracting-equal-amounts",
+  "title": "使数组中所有元素都等于零",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/make-array-zero-by-subtracting-equal-amounts/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "每次减去当前最小正数，消去一个不同的正值，答案是不同正数的个数。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(101)"
+  ]
+}

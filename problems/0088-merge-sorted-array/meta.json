@@ -1,0 +1,16 @@
+{
+  "id": 88,
+  "slug": "merge-sorted-array",
+  "title": "合并两个有序数组",
+  "difficulty": "简单",
+  "tags": ["数组", "双指针", "排序"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/merge-sorted-array/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最简单的做法：把 nums2 拷到 nums1 的后半段，然后整体排序。能不能利用「两个数组已经有序」这一点做得更快？",
+    "如果从前往后合并，写入 nums1 时会覆盖还没比较的元素。那从后往前呢？nums1 的末尾正好是空位。",
+    "用三个指针 i = m-1、j = n-1、k = m+n-1，每次把 nums1[i] 和 nums2[j] 中较大的放到 nums1[k]。nums2 用完就结束。"
+  ]
+}

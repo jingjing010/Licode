@@ -1,0 +1,18 @@
+{
+  "id": 1979,
+  "slug": "find-greatest-common-divisor-of-array",
+  "title": "找出数组的最大公约数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-greatest-common-divisor-of-array/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先求最小值与最大值，然后应用辗转相除法。",
+    "注意边界条件；推荐复杂度：时间 O(n+log M)，空间 O(1)"
+  ]
+}

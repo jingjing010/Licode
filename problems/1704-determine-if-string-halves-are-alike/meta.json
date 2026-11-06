@@ -1,0 +1,18 @@
+{
+  "id": 1704,
+  "slug": "determine-if-string-halves-are-alike",
+  "title": "判断字符串的两半是否相似",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/determine-if-string-halves-are-alike/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "把前半元音数加到余额，把后半元音数减掉，最后检查是否为0。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

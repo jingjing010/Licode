@@ -1,0 +1,18 @@
+{
+  "id": 771,
+  "slug": "jewels-and-stones",
+  "title": "宝石与石头",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/jewels-and-stones/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "建立宝石字符集合，扫描石头字符串判断每颗是否在集合内。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

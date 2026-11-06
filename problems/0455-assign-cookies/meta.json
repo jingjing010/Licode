@@ -1,0 +1,19 @@
+{
+  "id": 455,
+  "slug": "assign-cookies",
+  "title": "分发饼干",
+  "difficulty": "简单",
+  "tags": [
+    "贪心",
+    "排序"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/assign-cookies/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "排序后从胃口最小的孩子开始，用刚好够大的饼干满足他，较大的饼干留给后面的孩子。",
+    "注意边界条件；推荐复杂度：时间 O(n log n+m log m)，排序栈空间 O(log(n+m))"
+  ]
+}

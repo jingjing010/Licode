@@ -1,0 +1,18 @@
+{
+  "id": 2441,
+  "slug": "largest-positive-integer-that-exists-with-its-negative",
+  "title": "与对应负数同时存在的最大正整数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/largest-positive-integer-that-exists-with-its-negative/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "用偏移后的索引记录正负数，再按正数从大到小查询对应负数。",
+    "注意边界条件；推荐复杂度：时间 O(n+1000)，空间 O(2001)"
+  ]
+}

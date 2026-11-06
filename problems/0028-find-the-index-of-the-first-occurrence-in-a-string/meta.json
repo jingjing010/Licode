@@ -1,0 +1,18 @@
+{
+  "id": 28,
+  "slug": "find-the-index-of-the-first-occurrence-in-a-string",
+  "title": "找出字符串中第一个匹配项的下标",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "寻找第一个匹配位置；strstr返回NULL表示不存在，否则减去原字符串指针得到下标。",
+    "注意边界条件；推荐复杂度：时间最坏 O(nm)，空间 O(1)"
+  ]
+}

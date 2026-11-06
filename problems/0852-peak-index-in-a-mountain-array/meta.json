@@ -1,0 +1,16 @@
+{
+  "id": 852,
+  "slug": "peak-index-in-a-mountain-array",
+  "title": "山脉数组的峰顶索引",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/peak-index-in-a-mountain-array/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "峰顶就是第一个满足 arr[i] > arr[i+1] 的位置。从左往右扫是 O(n)。",
+    "比较 arr[mid] 和 arr[mid+1]：前者小说明 mid 在上坡，峰顶在右边。",
+    "峰顶不可能是 0 或 n-1，可以在 [1, n-2] 上二分：上坡 lo = mid + 1，下坡 hi = mid。"
+  ]
+}

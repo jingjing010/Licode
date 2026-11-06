@@ -1,0 +1,18 @@
+{
+  "id": 171,
+  "slug": "excel-sheet-column-number",
+  "title": "Excel 表列序号",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/excel-sheet-column-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "从高位开始累积，类似十进制读入，只是基数是26且每位从1起。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

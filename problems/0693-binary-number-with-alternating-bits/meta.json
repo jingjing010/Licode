@@ -1,0 +1,19 @@
+{
+  "id": 693,
+  "slug": "binary-number-with-alternating-bits",
+  "title": "交替位二进制数",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-number-with-alternating-bits/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "用 n 异或 n>>1 检查相邻位，结果全为1时恰好没有相邻相同位。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

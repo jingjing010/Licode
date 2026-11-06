@@ -1,0 +1,18 @@
+{
+  "id": 1346,
+  "slug": "check-if-n-and-its-double-exist",
+  "title": "检查整数及其两倍数是否存在",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/check-if-n-and-its-double-exist/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "只查询此前已出现的值，寻找当前数的两倍或一半，随后才登记当前数，避免一个0与自己匹配。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(4001)"
+  ]
+}

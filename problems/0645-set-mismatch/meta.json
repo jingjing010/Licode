@@ -1,0 +1,18 @@
+{
+  "id": 645,
+  "slug": "set-mismatch",
+  "title": "错误的集合",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/set-mismatch/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "数值应该各出现一次，用计数表分别找出现两次与零次的值。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(n)"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 1122,
+  "slug": "relative-sort-array",
+  "title": "数组的相对排序",
+  "difficulty": "简单",
+  "tags": [
+    "数组",
+    "计数"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/relative-sort-array/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "用计数数组保存arr1的各值次数，先按arr2次序输出，再按数值递增输出余项。",
+    "注意边界条件；推荐复杂度：时间 O(n+m+1001)，空间 O(n+1001)"
+  ]
+}

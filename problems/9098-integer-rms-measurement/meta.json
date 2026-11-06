@@ -1,0 +1,21 @@
+{
+  "id": 9098,
+  "slug": "integer-rms-measurement",
+  "title": "整数均方根测量",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "信号处理"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先用64位累加平方，再除采样数得到均方值，最后用整数二分求向下取整平方根。",
+    "注意边界条件；推荐复杂度：时间 O(n+log 32768)，空间 O(1)"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 9090,
+  "slug": "retry-exponential-backoff",
+  "title": "带上限的指数退避",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "调度"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "倍增前比较cap/2，提前饱和避免左移溢出。实际系统可再加随机抖动，本题只实现确定性退避。",
+    "注意边界条件；推荐复杂度：时间 O(attempt)，空间 O(1)"
+  ]
+}

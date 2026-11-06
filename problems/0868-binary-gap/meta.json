@@ -1,0 +1,19 @@
+{
+  "id": 868,
+  "slug": "binary-gap",
+  "title": "二进制间距",
+  "difficulty": "简单",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-gap/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "遍历二进制位，保存上一个1的位置，只在遇到下一个1时更新距离。",
+    "注意边界条件；推荐复杂度：时间 O(log n)，额外空间 O(1)"
+  ]
+}

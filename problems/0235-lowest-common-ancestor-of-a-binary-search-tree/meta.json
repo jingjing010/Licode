@@ -1,0 +1,16 @@
+{
+  "id": 235,
+  "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+  "title": "二叉搜索树的最近公共祖先",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "二叉搜索树", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "第 236 题的通用做法在这里也能用，但没有利用“二叉搜索树”这个条件。",
+    "从根出发：如果 p、q 的值都比当前结点小，它们都在左子树里；都比当前结点大，都在右子树里。",
+    "一旦 p、q 分在当前结点两侧（或者其中一个就是当前结点），当前结点就是最近公共祖先。整个过程只需一路往下走，不用回溯。"
+  ]
+}

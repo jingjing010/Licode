@@ -1,0 +1,21 @@
+{
+  "id": 9120,
+  "slug": "modbus-write-single-register",
+  "title": "Modbus 写单寄存器请求",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "协议"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "顺序组装站号、功能码06、寄存器地址和值，两个16位字段高字节先发，最后追加CRC16/MODBUS低字节与高字节。",
+    "注意边界条件；推荐复杂度：时间 O(1)，输出空间 O(1)"
+  ]
+}

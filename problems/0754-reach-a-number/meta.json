@@ -1,0 +1,19 @@
+{
+  "id": 754,
+  "slug": "reach-a-number",
+  "title": "到达终点数字",
+  "difficulty": "中等",
+  "tags": [
+    "数学",
+    "位运算"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reach-a-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先全部向目标方向走，直到总步长覆盖目标且差值为偶数；反转部分步长即可抵消差值。",
+    "注意边界条件；推荐复杂度：时间 O(√|target|)，空间 O(1)"
+  ]
+}

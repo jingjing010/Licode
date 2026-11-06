@@ -1,0 +1,21 @@
+{
+  "id": 9115,
+  "slug": "quadrature-encoder-counter",
+  "title": "正交编码器状态解码",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "外设"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "将前后两次AB状态组合成4位索引，查表得到+1、−1或0；非法双位跳变不计数但当前状态仍成为下一步基准。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

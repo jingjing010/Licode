@@ -1,0 +1,16 @@
+{
+  "id": 704,
+  "slug": "binary-search",
+  "title": "二分查找",
+  "difficulty": "简单",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-search/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "数组是有序的。先看最中间的数，和 target 比一比，能排除掉哪一半？",
+    "用 lo、hi 表示还没排除的范围。nums[mid] < target 时左半边（含 mid）都可以排除。",
+    "闭区间写法：lo = 0, hi = n - 1，while (lo <= hi)，更新用 lo = mid + 1 / hi = mid - 1。"
+  ]
+}

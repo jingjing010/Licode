@@ -1,0 +1,21 @@
+{
+  "id": 9101,
+  "slug": "flash-pages-touched",
+  "title": "Flash 写入覆盖页数",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "存储"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "地址在第一页内的偏移也占用空间，计算offset+length所覆盖的页数并向上取整。",
+    "注意边界条件；推荐复杂度：时间 O(1)，空间 O(1)"
+  ]
+}

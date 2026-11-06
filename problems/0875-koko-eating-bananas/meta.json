@@ -1,0 +1,16 @@
+{
+  "id": 875,
+  "slug": "koko-eating-bananas",
+  "title": "爱吃香蕉的珂珂",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/koko-eating-bananas/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "如果速度固定为 k，吃完第 i 堆需要 ceil(piles[i] / k) 小时。总时间怎么算？",
+    "速度越快，总时间越少（单调）。所以可以在速度 k 上二分：找最小的 k 使总时间 <= h。",
+    "k 的范围是 [1, max(piles)]。总时间可能超过 int，要用 long long；向上取整写成 (p - 1) / k + 1 可以避免 p + k - 1 溢出。"
+  ]
+}

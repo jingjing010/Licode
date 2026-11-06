@@ -1,0 +1,18 @@
+{
+  "id": 2000,
+  "slug": "reverse-prefix-of-word",
+  "title": "反转单词前缀",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reverse-prefix-of-word/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "找到第一个目标字符，将它与之前的前缀整体双指针反转。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

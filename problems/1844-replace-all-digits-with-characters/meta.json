@@ -1,0 +1,18 @@
+{
+  "id": 1844,
+  "slug": "replace-all-digits-with-characters",
+  "title": "将所有数字用字符替换",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/replace-all-digits-with-characters/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "奇数下标的数字表示前一个字母的偏移量，偶数下标原样保留。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(n)"
+  ]
+}

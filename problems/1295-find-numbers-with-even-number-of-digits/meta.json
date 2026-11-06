@@ -1,0 +1,18 @@
+{
+  "id": 1295,
+  "slug": "find-numbers-with-even-number-of-digits",
+  "title": "统计位数为偶数的数字",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-numbers-with-even-number-of-digits/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "逐个数除10计位数，位数为偶数就累计答案。",
+    "注意边界条件；推荐复杂度：时间 O(n log M)，空间 O(1)"
+  ]
+}

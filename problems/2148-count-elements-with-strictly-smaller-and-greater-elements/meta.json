@@ -1,0 +1,18 @@
+{
+  "id": 2148,
+  "slug": "count-elements-with-strictly-smaller-and-greater-elements",
+  "title": "元素计数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/count-elements-with-strictly-smaller-and-greater-elements/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "只有严格位于全局最小值与最大值之间的元素符合要求，重复元素按位置计数。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

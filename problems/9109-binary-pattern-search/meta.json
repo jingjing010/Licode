@@ -1,0 +1,21 @@
+{
+  "id": 9109,
+  "slug": "binary-pattern-search",
+  "title": "二进制缓冲区查找",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "内存"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "字节缓冲区不能用strlen或strstr，因为0也是普通数据。使用明确长度并在比较前检查剩余空间。",
+    "注意边界条件；推荐复杂度：时间 O(nm)，空间 O(1)"
+  ]
+}

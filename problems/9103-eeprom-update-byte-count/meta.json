@@ -1,0 +1,21 @@
+{
+  "id": 9103,
+  "slug": "eeprom-update-byte-count",
+  "title": "EEPROM 按需写入字节数",
+  "difficulty": "中等",
+  "tags": [
+    "嵌入式",
+    "存储"
+  ],
+  "lists": [
+    "embedded"
+  ],
+  "leetcode": "",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "先比较再写入可减少EEPROM擦写次数；统计实际发生变化的字节位置即可。",
+    "注意边界条件；推荐复杂度：时间 O(n)，空间 O(1)"
+  ]
+}

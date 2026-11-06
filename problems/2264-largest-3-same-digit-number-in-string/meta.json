@@ -1,0 +1,18 @@
+{
+  "id": 2264,
+  "slug": "largest-3-same-digit-number-in-string",
+  "title": "字符串中最大的 3 位相同数字",
+  "difficulty": "简单",
+  "tags": [
+    "字符串"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/largest-3-same-digit-number-in-string/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "只检查长度3的窗口，三位相等则比较该数字字符的大小。",
+    "注意边界条件；推荐复杂度：时间 O(n)，输出空间 O(1)"
+  ]
+}

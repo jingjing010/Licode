@@ -1,0 +1,18 @@
+{
+  "id": 414,
+  "slug": "third-maximum-number",
+  "title": "第三大的数",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/third-maximum-number/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "保存前三个不同的最大值，重复值直接跳过；用long long哨兵避免与INT_MIN混淆。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 908,
+  "slug": "smallest-range-i",
+  "title": "最小差值 I",
+  "difficulty": "简单",
+  "tags": [
+    "数组"
+  ],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/smallest-range-i/",
+  "time_limit_ms": 2000,
+  "samples": 2,
+  "hints": [
+    "先手算示例，确定输入与返回值的含义。",
+    "最大值最多减k、最小值最多加k，原差距减2k但不能低于0。",
+    "注意边界条件；推荐复杂度：时间 O(n)，额外空间 O(1)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 9028,
+  "slug": "sat-add16",
+  "title": "16 位饱和加法（音频混音）",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "饱和运算", "溢出处理", "数组"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "两个 int16_t 相加的真实结果范围是 -65536 ~ 65534，int16_t 装不下，但 int32_t 装得下。",
+    "先用 int32_t 算出真实的和 s = (int32_t)a[i] + b[i]，再判断它是否超出 [-32768, 32767]。",
+    "超出上限就写 INT16_MAX，低于下限就写 INT16_MIN，否则写 (int16_t)s。"
+  ]
+}

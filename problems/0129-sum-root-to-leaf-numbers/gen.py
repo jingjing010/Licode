@@ -74,15 +74,30 @@ def rand_shape(n, max_depth=10):
 def fit_int(root, by_depth):
     """若和超过 32 位，就从浅到深把整层改成 0 直到不溢出"""
     for layer in by_depth:
-        for nd in layer:
-            nd.val = random.randint(lo, hi)
-    for layer in by_depth:
         if paths_sum(root) <= INT_MAX:
             break
         for nd in layer:
             nd.val = 0
     assert paths_sum(root) <= INT_MAX
     return lines(tree(_to_level(root)))
+
+
+def digits_case(n, max_depth=10, lo=0, hi=9):
+    root, by_depth = rand_shape(n, max_depth)
+    for layer in by_depth:
+        for nd in layer:
+            nd.val = random.randint(lo, hi)
+    return fit_int(root, by_depth)
+
+
+def full_case(n):
+    """完全二叉树，随机数字（n = 1000 时深度为 10）"""
+    root = build([random.randint(0, 9) for _ in range(n)])
+    by_depth, layer = [], [root]
+    while layer:
+        by_depth.append(layer)
+        layer = [c for nd in layer for c in (nd.left, nd.right) if c]
+    return fit_int(root, by_depth)
 
 
 def samples():
@@ -111,7 +126,7 @@ def cases():
         digits_case(1000),
         digits_case(1000, lo=0, hi=1),
         digits_case(1000, lo=9, hi=9),
-        lines(tree([1] * 1000)),     # 近似满二叉树，深度 10
+        full_case(1000),
     ]
 
 

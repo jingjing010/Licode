@@ -3,7 +3,7 @@
   "slug": "toggle-bit",
   "title": "翻转指定位",
   "difficulty": "简单",
-  "tags": ["位运算", "寄存器操作"],
+  "tags": ["位运算", "嵌入式", "寄存器操作"],
   "lists": ["embedded"],
   "leetcode": "",
   "time_limit_ms": 1000,

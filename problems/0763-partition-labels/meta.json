@@ -1,0 +1,16 @@
+{
+  "id": 763,
+  "slug": "partition-labels",
+  "title": "划分字母区间",
+  "difficulty": "中等",
+  "tags": ["贪心", "哈希表", "双指针", "字符串"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/partition-labels/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "一个字母只要出现在某个片段里，这个片段就必须延伸到它最后一次出现的位置。",
+    "先扫一遍，用 last[26] 记下每个字母最后一次出现的下标。",
+    "再从左往右扫描，维护 end = max(end, last[s[i]])；当 i == end 时，当前片段里所有字母都已收尾，可以切一刀。"
+  ]
+}

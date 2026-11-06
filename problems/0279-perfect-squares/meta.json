@@ -1,0 +1,16 @@
+{
+  "id": 279,
+  "slug": "perfect-squares",
+  "title": "完全平方数",
+  "difficulty": "中等",
+  "tags": ["广度优先搜索", "数学", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/perfect-squares/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "设 dp[i] 为和为 i 的完全平方数的最少数量，dp[0] = 0。",
+    "凑出 i 的最后一个平方数是 j*j（j*j <= i），剩下的 i - j*j 用最少的个数凑：dp[i] = min(dp[i - j*j]) + 1。",
+    "这其实是「完全背包」：每个平方数可以用无数次。数学上还有四平方和定理：答案一定不超过 4。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 2,
+  "slug": "add-two-numbers",
+  "title": "两数相加",
+  "difficulty": "中等",
+  "tags": ["递归", "链表", "数学"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/add-two-numbers/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "链表是逆序存的，头结点就是个位。这正好和竖式加法「从个位开始算」的顺序一致。",
+    "每一位的和 = 两个链表这一位的数字 + 上一位的进位。这一位写 sum % 10，进位是 sum / 10。某个链表走完了就当作 0。",
+    "循环条件写成「l1 没走完 或 l2 没走完 或 还有进位」，最后多出来的那一位进位就自动处理了。用哑结点 dummy 构造结果链表最省事。"
+  ]
+}

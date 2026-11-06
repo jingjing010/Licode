@@ -1,0 +1,16 @@
+{
+  "id": 51,
+  "slug": "n-queens",
+  "title": "N 皇后",
+  "difficulty": "困难",
+  "tags": ["数组", "回溯"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/n-queens/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "n 个皇后放在 n 行里，又不能同行，所以每一行恰好放一个皇后。问题变成：每一行的皇后放在第几列？",
+    "一行一行地放（回溯）：第 r 行尝试每一列 c，检查和前面已放的皇后是否同列、同斜线，不冲突就递归放下一行。",
+    "同一条斜线上，「行+列」或「行-列」相同。用 col[]、diag1[r+c]、diag2[r-c+n-1] 三个布尔数组记录占用情况，就能 O(1) 判断冲突。"
+  ]
+}

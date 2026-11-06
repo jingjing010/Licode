@@ -1,0 +1,16 @@
+{
+  "id": 9004,
+  "slug": "get-bit-field",
+  "title": "读取寄存器位域",
+  "difficulty": "简单",
+  "tags": ["位运算", "嵌入式", "寄存器操作", "掩码"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "分两步：先把位域挪到最低位，再把位域以外的高位去掉。",
+    "挪到最低位用 reg >> pos；去掉高位用低 width 位全为 1 的掩码 (1u << width) - 1 做按位与。",
+    "width = 32 时 1u << 32 是未定义行为，掩码要单独写成 0xFFFFFFFFu。"
+  ]
+}

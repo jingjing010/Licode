@@ -1,0 +1,16 @@
+{
+  "id": 131,
+  "slug": "palindrome-partitioning",
+  "title": "分割回文串",
+  "difficulty": "中等",
+  "tags": ["字符串", "动态规划", "回溯"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/palindrome-partitioning/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从字符串开头切第一刀：第一段可以是 s[0..0]、s[0..1]、……，只要这一段是回文，就对剩下的部分递归做同样的事。",
+    "递归函数 dfs(start) 表示「从下标 start 开始继续切」；start 走到字符串末尾时，就得到了一种完整的分割方案。",
+    "反复判断 s[i..j] 是否回文很浪费。可以先用动态规划预处理：pal[i][j] = (s[i]==s[j]) && (j-i<2 || pal[i+1][j-1])。"
+  ]
+}

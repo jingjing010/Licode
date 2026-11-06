@@ -1,0 +1,16 @@
+{
+  "id": 46,
+  "slug": "permutations",
+  "title": "全排列",
+  "difficulty": "中等",
+  "tags": ["数组", "回溯"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/permutations/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "n 个互不相同的数，第 1 个位置有 n 种选法，第 2 个位置剩 n-1 种……一共有多少个排列？",
+    "用递归一个位置一个位置地填：用 path 记录已经填好的数，用 used[] 记录哪些数已经用过。",
+    "回溯三步：做选择（used[i]=true，放进 path）→ 递归填下一个位置 → 撤销选择（used[i]=false）。填满 n 个就复制一份存进答案。"
+  ]
+}

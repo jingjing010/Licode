@@ -1,0 +1,16 @@
+{
+  "id": 9021,
+  "slug": "bcd-to-bin",
+  "title": "BCD 码转二进制（RTC 时间解码）",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "BCD", "位运算", "RTC"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "BCD 码用一个字节的高 4 位存十位数字、低 4 位存个位数字，例如 59 存成 0x59。",
+    "十位 = bcd >> 4，个位 = bcd & 0x0F。",
+    "结果 = 十位 * 10 + 个位。注意 0x59 的十进制值是 89，但它代表的数是 59。"
+  ]
+}

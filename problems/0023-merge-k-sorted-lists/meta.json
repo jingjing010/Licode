@@ -1,0 +1,16 @@
+{
+  "id": 23,
+  "slug": "merge-k-sorted-lists",
+  "title": "合并 K 个升序链表",
+  "difficulty": "困难",
+  "tags": ["链表", "分治", "堆（优先队列）", "归并排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/merge-k-sorted-lists/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先复习第 21 题「合并两个有序链表」。最直接的做法：拿一个结果链表，依次把每条链表合并进去。",
+    "逐一合并的问题是：前面合并好的长链表会被反复遍历。能不能像淘汰赛一样两两配对合并，一共只需要 log K 轮？",
+    "另一种思路：结果的下一个结点一定是 K 条链表当前头结点中最小的那个。用小根堆维护这 K 个头结点，每次取最小值只要 O(log K)。"
+  ]
+}

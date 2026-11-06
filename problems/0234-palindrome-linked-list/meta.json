@@ -1,0 +1,16 @@
+{
+  "id": 234,
+  "slug": "palindrome-linked-list",
+  "title": "回文链表",
+  "difficulty": "简单",
+  "tags": ["栈", "递归", "链表", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/palindrome-linked-list/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "单链表不能倒着走，但数组可以。先把所有值拷进数组，再用左右两个下标往中间夹。",
+    "想做到 O(1) 空间：先用快慢指针找到链表中点，把后半段反转（第 206 题），这样后半段就能「倒着读」了。",
+    "前半段从 head 出发、反转后的后半段从它的头出发，同时往后比较，直到后半段走完。最后记得把后半段再反转回去。"
+  ]
+}

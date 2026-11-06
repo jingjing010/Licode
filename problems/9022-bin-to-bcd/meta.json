@@ -1,0 +1,16 @@
+{
+  "id": 9022,
+  "slug": "bin-to-bcd",
+  "title": "二进制转 BCD 码（RTC 时间设置）",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "BCD", "位运算", "RTC"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "BCD 码：高 4 位放十位数字，低 4 位放个位数字，例如 59 要变成 0x59。",
+    "十位 = bin / 10，个位 = bin % 10。",
+    "结果 = (十位 << 4) | 个位。59 -> (5 << 4) | 9 = 0x59 = 89。"
+  ]
+}

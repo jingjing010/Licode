@@ -1,0 +1,16 @@
+{
+  "id": 3,
+  "slug": "longest-substring-without-repeating-characters",
+  "title": "无重复字符的最长子串",
+  "difficulty": "中等",
+  "tags": ["哈希表", "字符串", "滑动窗口"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/longest-substring-without-repeating-characters/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的想法：枚举每个起点，往右扩展，直到遇到重复字符为止。怎么快速判断一个字符是否已经出现过？",
+    "如果 s[i..j] 没有重复字符，那么 s[i+1..j] 也一定没有。起点右移时，终点不需要退回去——这就是「滑动窗口」。",
+    "用 last[c] 记录字符 c 最近一次出现的下标。右边界遇到 s[i] 时，如果 last[s[i]] >= left，就把 left 跳到 last[s[i]] + 1。"
+  ]
+}

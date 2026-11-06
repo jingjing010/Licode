@@ -1,0 +1,16 @@
+{
+  "id": 9034,
+  "slug": "my-memcmp",
+  "title": "实现 memcmp",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "指针", "内存"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "从第 0 个字节开始逐个比较，第一次出现不同的字节就能决定结果，不用再往后看。",
+    "比较时一定要把字节当成 unsigned char：0xC8（200）应该大于 0x64（100），如果当成有符号 char，200 会变成 -56。",
+    "返回 (int)a[i] - (int)b[i] 就能同时表示\"小于/大于\"；n 个字节都相同时返回 0。"
+  ]
+}

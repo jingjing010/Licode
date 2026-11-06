@@ -1,0 +1,16 @@
+{
+  "id": 9015,
+  "slug": "average-no-overflow",
+  "title": "无溢出求平均值",
+  "difficulty": "简单",
+  "tags": ["位运算", "嵌入式", "整数溢出"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "(a + b) / 2 为什么不行？想想 a = b = 0xFFFFFFFF 时 a + b 是多少。",
+    "如果 a <= b，那么 a + (b - a) / 2 不会溢出。",
+    "位运算写法：a & b 是两数\"都为 1\"的部分，a ^ b 是\"只有一个为 1\"的部分，a + b = 2 * (a & b) + (a ^ b)，所以平均值是 (a & b) + ((a ^ b) >> 1)。"
+  ]
+}

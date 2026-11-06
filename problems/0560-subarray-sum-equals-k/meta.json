@@ -1,0 +1,16 @@
+{
+  "id": 560,
+  "slug": "subarray-sum-equals-k",
+  "title": "和为 K 的子数组",
+  "difficulty": "中等",
+  "tags": ["数组", "哈希表", "前缀和"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/subarray-sum-equals-k/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接的想法：枚举子数组的起点 i，再往右扩展终点 j，边扩展边累加和。注意数组里有负数，不能用滑动窗口。",
+    "用前缀和 pre[j] 表示前 j 个数的和，那么子数组 nums[i..j-1] 的和就是 pre[j] - pre[i]。",
+    "遍历到 pre[j] 时，要找的是之前有多少个 pre[i] == pre[j] - k。用哈希表记录每个前缀和出现的次数（别忘了 pre[0] = 0 出现过 1 次）。"
+  ]
+}

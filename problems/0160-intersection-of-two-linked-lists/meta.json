@@ -1,0 +1,16 @@
+{
+  "id": 160,
+  "slug": "intersection-of-two-linked-lists",
+  "title": "相交链表",
+  "difficulty": "简单",
+  "tags": ["哈希表", "链表", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/intersection-of-two-linked-lists/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "相交指的是两条链表从某个结点开始「共用」后面所有结点（指针相同），而不是值相同。",
+    "如果两条链表一样长，两个指针同时出发、每次各走一步，第一次指针相等的地方就是交点。长度不同时，能不能先让长的那条多走几步？",
+    "更巧妙的写法：指针 pA 走完 A 后跳到 B 的头，pB 走完 B 后跳到 A 的头。两人走的总路程都是 a + b + c，一定会在交点（或同时到达 NULL）相遇。"
+  ]
+}

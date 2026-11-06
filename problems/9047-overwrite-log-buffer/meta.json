@@ -1,0 +1,16 @@
+{
+  "id": 9047,
+  "slug": "overwrite-log-buffer",
+  "title": "覆盖式日志缓冲区",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "设计", "队列", "数组"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "还是环形缓冲区：一个固定数组 + 写指针。区别只在于\"满了怎么办\"——这次不拒绝，而是把最旧的那条盖掉。",
+    "满了之后再写：新数据写在最旧数据的位置上，于是\"最旧的位置\"也要跟着后移一格。",
+    "getAll 从最旧的那条开始，按 (oldest + i) % capacity 依次取 count 条，就是从旧到新的顺序。"
+  ]
+}

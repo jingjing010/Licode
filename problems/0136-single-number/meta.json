@@ -1,0 +1,16 @@
+{
+  "id": 136,
+  "slug": "single-number",
+  "title": "只出现一次的数字",
+  "difficulty": "简单",
+  "tags": ["位运算", "数组"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/single-number/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "最直接的想法：数一数每个数出现了几次。数值范围不大，可以用数组当计数器。",
+    "能不能不用额外空间？想想有没有一种运算，让两个相同的数「互相抵消」。",
+    "异或 ^ 满足 a ^ a = 0、a ^ 0 = a，并且满足交换律和结合律。把所有数异或起来，成对的都抵消了，剩下的就是答案。"
+  ]
+}

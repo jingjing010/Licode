@@ -1,0 +1,16 @@
+{
+  "id": 41,
+  "slug": "first-missing-positive",
+  "title": "缺失的第一个正数",
+  "difficulty": "困难",
+  "tags": ["数组", "哈希表"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/first-missing-positive/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "长度为 n 的数组，答案一定在 1 ~ n+1 之间。为什么？",
+    "所以只需要关心 1 ~ n 范围内的数。开一个长度 n+2 的标记数组，就能 O(n) 找到答案（但用了 O(n) 额外空间）。",
+    "原地做法：把每个在 1~n 范围内的数 x 交换到下标 x-1 的位置上（「让每个数回家」），最后第一个 nums[i] != i+1 的位置就是答案。"
+  ]
+}

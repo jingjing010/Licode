@@ -1,0 +1,16 @@
+{
+  "id": 9037,
+  "slug": "my-strncpy",
+  "title": "实现 strncpy",
+  "difficulty": "中等",
+  "tags": ["嵌入式", "字符串", "指针"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "strncpy 无论如何都恰好写 n 个字节：先复制 src 的字符，复制不满 n 个就用 '\\0' 补满。",
+    "分两段：第一段复制字符，条件是\"还没写满 n 个\"且\"src 还没到 '\\0'\"；第二段把剩下的位置全部写成 '\\0'。",
+    "如果 strlen(src) >= n，第一段就把 n 个字节写满了，第二段一个都不写——这时 dst 没有 '\\0' 结尾，这正是 strncpy 的标准行为。"
+  ]
+}

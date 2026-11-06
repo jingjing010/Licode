@@ -1,0 +1,16 @@
+{
+  "id": 189,
+  "slug": "rotate-array",
+  "title": "轮转数组",
+  "difficulty": "中等",
+  "tags": ["数组", "数学", "双指针"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/rotate-array/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "k 可能比数组长度还大，转 n 次等于没转，先把 k 对 n 取余。",
+    "原来下标 i 的元素，轮转后会去到下标 (i + k) % n。借助一个临时数组就能 O(n) 完成。",
+    "原地做法：先整体翻转，再分别翻转前 k 个和后 n - k 个。"
+  ]
+}

@@ -39,6 +39,21 @@ def rand_intervals(n, hi, maxlen):
     return res
 
 
+def fast(iv):
+    res = []
+    for l, r in sorted(iv):
+        if res and l <= res[-1][1]:
+            res[-1][1] = max(res[-1][1], r)
+        else:
+            res.append([l, r])
+    return mat(res)
+
+
+for _ in range(200):
+    _iv = rand_intervals(random.randint(1, 8), 30, 6)
+    assert brute(lines(mat(_iv))) == fast(_iv)
+
+
 def cases():
     res = [
         lines(mat([[0, 0]])),

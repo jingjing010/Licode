@@ -3,7 +3,7 @@
   "slug": "ring-buffer",
   "title": "环形缓冲区",
   "difficulty": "简单",
-  "tags": ["队列", "设计", "数组", "通信协议"],
+  "tags": ["嵌入式", "队列", "设计", "数组", "通信协议"],
   "lists": ["embedded"],
   "leetcode": "",
   "time_limit_ms": 1000,

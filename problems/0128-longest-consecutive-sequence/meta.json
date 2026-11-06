@@ -1,0 +1,16 @@
+{
+  "id": 128,
+  "slug": "longest-consecutive-sequence",
+  "title": "最长连续序列",
+  "difficulty": "中等",
+  "tags": ["并查集", "数组", "哈希表"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/longest-consecutive-sequence/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先不管 O(n) 的要求：排序之后，连续的数会挨在一起，注意跳过重复的数。",
+    "要做到 O(n)，需要能 O(1) 判断「某个数在不在数组里」——把所有数放进哈希集合。",
+    "只从「序列的起点」开始往后数：如果 x-1 在集合里，x 就不是起点，直接跳过。这样每个数最多被数一次。"
+  ]
+}

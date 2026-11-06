@@ -1,0 +1,16 @@
+{
+  "id": 198,
+  "slug": "house-robber",
+  "title": "打家劫舍",
+  "difficulty": "中等",
+  "tags": ["数组", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/house-robber/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "站在第 i 间房子门口，你只有两个选择：偷它，或者不偷它。",
+    "设 dp[i] 为只考虑前 i 间房子能偷到的最高金额。偷第 i 间就不能偷第 i-1 间：dp[i] = max(dp[i-1], dp[i-2] + nums[i-1])。",
+    "dp[i] 只依赖 dp[i-1] 和 dp[i-2]，用两个变量滚动即可做到 O(1) 空间。"
+  ]
+}

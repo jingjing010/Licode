@@ -1,0 +1,16 @@
+{
+  "id": 9033,
+  "slug": "my-memset",
+  "title": "实现 memset",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "指针", "内存"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "和 memcpy 一样，先把 void* 转成 unsigned char*，才能一个字节一个字节地写。",
+    "参数 c 虽然是 int，但真正写进内存的只是它的低 8 位。(unsigned char)c 会自动截断成 0~255。",
+    "循环 n 次，每次写一个字节；最后返回原始的 s，而不是移动后的指针。"
+  ]
+}

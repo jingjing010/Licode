@@ -1,0 +1,16 @@
+{
+  "id": 9018,
+  "slug": "read-be32",
+  "title": "从字节流读取大端 uint32",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "字节序", "位运算", "指针"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "大端：第一个字节 buf[offset] 是最高字节，放在 bit31~24。",
+    "每个字节先转成 uint32_t 再左移：(uint32_t)buf[offset] << 24，依次是 24、16、8、0。",
+    "不要用 *(uint32_t*)(buf + offset)：字节序与 CPU 有关，而且 offset 不是 4 的倍数时可能非对齐访问。"
+  ]
+}

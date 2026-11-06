@@ -1,0 +1,16 @@
+{
+  "id": 9031,
+  "slug": "my-memcpy",
+  "title": "实现 memcpy",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "指针", "内存"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "void* 不能直接解引用，也不能做指针加减。先把它转换成什么类型的指针，才能\"一个字节一个字节\"地访问？",
+    "转成 unsigned char*（src 要保留 const），然后循环 n 次，每次复制一个字节。",
+    "循环里指针会往后移动，最后要返回的是\"原来的 dst\"，所以要用另外的变量做循环指针，或者提前保存 dst。"
+  ]
+}

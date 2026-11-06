@@ -1,0 +1,16 @@
+{
+  "id": 72,
+  "slug": "edit-distance",
+  "title": "编辑距离",
+  "difficulty": "中等",
+  "tags": ["字符串", "动态规划"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/edit-distance/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "设 dp[i][j] 为把 word1 的前 i 个字符变成 word2 的前 j 个字符所需的最少操作数。边界：dp[i][0] = i，dp[0][j] = j。",
+    "如果 word1[i-1] == word2[j-1]，最后一个字符不用动：dp[i][j] = dp[i-1][j-1]。",
+    "否则三选一再加 1：替换 dp[i-1][j-1]、删除 dp[i-1][j]、插入 dp[i][j-1]，取最小值。"
+  ]
+}

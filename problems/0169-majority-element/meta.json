@@ -1,0 +1,16 @@
+{
+  "id": 169,
+  "slug": "majority-element",
+  "title": "多数元素",
+  "difficulty": "简单",
+  "tags": ["数组", "哈希表", "分治", "计数", "排序"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/majority-element/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "多数元素出现的次数超过一半。如果把数组排好序，正中间的那个数是谁？",
+    "能不能 O(n) 时间、O(1) 空间？想象「打擂台」：不同的数两两同归于尽，最后站着的是谁？",
+    "摩尔投票：维护候选人 cand 和票数 cnt。cnt 为 0 时换当前数当候选人；相同 +1，不同 -1。最后的候选人就是答案。"
+  ]
+}

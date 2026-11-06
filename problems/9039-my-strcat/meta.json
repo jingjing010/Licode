@@ -1,0 +1,16 @@
+{
+  "id": 9039,
+  "slug": "my-strcat",
+  "title": "实现 strcat",
+  "difficulty": "简单",
+  "tags": ["嵌入式", "字符串", "指针"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "拼接分两步：先找到 dst 的结尾在哪里，再从那里开始把 src 复制过去。",
+    "dst 的结尾就是它的 '\\0' 所在的位置——src 的第一个字符要覆盖掉这个 '\\0'。",
+    "第二步就是一次 strcpy：连同 src 的 '\\0' 一起复制。别忘了返回的是原始的 dst。"
+  ]
+}

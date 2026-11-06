@@ -1,0 +1,16 @@
+{
+  "id": 9011,
+  "slug": "sign-extend",
+  "title": "符号扩展",
+  "difficulty": "中等",
+  "tags": ["位运算", "嵌入式", "补码", "传感器"],
+  "lists": ["embedded"],
+  "leetcode": "",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "bits 位补码的最高位（第 bits - 1 位）是符号位。符号位为 0 时数值不变；为 1 时表示负数。",
+    "bits 位补码中，符号位为 1 时真实值 = raw - 2^bits。用 int64_t 计算可以避免溢出。",
+    "无分支写法：m = 1u << (bits - 1)，答案是 (raw ^ m) - m，再转成 int32_t。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 33,
+  "slug": "search-in-rotated-sorted-array",
+  "title": "搜索旋转排序数组",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": ["hot100"],
+  "leetcode": "https://leetcode.cn/problems/search-in-rotated-sorted-array/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先不管 O(log n)：从头到尾找一遍就能做对。",
+    "从中间 mid 把数组切成两半，至少有一半是完全升序的。怎么判断？比较 nums[lo] 和 nums[mid]。",
+    "在升序的那一半里，只看两端就能判断 target 在不在里面；在就往这一半缩，不在就去另一半。"
+  ]
+}

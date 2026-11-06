@@ -1,0 +1,16 @@
+{
+  "id": 513,
+  "slug": "find-bottom-left-tree-value",
+  "title": "找树左下角的值",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-bottom-left-tree-value/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "「最底层」最左边：先要找到最深的一层，再取这一层最左边的结点。注意它不一定是左孩子。",
+    "层序遍历时记录每一层的第一个结点，遍历结束时最后记录的就是答案。",
+    "更巧的做法：BFS 时先放右孩子、再放左孩子，那么最后一个出队的结点就是答案。"
+  ]
+}

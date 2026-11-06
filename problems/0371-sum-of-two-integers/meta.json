@@ -1,0 +1,16 @@
+{
+  "id": 371,
+  "slug": "sum-of-two-integers",
+  "title": "两整数之和",
+  "difficulty": "中等",
+  "tags": ["位运算", "数学"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sum-of-two-integers/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "回忆一位二进制加法：本位 = a ^ b，进位 = a & b。",
+    "a + b = (a ^ b) + ((a & b) << 1)：不带进位的和 + 进位。右边又是一个加法，可以循环处理，直到进位为 0。",
+    "负数左移在 C 里是未定义行为，把 a、b 转成 unsigned int 再运算，最后转回 int。"
+  ]
+}

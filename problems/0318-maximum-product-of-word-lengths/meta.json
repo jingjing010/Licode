@@ -1,0 +1,16 @@
+{
+  "id": 318,
+  "slug": "maximum-product-of-word-lengths",
+  "title": "最大单词长度乘积",
+  "difficulty": "中等",
+  "tags": ["位运算", "数组", "字符串"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/maximum-product-of-word-lengths/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "枚举所有单词对 (i, j)，判断它们有没有公共字母，没有的话用 len(i) * len(j) 更新答案。",
+    "每次逐字符比较两个单词太慢。可以先预处理：每个单词出现过哪些字母？只有 26 种字母。",
+    "用一个 int 的低 26 位表示一个单词的字母集合：mask |= 1 << (c - 'a')。两个单词没有公共字母 ⇔ (mask[i] & mask[j]) == 0。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 441,
+  "slug": "arranging-coins",
+  "title": "排列硬币",
+  "difficulty": "简单",
+  "tags": ["数学", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/arranging-coins/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "摆满前 k 行一共需要 1 + 2 + ... + k = k(k+1)/2 枚硬币。",
+    "要找最大的 k，使得 k(k+1)/2 <= n。k(k+1)/2 随 k 单调递增，可以二分。",
+    "n 可达 2^31-1，k(k+1)/2 的计算要用 long long，否则会溢出。"
+  ]
+}

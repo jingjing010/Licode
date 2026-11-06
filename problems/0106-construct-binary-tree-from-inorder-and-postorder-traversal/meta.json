@@ -1,0 +1,16 @@
+{
+  "id": 106,
+  "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+  "title": "从中序与后序遍历序列构造二叉树",
+  "difficulty": "中等",
+  "tags": ["树", "数组", "哈希表", "分治", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "后序遍历是“左 → 右 → 根”，所以后序数组的最后一个数一定是整棵树的根。",
+    "在中序数组里找到根的位置，它左边的都属于左子树，右边的都属于右子树；两边的个数也就知道了，于是可以把后序数组也切成两段，递归处理。",
+    "每次在中序数组里线性查找根的位置会退化成 O(n²)。值的范围很小，可以先用一个数组/哈希表记下“值 → 中序下标”，查找变成 O(1)。"
+  ]
+}

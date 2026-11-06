@@ -1,0 +1,16 @@
+{
+  "id": 515,
+  "slug": "find-largest-value-in-each-tree-row",
+  "title": "在每个树行中找最大值",
+  "difficulty": "中等",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-largest-value-in-each-tree-row/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "按层处理：第 102 题的层序遍历模板，每层只需要记一个最大值。",
+    "结点值可能是 -2^31，每层的最大值初始值应设为 INT_MIN 或者这一层的第一个结点值，而不是 0。",
+    "DFS 也可以：带着深度 d 递归，第一次到达深度 d 时直接写入，之后取 max。"
+  ]
+}

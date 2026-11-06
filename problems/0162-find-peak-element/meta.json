@@ -1,0 +1,16 @@
+{
+  "id": 162,
+  "slug": "find-peak-element",
+  "title": "寻找峰值",
+  "difficulty": "中等",
+  "tags": ["数组", "二分查找"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-peak-element/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从头扫一遍，找到第一个 nums[i] > nums[i+1] 的位置就是峰值——但这是 O(n)。",
+    "看中间的 nums[mid] 和它右边的 nums[mid+1]：如果在「上坡」，往右走一定能遇到峰值。",
+    "nums[mid] < nums[mid+1] 时答案在 mid 右边（lo = mid + 1），否则 mid 本身可能就是峰值（hi = mid）。"
+  ]
+}

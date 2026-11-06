@@ -1,0 +1,16 @@
+{
+  "id": 201,
+  "slug": "bitwise-and-of-numbers-range",
+  "title": "数字范围按位与",
+  "difficulty": "中等",
+  "tags": ["位运算"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/bitwise-and-of-numbers-range/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "直接从 left 与到 right 最多要做 2^31 次运算，会超时。观察一下：只要区间里有两个相邻的数，最低位一定会被与成 0。",
+    "把 left 和 right 写成二进制：结果其实就是它们的「公共前缀」，后面补 0。",
+    "求公共前缀：两个数同时右移直到相等，记下移了几次，再左移回去；或者不断执行 right &= right - 1 直到 right <= left。"
+  ]
+}

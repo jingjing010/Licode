@@ -1,0 +1,16 @@
+{
+  "id": 103,
+  "slug": "binary-tree-zigzag-level-order-traversal",
+  "title": "二叉树的锯齿形层序遍历",
+  "difficulty": "中等",
+  "tags": ["树", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先忘掉“锯齿”，你会写普通的层序遍历（第 102 题）吗？用队列一层一层地取结点。",
+    "锯齿形只是把奇数层（从 0 开始数）的结果倒过来，结点的访问顺序完全不用变。",
+    "每一层的大小在开始处理这一层时就知道了，可以直接按“正着放/倒着放”把值写进这一层数组的对应下标。"
+  ]
+}

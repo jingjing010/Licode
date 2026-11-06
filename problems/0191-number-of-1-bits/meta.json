@@ -1,0 +1,16 @@
+{
+  "id": 191,
+  "slug": "number-of-1-bits",
+  "title": "位1的个数",
+  "difficulty": "简单",
+  "tags": ["位运算", "分治"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/number-of-1-bits/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "逐位检查：(n >> i) & 1 取出第 i 位，32 位挨个数一遍。",
+    "n & (n - 1) 会把 n 最右边的那个 1 变成 0。反复这样做直到 n 为 0，做了几次就有几个 1。",
+    "无循环写法：每 2 位一组求和，再每 4 位、8 位一组求和，最后把 4 个字节加起来（掩码 0x55555555、0x33333333、0x0F0F0F0F）。"
+  ]
+}

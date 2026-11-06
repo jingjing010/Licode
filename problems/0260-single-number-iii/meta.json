@@ -1,0 +1,16 @@
+{
+  "id": 260,
+  "slug": "single-number-iii",
+  "title": "只出现一次的数字 III",
+  "difficulty": "中等",
+  "tags": ["位运算", "数组"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/single-number-iii/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "先把所有数异或起来：成对的数都抵消了，得到的是两个答案的异或 x = a ^ b。",
+    "a != b，所以 x 至少有一位是 1，说明 a 和 b 在这一位上不同。取出 x 最低的那个 1：lowbit = x & -x（注意用无符号数防止溢出）。",
+    "按这一位是 0 还是 1 把所有数分成两组：a 和 b 分到不同组，成对的数一定分在同一组。每组各自异或，就分别得到 a 和 b。"
+  ]
+}

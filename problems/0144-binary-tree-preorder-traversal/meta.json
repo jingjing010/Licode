@@ -1,0 +1,16 @@
+{
+  "id": 144,
+  "slug": "binary-tree-preorder-traversal",
+  "title": "二叉树的前序遍历",
+  "difficulty": "简单",
+  "tags": ["栈", "树", "深度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-preorder-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "前序遍历的顺序是：根 → 左子树 → 右子树。",
+    "递归写法：先记录当前结点，再递归左、递归右；计数器要传地址。",
+    "迭代写法：用栈。弹出一个结点就记录它，然后先压右孩子、再压左孩子（这样左孩子先出栈）。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 257,
+  "slug": "binary-tree-paths",
+  "title": "二叉树的所有路径",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "字符串", "回溯", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-paths/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从根出发做 DFS，用一个字符缓冲区记录「当前路径」的字符串。",
+    "进入结点时用 sprintf 把 \"->值\"（根结点没有箭头）追加到缓冲区末尾，记下追加前的长度，离开时把长度恢复（回溯）。",
+    "到达叶子时，malloc 一份新字符串，把缓冲区复制进去，存入答案数组。"
+  ]
+}

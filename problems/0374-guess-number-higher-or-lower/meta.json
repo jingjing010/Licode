@@ -1,0 +1,16 @@
+{
+  "id": 374,
+  "slug": "guess-number-higher-or-lower",
+  "title": "猜数字大小",
+  "difficulty": "简单",
+  "tags": ["二分查找", "交互"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/guess-number-higher-or-lower/",
+  "time_limit_ms": 1000,
+  "samples": 3,
+  "hints": [
+    "从 1 猜到 n 一定能猜中，但 n 可能是 2^31-1，调用次数会超限。",
+    "每猜一次，guess 都会告诉你「大了」还是「小了」——正好能扔掉一半的候选数字。",
+    "guess(mid) == -1 说明 mid 太大（hi = mid - 1），== 1 说明太小（lo = mid + 1），== 0 就猜中了。mid 要用 lo + (hi - lo) / 2。"
+  ]
+}

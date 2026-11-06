@@ -1,0 +1,16 @@
+{
+  "id": 278,
+  "slug": "first-bad-version",
+  "title": "第一个错误的版本",
+  "difficulty": "简单",
+  "tags": ["二分查找", "交互"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/first-bad-version/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "从 1 开始一个一个问 isBadVersion 当然能找到，但 n 可能有 2^31-1 那么大，调用次数也会超限。",
+    "版本序列长这样：好 好 好 坏 坏 坏。要找的是「第一个坏」——典型的二分查找边界问题。",
+    "isBadVersion(mid) 为真时答案在 mid 或左边（hi = mid），否则在右边（lo = mid + 1）。算 mid 时注意 lo + hi 会溢出！"
+  ]
+}

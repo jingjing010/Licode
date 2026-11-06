@@ -1,0 +1,16 @@
+{
+  "id": 404,
+  "slug": "sum-of-left-leaves",
+  "title": "左叶子之和",
+  "difficulty": "简单",
+  "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/sum-of-left-leaves/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "左叶子需要同时满足两个条件：它是叶子；它是某个结点的左孩子。",
+    "单看一个结点自己，是不知道它是左孩子还是右孩子的——要站在父结点上判断。",
+    "对每个结点：如果 node->left 存在且是叶子，就加上它的值；否则递归进左子树。右子树总是要递归的。"
+  ]
+}

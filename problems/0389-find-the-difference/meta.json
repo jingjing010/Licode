@@ -1,0 +1,16 @@
+{
+  "id": 389,
+  "slug": "find-the-difference",
+  "title": "找不同",
+  "difficulty": "简单",
+  "tags": ["位运算", "哈希表", "字符串", "排序"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/find-the-difference/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "用一个长度为 26 的数组统计 s 中每个字母出现的次数，再遍历 t 逐个减掉，哪个字母减成负数了，它就是多出来的。",
+    "更简单：t 中所有字符的 ASCII 码之和 减去 s 中所有字符的 ASCII 码之和，就是多出来的那个字符。",
+    "也可以把 s 和 t 的所有字符异或起来：成对出现的字符都抵消了，剩下的就是答案。"
+  ]
+}

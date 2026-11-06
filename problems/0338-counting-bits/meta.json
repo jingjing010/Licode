@@ -1,0 +1,16 @@
+{
+  "id": 338,
+  "slug": "counting-bits",
+  "title": "比特位计数",
+  "difficulty": "简单",
+  "tags": ["位运算", "动态规划"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/counting-bits/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "最直接：对 0 ~ n 每个数单独数一遍 1 的个数（参考 191 题），总共 O(n log n)。",
+    "能不能利用已经算过的结果？i 右移一位得到 i >> 1，它比 i 小，答案已经算好了。",
+    "ans[i] = ans[i >> 1] + (i & 1)：右移扔掉的最低位如果是 1，就要再加 1。也可以用 ans[i] = ans[i & (i - 1)] + 1。"
+  ]
+}

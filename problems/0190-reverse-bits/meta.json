@@ -1,0 +1,16 @@
+{
+  "id": 190,
+  "slug": "reverse-bits",
+  "title": "颠倒二进制位",
+  "difficulty": "简单",
+  "tags": ["位运算", "分治"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/reverse-bits/",
+  "time_limit_ms": 1000,
+  "samples": 2,
+  "hints": [
+    "原数的第 i 位要放到结果的第 31 - i 位上。逐位取出、逐位放好即可。",
+    "也可以边读边拼：每次 res = (res << 1) | (n & 1)，然后 n >>= 1，循环 32 次。",
+    "不用循环的写法：先交换相邻的 1 位，再交换相邻的 2 位、4 位、8 位，最后交换高低 16 位。掩码依次是 0x55555555、0x33333333、0x0F0F0F0F、0x00FF00FF。"
+  ]
+}

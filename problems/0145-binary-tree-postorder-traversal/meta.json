@@ -1,0 +1,16 @@
+{
+  "id": 145,
+  "slug": "binary-tree-postorder-traversal",
+  "title": "二叉树的后序遍历",
+  "difficulty": "简单",
+  "tags": ["栈", "树", "深度优先搜索", "二叉树"],
+  "lists": [],
+  "leetcode": "https://leetcode.cn/problems/binary-tree-postorder-traversal/",
+  "time_limit_ms": 1000,
+  "samples": 4,
+  "hints": [
+    "后序遍历的顺序是：左子树 → 右子树 → 根。",
+    "递归写法和前序几乎一样，只是「记录当前结点」挪到两次递归之后。",
+    "迭代小技巧：按「根 → 右 → 左」的顺序遍历（前序的镜像），再把结果整个反转，就得到「左 → 右 → 根」。"
+  ]
+}

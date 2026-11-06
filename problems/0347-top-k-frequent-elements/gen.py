@@ -61,7 +61,7 @@ def cases():
     ]
     for n, span in ((20, 5), (200, 30), (2000, 300)):
         res.append(unique_case(n, -span, span))
-    res.append(checked(build([N // 2, N // 4] + [1] * (N // 4)), 2))
+    res.append(checked(build([N // 2, N // 4] + [1] * 19999), 2))
     res.append(checked(build(list(range(1, 447))), 100))
     res.append(checked(build(list(range(1, 447))), 446))
     res.append(checked(build([3] + [2] * 20000), 1))

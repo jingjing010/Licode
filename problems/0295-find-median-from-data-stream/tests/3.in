@@ -1,2 +1,2 @@
-["MedianFinder","addNum","addNum","findMedian"]
-[[],[-100000],[100000],[]]
+["MedianFinder","addNum","findMedian","addNum","findMedian"]
+[[],[-100000],[],[100000],[]]

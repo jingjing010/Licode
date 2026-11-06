@@ -1,2 +1,2 @@
-["MinStack","push","getMin","getMin","getMin","getMin","pop","push","push","push","push","push","top","push","push","top","push","getMin","getMin","getMin"]
-[[],[4],[],[],[],[],[],[4],[3],[-3],[5],[-4],[],[2],[3],[],[1],[],[],[]]
+["MinStack","push","push","push","pop","getMin","pop","getMin"]
+[[],[5],[5],[5],[],[],[],[]]
